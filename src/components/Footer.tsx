@@ -39,8 +39,8 @@ export default function Footer() {
               <span className="text-[15px] font-semibold tracking-tight">Shamas Sons</span>
             </div>
             <p className="text-[13px] text-gray-400 leading-relaxed max-w-[260px]">
-              Scandinavian furniture, meticulously handcrafted to bring warmth
-              and elegance into your home.
+              UK-based, VAT-registered retailer. Top-rated seller with 4.4 ★ from
+              over 95 verified customers. Based in Colchester, Essex.
             </p>
           </div>
 

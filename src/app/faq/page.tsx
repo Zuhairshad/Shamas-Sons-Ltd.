@@ -24,19 +24,19 @@ const FAQ_SECTIONS: FaqSection[] = [
     items: [
       {
         q: "How long does shipping take?",
-        a: "Standard delivery takes 5–10 business days within Europe. White-glove delivery (assembly included) is available in major cities and takes 7–14 days. We'll send you a tracking link as soon as your order leaves our warehouse.",
+        a: "Standard UK delivery typically takes 2–5 business days from dispatch. We dispatch orders promptly from our base in Colchester, Essex, and you'll receive a tracking update as soon as your parcel is on its way.",
       },
       {
-        q: "Do you ship internationally?",
-        a: "Yes — we ship to most countries in Europe, the UK, and select destinations worldwide. Shipping costs and lead times are calculated at checkout. For large custom orders outside Europe, please contact us directly.",
+        q: "Do you ship outside the UK?",
+        a: "At present we ship to addresses within the United Kingdom only. If you have a specific international enquiry, please contact us via our contact page and we'll do our best to help.",
       },
       {
         q: "How can I track my order?",
-        a: "Once your order has been dispatched you will receive a confirmation email with a tracking number. You can use this to follow your shipment on the carrier's website. If you have any concerns, our team is happy to help.",
+        a: "Once your order has been dispatched you'll receive a confirmation with a tracking number. You can use this to follow your shipment on the carrier's website. If you have any concerns, drop us a message and we'll look into it for you.",
       },
       {
         q: "Are there any shipping fees?",
-        a: "We offer free standard shipping on all orders over €300 within the EU. Orders below that threshold incur a flat fee of €25. White-glove delivery is priced separately based on your location.",
+        a: "Shipping costs are calculated at checkout based on your order size and location. We aim to keep costs as low as possible — many items qualify for free or reduced-rate shipping.",
       },
     ],
   },
@@ -45,15 +45,28 @@ const FAQ_SECTIONS: FaqSection[] = [
     items: [
       {
         q: "What is your return policy?",
-        a: "We accept returns within 30 days of delivery, provided the item is in its original condition and packaging. Custom and made-to-order pieces cannot be returned unless there is a manufacturing defect.",
+        a: "We accept returns within 30 days of delivery, provided the item is unused and in its original packaging. Please contact us before sending anything back so we can arrange the most efficient process.",
       },
       {
-        q: "How do I initiate a return or exchange?",
-        a: "Send us an email at returns@shamassons.com with your order number and reason for return. We'll respond within 48 hours with a prepaid shipping label and instructions. Refunds are processed within 5–7 business days of receiving the item.",
+        q: "How do I initiate a return?",
+        a: "Send us a message via our contact page with your order number and reason for return. We'll respond within 1–2 business days with instructions. Refunds are processed within 5–7 business days of receiving the returned item.",
       },
       {
         q: "What should I do if my order arrives damaged?",
-        a: "Please photograph the damage and email us at support@shamassons.com within 48 hours of delivery. We'll arrange a replacement or full refund at no cost to you. Do not discard the packaging as it may be required for the carrier claim.",
+        a: "Please photograph the damage and contact us within 48 hours of delivery. We'll arrange a replacement or full refund at no cost to you. Please hold onto the original packaging as it may be needed for a carrier claim.",
+      },
+    ],
+  },
+  {
+    title: "About Us",
+    items: [
+      {
+        q: "Who is Shamas & Sons Ltd?",
+        a: "Shamas & Sons Ltd is a UK-based, VAT-registered retailer (VAT No: GB458915253, Company No: 13659351) founded in 2021. We're a family-run business based in Colchester, Essex, with over 95 verified customer reviews and a 4.4-star rating.",
+      },
+      {
+        q: "Are you a legitimate UK business?",
+        a: "Yes — we're a fully registered private limited company (Companies House No: 13659351) and VAT registered (GB458915253). Our registered address is 2 Hesper Road, Colchester, Essex, CO2 8JS.",
       },
     ],
   },

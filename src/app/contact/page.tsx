@@ -9,14 +9,14 @@ import Footer from "@/components/Footer";
 
 const OFFICES = [
   {
-    city: "Prague",
-    address: "Náměstí Míru 14\n120 00 Prague 2\nCzech Republic",
-    phone: "+420 222 510 882",
+    city: "Colchester",
+    address: "2 Hesper Road\nColchester, Essex\nCO2 8JS, UK",
+    phone: "+44 7438 106866",
   },
   {
-    city: "Hamburg",
-    address: "Eppendorfer Weg 155\n20253 Hamburg\nGermany",
-    phone: "+49 40 4600 8800",
+    city: "Online",
+    address: "VAT No: GB458915253\nCompany No: 13659351\nRegistered in England & Wales",
+    phone: "+44 7438 106866",
   },
 ];
 
@@ -56,8 +56,8 @@ export default function ContactPage() {
         <div className="bg-[#f5f4f1] dark:bg-[#1a1a1a] flex flex-col px-14 py-14 transition-colors">
           <h1 className="text-5xl font-light text-neutral-900 dark:text-neutral-100 mb-2">Let&apos;s Talk</h1>
           <p className="text-[13px] text-gray-500 dark:text-gray-400 mb-10 max-w-[340px]">
-            Have a question, a custom enquiry, or just want to say hello?
-            We&apos;d love to hear from you.
+            Have a question about an order, product, or anything else?
+            We&apos;re based in Colchester, Essex, and respond within 1–2 business days.
           </p>
 
           {sent ? (
@@ -131,9 +131,16 @@ export default function ContactPage() {
                 {address}
               </p>
               <p className="text-[13px] text-neutral-500 dark:text-neutral-400">{phone}</p>
-              <button className="mt-6 flex items-center gap-2 bg-neutral-900 dark:bg-white text-white dark:text-black text-[12px] rounded-lg px-4 py-2 hover:bg-neutral-700 dark:hover:bg-gray-200 transition-colors">
-                Get Direction <span className="text-[10px]">↗</span>
-              </button>
+              {city === "Colchester" && (
+                <a
+                  href="https://maps.google.com/?q=2+Hesper+Road,+Colchester,+Essex,+CO2+8JS"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-6 inline-flex items-center gap-2 bg-neutral-900 dark:bg-white text-white dark:text-black text-[12px] rounded-lg px-4 py-2 hover:bg-neutral-700 dark:hover:bg-gray-200 transition-colors"
+                >
+                  Get Directions <span className="text-[10px]">↗</span>
+                </a>
+              )}
             </div>
           ))}
         </div>
