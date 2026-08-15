@@ -8,9 +8,9 @@ import { COLLECTION_THUMBNAILS, type CollectionSlug } from "@/data/products";
 import { useTheme } from "@/components/ThemeProvider";
 
 const COLLECTIONS: { slug: CollectionSlug; label: string }[] = [
-  { slug: "dark",   label: "Dark"   },
-  { slug: "modern", label: "Modern" },
-  { slug: "wood",   label: "Wood"   },
+  { slug: "liquid",  label: "Liquid Polish"  },
+  { slug: "wadding", label: "Wadding & Wipes" },
+  { slug: "bundle",  label: "Bundles & Packs" },
 ];
 
 const ABOUT_LINKS = [

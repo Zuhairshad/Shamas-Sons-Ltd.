@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import ShopClient from "@/components/ShopClient";
 import { type CollectionSlug } from "@/data/products";
 
-const VALID: CollectionSlug[] = ["dark", "modern", "wood"];
+const VALID: CollectionSlug[] = ["liquid", "wadding", "bundle"];
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -14,8 +14,13 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
-  const label = slug.charAt(0).toUpperCase() + slug.slice(1);
-  return { title: `${label} Collection — Shamas Sons Ltd.` };
+  const labelMap: Record<string, string> = {
+    liquid: "Liquid Polish",
+    wadding: "Wadding & Wipes",
+    bundle: "Bundles & Packs",
+  };
+  const label = labelMap[slug] ?? slug;
+  return { title: `${label} — Shamas Sons Ltd.` };
 }
 
 export default async function CollectionPage({ params }: Props) {

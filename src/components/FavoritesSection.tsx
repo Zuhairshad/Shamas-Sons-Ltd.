@@ -1,35 +1,48 @@
 import Image from "next/image";
 import Link from "next/link";
-import { MoveRight } from "lucide-react";
+import { MoveRight, Star } from "lucide-react";
 
+// Top 4 bestsellers by review count / sales
 const products = [
   {
-    id: 2,
-    name: "Skala",
-    sale: "50% OFF",
-    src: "https://images.unsplash.com/photo-1549497538-303791108f95?auto=format&fit=crop&w=600&h=700&q=80",
-    alt: "Skala spindle chair",
+    id: 14,
+    name: "Brasso Wadding 75 g",
+    price: "£2.99",
+    reviewCount: "4.7K",
+    rating: 4.6,
+    src: "https://m.media-amazon.com/images/P/B00BE27CYK._SL500_.jpg",
+    alt: "Brasso Metal Polish Wadding 75g",
+    badge: "Bestseller",
   },
   {
-    id: 10,
-    name: "Nest",
-    sale: null,
-    src: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=600&h=700&q=80",
-    alt: "Nest upholstered chair",
+    id: 1,
+    name: "Brasso Liquid 175 ml",
+    price: "£2.99",
+    reviewCount: "1.6K",
+    rating: 4.6,
+    src: "https://m.media-amazon.com/images/P/B002G0BULU._SL500_.jpg",
+    alt: "Brasso Metal Polish 175ml",
+    badge: "1K+ sold/month",
   },
   {
-    id: 9,
-    name: "Runa",
-    sale: null,
-    src: "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=600&h=700&q=80",
-    alt: "Runa wooden chair",
+    id: 8,
+    name: "Brasso Liquid 1 L × 2",
+    price: "£14.99",
+    reviewCount: "1.8K",
+    rating: 4.7,
+    src: "https://m.media-amazon.com/images/P/B002G0BULU._SL500_.jpg",
+    alt: "Brasso Metal Polish 1L Pack of 2",
+    badge: "Best Value",
   },
   {
-    id: 12,
-    name: "Lykke",
-    sale: "54% OFF",
-    src: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=600&h=700&q=80",
-    alt: "Lykke modern chair",
+    id: 4,
+    name: "Brasso Liquid 175 ml × 4",
+    price: "£9.99",
+    reviewCount: "116",
+    rating: 4.7,
+    src: "https://m.media-amazon.com/images/P/B015NOXBCG._SL500_.jpg",
+    alt: "Brasso Metal Polish 175ml Pack of 4",
+    badge: null,
   },
 ];
 
@@ -39,7 +52,7 @@ export default function FavoritesSection() {
       {/* ── Section label ── */}
       <div className="text-center mb-10">
         <h2 className="text-[13px] tracking-[0.12em] text-neutral-500 dark:text-neutral-400 uppercase font-medium">
-          Our Favorites
+          Best Sellers
         </h2>
       </div>
 
@@ -47,27 +60,45 @@ export default function FavoritesSection() {
       <div className="relative max-w-[1400px] mx-auto">
         <div className="grid grid-cols-4 gap-3">
           {products.map((p) => (
-            <Link key={p.name} href={`/shop/${p.id}`} className="group block">
-              <p className="text-[13px] text-neutral-600 dark:text-neutral-400 mb-2 font-light">{p.name}</p>
+            <Link key={p.id} href={`/shop/${p.id}`} className="group block">
+              {/* Name + rating above image */}
+              <p className="text-[13px] text-neutral-600 dark:text-neutral-400 mb-1 font-light leading-snug">
+                {p.name}
+              </p>
+              <div className="flex items-center gap-1 mb-2">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star
+                    key={i}
+                    size={9}
+                    strokeWidth={0}
+                    className={i < Math.floor(p.rating) ? "fill-amber-400" : "fill-neutral-200 dark:fill-neutral-700"}
+                  />
+                ))}
+                <span className="text-[10px] text-neutral-400 ml-0.5">({p.reviewCount})</span>
+              </div>
+
+              {/* Image tile */}
               <div className="relative bg-[#f3f3f3] dark:bg-[#222] rounded-2xl overflow-hidden aspect-[4/5] transition-colors">
                 <Image
                   src={p.src}
                   alt={p.alt}
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="object-contain p-6 group-hover:scale-105 transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, 25vw"
                 />
-                {p.sale && (
-                  <span className="absolute top-3 right-3 bg-black text-white text-[11px] font-medium px-2.5 py-1 rounded-sm tracking-wide">
-                    {p.sale}
+                {p.badge && (
+                  <span className="absolute top-3 right-3 bg-black text-white text-[10px] font-medium px-2 py-0.5 rounded-sm tracking-wide">
+                    {p.badge}
                   </span>
                 )}
               </div>
+
+              <p className="text-[13px] text-neutral-500 dark:text-neutral-400 mt-2">{p.price}</p>
             </Link>
           ))}
         </div>
 
-        {/* ── View all — navigates to /shop ── */}
+        {/* ── View all ── */}
         <Link
           href="/shop"
           aria-label="View all products"

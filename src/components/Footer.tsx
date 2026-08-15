@@ -5,10 +5,10 @@ import Link from "next/link";
 
 const links: Record<string, { label: string; href: string }[]> = {
   Shop: [
-    { label: "All Products",       href: "/shop"              },
-    { label: "Dark Collection",    href: "/collections/dark"  },
-    { label: "Modern Collection",  href: "/collections/modern"},
-    { label: "Wood Collection",    href: "/collections/wood"  },
+    { label: "All Products",    href: "/shop"                },
+    { label: "Liquid Polish",   href: "/collections/liquid"  },
+    { label: "Wadding & Wipes", href: "/collections/wadding" },
+    { label: "Bundles & Packs", href: "/collections/bundle"  },
   ],
   Company: [
     { label: "About",   href: "/about"   },

@@ -1,10 +1,10 @@
-import { Truck, Globe, RotateCcw, ShieldCheck } from "lucide-react";
+import { Truck, Star, ShieldCheck, Package } from "lucide-react";
 
 const benefits = [
-  { Icon: Truck,        label: "Free Shipping over 500€" },
-  { Icon: Globe,        label: "Worldwide Shipping"       },
-  { Icon: RotateCcw,   label: "Free Returns"              },
-  { Icon: ShieldCheck, label: "5-Year Warranty"           },
+  { Icon: Truck,       label: "Fast UK Dispatch"          },
+  { Icon: Star,        label: "4.4 ★ Top-Rated Seller"    },
+  { Icon: ShieldCheck, label: "Genuine Brasso Products"   },
+  { Icon: Package,     label: "Secure Packaging"          },
 ];
 
 export default function BenefitsBar() {

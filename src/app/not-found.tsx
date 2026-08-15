@@ -9,12 +9,12 @@ export const metadata = {
 };
 
 const QUICK_LINKS = [
-  { label: "Shop All",          href: "/shop"               },
-  { label: "Dark Collection",   href: "/collections/dark"   },
-  { label: "Modern Collection", href: "/collections/modern" },
-  { label: "Wood Collection",   href: "/collections/wood"   },
-  { label: "About Us",          href: "/about"              },
-  { label: "Contact",           href: "/contact"            },
+  { label: "Shop All",         href: "/shop"                  },
+  { label: "Liquid Polish",    href: "/collections/liquid"    },
+  { label: "Wadding & Wipes",  href: "/collections/wadding"   },
+  { label: "Bundles & Packs",  href: "/collections/bundle"    },
+  { label: "About Us",         href: "/about"                 },
+  { label: "Contact",          href: "/contact"               },
 ];
 
 export default function NotFound() {

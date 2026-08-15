@@ -1,4 +1,4 @@
-const MESSAGE = "Save 20% on your first order";
+const MESSAGE = "Genuine Brasso products · Fast UK dispatch · VAT-registered seller · Top-rated on Amazon";
 const REPEAT = 10;
 
 export default function AnnouncementBar() {

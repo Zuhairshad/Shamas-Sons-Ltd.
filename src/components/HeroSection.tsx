@@ -8,24 +8,24 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 const slides = [
   {
     id: 1,
-    src: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1800&q=85",
-    alt: "Black leather armchair",
-    heading: "Crafting Comfort,\nInspired by the North",
-    sub: "Crafted for style and lasting durability, perfect for any space.",
+    src: "https://images.unsplash.com/photo-1563237023-b1e970526dcb?auto=format&fit=crop&w=1800&q=85",
+    alt: "Shiny polished metal surface",
+    heading: "Restore Brilliance\nto Every Metal",
+    sub: "Trusted by homes and workshops across the UK. Genuine Brasso — the original metal polish since 1905.",
   },
   {
     id: 2,
-    src: "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=1800&q=85",
-    alt: "Wooden lounge chair",
-    heading: "Timeless Design,\nEnduring Quality",
-    sub: "Each piece tells a story of craftsmanship and care.",
+    src: "https://images.unsplash.com/photo-1585421514284-efb74c2b69ba?auto=format&fit=crop&w=1800&q=85",
+    alt: "Polishing a metal surface",
+    heading: "Liquid or Wadding —\nYour Choice",
+    sub: "From quick touch-ups to deep restoration. Available in multiple sizes and formats for every job.",
   },
   {
     id: 3,
-    src: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1800&q=85",
-    alt: "Scandinavian interior chair",
-    heading: "Natural Materials,\nModern Aesthetic",
-    sub: "Bringing Scandinavian warmth into contemporary homes.",
+    src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1800&q=85",
+    alt: "Metal care products",
+    heading: "Brass, Copper, Chrome\n& Stainless Steel",
+    sub: "One trusted brand covers all your metals. Shop by format or pack size — fast UK dispatch guaranteed.",
   },
 ];
 
@@ -60,7 +60,7 @@ export default function HeroSection() {
             priority={i === 0}
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-black/30" />
+          <div className="absolute inset-0 bg-black/40" />
         </div>
       ))}
 
@@ -83,7 +83,27 @@ export default function HeroSection() {
       </button>
 
       {/* ── Info card ── */}
-      <div className="absolute bottom-14 left-10 z-20 bg-white dark:bg-[#1a1a1a] p-7 max-w-[300px] rounded-sm shadow-md transition-colors">
+      <div className="absolute bottom-14 left-10 z-20 bg-white dark:bg-[#1a1a1a] p-7 max-w-[320px] rounded-sm shadow-md transition-colors">
+        {/* Brasso product thumbnail */}
+        <div className="flex items-center gap-3 mb-4">
+          <div className="relative w-12 h-12 rounded-lg overflow-hidden bg-[#f3f3f3] flex-shrink-0">
+            <Image
+              src="https://m.media-amazon.com/images/P/B002G0BULU._SL500_.jpg"
+              alt="Brasso Metal Polish"
+              fill
+              className="object-contain p-1"
+              sizes="48px"
+            />
+          </div>
+          <div>
+            <p className="text-[11px] text-neutral-400 dark:text-neutral-500 uppercase tracking-widest">
+              Featured
+            </p>
+            <p className="text-[13px] font-medium text-neutral-900 dark:text-neutral-100">
+              Brasso Metal Polish
+            </p>
+          </div>
+        </div>
         <h1 className="text-[22px] font-light leading-[1.35] mb-3 whitespace-pre-line text-neutral-900 dark:text-neutral-100">
           {slides[current].heading}
         </h1>
@@ -94,7 +114,7 @@ export default function HeroSection() {
           href="/shop"
           className="text-[13px] underline underline-offset-4 text-neutral-800 dark:text-neutral-200 hover:text-black dark:hover:text-white"
         >
-          View Product
+          Shop All Products
         </Link>
       </div>
 

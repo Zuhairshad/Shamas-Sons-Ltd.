@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Home, MoveRight } from "lucide-react";
+import { Home, MoveRight, Star } from "lucide-react";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Navbar from "@/components/Navbar";
 import SocialBar from "@/components/SocialBar";
@@ -15,19 +15,44 @@ import {
   type Product,
 } from "@/data/products";
 
+/* ─── Star rating ─────────────────────────────────────────── */
+function StarRating({ rating, count }: { rating: number; count: string }) {
+  return (
+    <div className="flex items-center gap-1.5 mt-1.5">
+      <div className="flex items-center gap-0.5">
+        {Array.from({ length: 5 }).map((_, i) => (
+          <Star
+            key={i}
+            size={10}
+            strokeWidth={0}
+            className={
+              i < Math.floor(rating)
+                ? "fill-amber-400"
+                : i < rating
+                ? "fill-amber-200"
+                : "fill-neutral-300 dark:fill-neutral-600"
+            }
+          />
+        ))}
+      </div>
+      <span className="text-[11px] text-neutral-400 dark:text-neutral-500">
+        {rating.toFixed(1)} ({count})
+      </span>
+    </div>
+  );
+}
+
 /* ─── Product card ───────────────────────────────────────── */
 function ProductCard({ product }: { product: Product }) {
   return (
     <Link href={`/shop/${product.id}`} className="group block">
-      <p className="text-[13px] text-neutral-600 dark:text-neutral-400 mb-2 font-light">{product.name}</p>
-
       <div className="relative bg-[#f3f3f3] dark:bg-[#222] rounded-2xl overflow-hidden aspect-[4/5] transition-colors">
-        {/* Product image — blurs on hover */}
+        {/* Product image */}
         <Image
           src={product.src}
           alt={product.name}
           fill
-          className="object-cover transition-all duration-500 ease-in-out group-hover:blur-[3px]"
+          className="object-contain p-4 transition-all duration-500 ease-in-out group-hover:scale-105"
           sizes="(max-width: 768px) 50vw, 25vw"
         />
 
@@ -38,7 +63,7 @@ function ProductCard({ product }: { product: Product }) {
           </span>
         )}
 
-        {/* Hover overlay — gradient + price row */}
+        {/* Hover overlay */}
         <div className="absolute inset-x-0 bottom-0 z-10 flex items-end justify-between px-5 pb-5 pt-16
           bg-gradient-to-t from-[#f0f0f0]/95 via-[#f0f0f0]/50 to-transparent
           dark:from-[#222]/95 dark:via-[#222]/50
@@ -51,6 +76,14 @@ function ProductCard({ product }: { product: Product }) {
           </span>
         </div>
       </div>
+
+      <div className="mt-2">
+        <p className="text-[13px] text-neutral-700 dark:text-neutral-300 font-light leading-snug">
+          {product.name}
+        </p>
+        <StarRating rating={product.rating} count={product.reviewCount} />
+        <p className="text-[13px] text-neutral-500 dark:text-neutral-400 mt-1">{product.price}</p>
+      </div>
     </Link>
   );
 }
@@ -59,6 +92,12 @@ function ProductCard({ product }: { product: Product }) {
 interface ShopClientProps {
   defaultCollection?: FilterId;
 }
+
+const FILTER_TABS: { id: FilterId; label: string }[] = [
+  { id: "liquid",  label: "Liquid Polish"  },
+  { id: "wadding", label: "Wadding"        },
+  { id: "bundle",  label: "Bundles"        },
+];
 
 export default function ShopClient({ defaultCollection = "all" }: ShopClientProps) {
   const [active, setActive] = useState<FilterId>(defaultCollection);
@@ -78,18 +117,18 @@ export default function ShopClient({ defaultCollection = "all" }: ShopClientProp
         <h1 className="text-5xl font-light text-neutral-900 dark:text-neutral-100 mb-4">
           {active === "all" ? "Shop" : meta.title}
         </h1>
-        <p className="text-[13px] text-gray-500 dark:text-gray-400 leading-relaxed max-w-[300px]">
+        <p className="text-[13px] text-gray-500 dark:text-gray-400 leading-relaxed max-w-[360px]">
           {meta.desc}
         </p>
       </div>
 
-      {/* ── Collection filter tabs ── */}
+      {/* ── Category filter tabs ── */}
       <div className="border-y border-gray-200 dark:border-[#2a2a2a] transition-colors">
         <div className="grid grid-cols-4 divide-x divide-gray-200 dark:divide-[#2a2a2a]">
-          {/* Home / all tab */}
+          {/* All tab */}
           <button
             onClick={() => setActive("all")}
-            aria-label="All collections"
+            aria-label="All products"
             className={`flex items-center justify-between px-8 py-5 hover:bg-gray-50 dark:hover:bg-[#1a1a1a] transition-colors ${
               active === "all" ? "bg-gray-50 dark:bg-[#1a1a1a]" : ""
             }`}
@@ -97,17 +136,17 @@ export default function ShopClient({ defaultCollection = "all" }: ShopClientProp
             <Home size={15} strokeWidth={1.5} className="text-neutral-600 dark:text-neutral-400" />
           </button>
 
-          {(["dark", "modern", "wood"] as const).map((id) => (
+          {FILTER_TABS.map(({ id, label }) => (
             <button
               key={id}
               onClick={() => setActive(id)}
-              className={`flex items-center justify-between px-8 py-5 hover:bg-gray-50 dark:hover:bg-[#1a1a1a] transition-colors text-[13px] capitalize ${
+              className={`flex items-center justify-between px-8 py-5 hover:bg-gray-50 dark:hover:bg-[#1a1a1a] transition-colors text-[13px] ${
                 active === id
                   ? "bg-gray-50 dark:bg-[#1a1a1a] font-medium text-neutral-900 dark:text-neutral-100"
                   : "text-neutral-600 dark:text-neutral-400"
               }`}
             >
-              <span>{id.charAt(0).toUpperCase() + id.slice(1)}</span>
+              <span>{label}</span>
               <MoveRight
                 size={14}
                 strokeWidth={1.5}
@@ -122,7 +161,7 @@ export default function ShopClient({ defaultCollection = "all" }: ShopClientProp
 
       {/* ── Product grid ── */}
       <section className="bg-white dark:bg-[#111] px-6 py-10 transition-colors">
-        <div className="grid grid-cols-4 gap-3 max-w-[1400px] mx-auto">
+        <div className="grid grid-cols-4 gap-4 max-w-[1400px] mx-auto">
           {filtered.map((p) => (
             <ProductCard key={p.id} product={p} />
           ))}
