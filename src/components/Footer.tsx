@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const links: Record<string, { label: string; href: string }[]> = {
   Shop: [
@@ -28,19 +29,27 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#111] text-white">
-      <div className="grid grid-cols-2 divide-x divide-white/10 max-w-[1400px] mx-auto">
 
-        {/* ── Left panel: brand ── */}
-        <div className="flex flex-col justify-between px-12 py-12">
+      {/* ── Main grid ── */}
+      <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-white/10 max-w-[1400px] mx-auto">
+
+        {/* ── Left: brand ── */}
+        <div className="flex flex-col justify-between px-6 sm:px-10 md:px-12 py-10 md:py-12">
           <div>
-            {/* Logo */}
-            <div className="flex items-center gap-2.5 mb-5">
-              <span className="w-3.5 h-3.5 rounded-full bg-white inline-block" />
-              <span className="text-[15px] font-semibold tracking-tight">Shamas Sons</span>
-            </div>
-            <p className="text-[13px] text-gray-400 leading-relaxed max-w-[260px]">
-              UK-based, VAT-registered retailer. Top-rated seller with 4.4 ★ from
-              over 95 verified customers. Based in Colchester, Essex.
+            {/* Logo — inverted so the black SVG reads white on dark background */}
+            <Link href="/" className="inline-block mb-5">
+              <Image
+                src="/logo.svg"
+                alt="Shamas & Sons"
+                width={100}
+                height={143}
+                className="h-16 w-auto invert opacity-90 hover:opacity-100 transition-opacity"
+              />
+            </Link>
+            <p className="text-[13px] text-gray-400 leading-relaxed max-w-[280px]">
+              UK-based, VAT-registered retailer supplying genuine Brasso metal
+              polish. 4.4 ★ top-rated seller with 95+ verified reviews — based
+              in Colchester, Essex.
             </p>
           </div>
 
@@ -68,14 +77,15 @@ export default function Footer() {
           </div>
 
           <p className="text-xs text-gray-600 mt-10">
-            © {new Date().getFullYear()} Shamas Sons Ltd. All rights reserved.
+            © {new Date().getFullYear()} Shamas &amp; Sons Ltd. All rights reserved.
+            &nbsp;VAT No: GB458915253 · Co No: 13659351
           </p>
         </div>
 
-        {/* ── Right panel: newsletter ── */}
-        <div className="px-12 py-12 flex flex-col justify-between">
+        {/* ── Right: newsletter ── */}
+        <div className="px-6 sm:px-10 md:px-12 py-10 md:py-12 flex flex-col justify-between">
           <p className="text-[22px] font-light leading-[1.35] text-white max-w-[320px]">
-            Join our newsletter and get 20% off your first purchase
+            Stay in the loop — get exclusive deals and new product updates
           </p>
 
           <div className="mt-8">
@@ -83,7 +93,7 @@ export default function Footer() {
               <div className="border border-white/20 rounded-sm px-4 py-4">
                 <p className="text-[13px] text-white">You&apos;re on the list ✦</p>
                 <p className="text-[12px] text-gray-400 mt-1">
-                  Your 20% discount is on its way to {email}
+                  Thanks! We&apos;ll be in touch at {email}
                 </p>
               </div>
             ) : (

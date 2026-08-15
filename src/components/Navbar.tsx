@@ -3,20 +3,30 @@
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Search, ShoppingBag, X, MoveRight } from "lucide-react";
+import { Search, ShoppingBag, X, MoveRight, Menu } from "lucide-react";
 import { COLLECTION_THUMBNAILS, type CollectionSlug } from "@/data/products";
 import { useTheme } from "@/components/ThemeProvider";
 
 const COLLECTIONS: { slug: CollectionSlug; label: string }[] = [
-  { slug: "liquid",  label: "Liquid Polish"  },
-  { slug: "wadding", label: "Wadding & Wipes" },
-  { slug: "bundle",  label: "Bundles & Packs" },
+  { slug: "liquid",  label: "Liquid Polish"   },
+  { slug: "wadding", label: "Wadding & Wipes"  },
+  { slug: "bundle",  label: "Bundles & Packs"  },
 ];
 
 const ABOUT_LINKS = [
   { href: "/about",   label: "About"   },
   { href: "/contact", label: "Contact" },
   { href: "/faq",     label: "FAQ"     },
+];
+
+const ALL_MOBILE_LINKS = [
+  { href: "/shop",                 label: "Shop All"        },
+  { href: "/collections/liquid",   label: "Liquid Polish"   },
+  { href: "/collections/wadding",  label: "Wadding & Wipes" },
+  { href: "/collections/bundle",   label: "Bundles & Packs" },
+  { href: "/about",                label: "About"           },
+  { href: "/contact",              label: "Contact"         },
+  { href: "/faq",                  label: "FAQ"             },
 ];
 
 function useDropdown() {
@@ -35,24 +45,48 @@ function useDropdown() {
 }
 
 export default function Navbar() {
-  const collections = useDropdown();
-  const about       = useDropdown();
+  const collections  = useDropdown();
+  const about        = useDropdown();
+  const [mobileOpen, setMobileOpen] = useState(false);
   const { theme, toggle } = useTheme();
+
+  function closeAll() {
+    collections.setOpen(false);
+    about.setOpen(false);
+    setMobileOpen(false);
+  }
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white dark:bg-[#111] border-b border-gray-100 dark:border-[#222] transition-colors">
-      <div className="flex items-center justify-between px-6 h-16">
+
+      {/* ── Main bar ── */}
+      <div className="flex items-center justify-between px-4 sm:px-6 h-16">
 
         {/* ── Logo ── */}
-        <Link href="/" className="flex items-center gap-2.5 flex-shrink-0">
-          <span className="w-3.5 h-3.5 rounded-full bg-black dark:bg-white inline-block" />
-          <span className="text-[15px] font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">
-            Shamas Sons
-          </span>
+        <Link href="/" onClick={closeAll} className="flex items-center flex-shrink-0">
+          {/* Full logo: bottle + text — shown sm+ */}
+          <Image
+            src="/logo.svg"
+            alt="Shamas & Sons"
+            width={80}
+            height={114}
+            className="hidden sm:block h-11 w-auto object-contain dark:invert"
+            priority
+          />
+          {/* Compact: bottle-only crop — shown xs only */}
+          <Image
+            src="/logo.svg"
+            alt="Shamas & Sons"
+            width={40}
+            height={57}
+            className="block sm:hidden h-9 w-auto object-contain dark:invert"
+            style={{ objectPosition: "top" }}
+            priority
+          />
         </Link>
 
-        {/* ── Centre pill nav ── */}
-        <nav className="flex items-center gap-0.5 bg-gray-50 dark:bg-[#1a1a1a] rounded-full px-1.5 py-1.5 border border-gray-200 dark:border-[#2a2a2a] transition-colors">
+        {/* ── Desktop centre pill nav ── */}
+        <nav className="hidden md:flex items-center gap-0.5 bg-gray-50 dark:bg-[#1a1a1a] rounded-full px-1.5 py-1.5 border border-gray-200 dark:border-[#2a2a2a] transition-colors">
           <Link
             href="/shop"
             className="px-4 py-1.5 text-sm text-gray-700 dark:text-gray-300 rounded-full hover:bg-white dark:hover:bg-[#2a2a2a] hover:shadow-sm transition-all"
@@ -70,14 +104,14 @@ export default function Navbar() {
                   : "text-gray-700 dark:text-gray-300 hover:bg-white dark:hover:bg-[#2a2a2a] hover:shadow-sm"
               }`}
             >
-              Collections
+              Categories
               {collections.open
                 ? <X size={11} strokeWidth={2} className="opacity-60" />
                 : <span className="text-xs opacity-60">+</span>}
             </button>
 
             {collections.open && (
-              <div className="absolute top-[calc(100%+12px)] left-1/2 -translate-x-1/2 w-[260px] bg-white dark:bg-[#1a1a1a] rounded-2xl shadow-xl border border-gray-100 dark:border-[#2a2a2a] overflow-hidden z-50">
+              <div className="absolute top-[calc(100%+12px)] left-1/2 -translate-x-1/2 w-[280px] bg-white dark:bg-[#1a1a1a] rounded-2xl shadow-xl border border-gray-100 dark:border-[#2a2a2a] overflow-hidden z-50">
                 {COLLECTIONS.map(({ slug, label }) => (
                   <Link
                     key={slug}
@@ -85,12 +119,12 @@ export default function Navbar() {
                     onClick={() => collections.setOpen(false)}
                     className="flex items-center gap-3.5 px-4 py-3 hover:bg-gray-50 dark:hover:bg-[#222] transition-colors group"
                   >
-                    <div className="w-14 h-14 rounded-xl overflow-hidden flex-shrink-0 bg-gray-100 dark:bg-[#2a2a2a] relative">
+                    <div className="w-14 h-14 rounded-xl overflow-hidden flex-shrink-0 bg-[#f3f3f3] dark:bg-[#2a2a2a] relative flex items-center justify-center">
                       <Image
                         src={COLLECTION_THUMBNAILS[slug]}
                         alt={label}
                         fill
-                        className="object-cover"
+                        className="object-contain p-2"
                         sizes="56px"
                       />
                     </div>
@@ -139,7 +173,7 @@ export default function Navbar() {
             )}
           </div>
 
-          {/* Theme toggle — dark circle in light mode, light circle in dark mode */}
+          {/* Theme toggle */}
           <button
             onClick={toggle}
             aria-label="Toggle theme"
@@ -151,8 +185,8 @@ export default function Navbar() {
           />
         </nav>
 
-        {/* ── Right icons ── */}
-        <div className="flex items-center gap-5">
+        {/* ── Desktop right icons ── */}
+        <div className="hidden md:flex items-center gap-5">
           <button aria-label="Search" className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors">
             <Search size={18} strokeWidth={1.5} />
           </button>
@@ -164,7 +198,60 @@ export default function Navbar() {
             <span>(0)</span>
           </button>
         </div>
+
+        {/* ── Mobile right cluster ── */}
+        <div className="flex md:hidden items-center gap-3">
+          {/* Theme toggle (small) */}
+          <button
+            onClick={toggle}
+            aria-label="Toggle theme"
+            className={`w-6 h-6 rounded-full flex-shrink-0 transition-colors ${
+              theme === "dark"
+                ? "bg-white hover:bg-gray-200"
+                : "bg-gray-900 hover:bg-gray-700"
+            }`}
+          />
+          {/* Hamburger */}
+          <button
+            onClick={() => setMobileOpen((o) => !o)}
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            className="p-1 text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors"
+          >
+            {mobileOpen ? <X size={22} strokeWidth={1.5} /> : <Menu size={22} strokeWidth={1.5} />}
+          </button>
+        </div>
       </div>
+
+      {/* ── Mobile slide-down menu ── */}
+      {mobileOpen && (
+        <div className="md:hidden bg-white dark:bg-[#111] border-t border-gray-100 dark:border-[#222] transition-colors">
+          <nav className="px-4 py-3 space-y-0.5">
+            {ALL_MOBILE_LINKS.map(({ href, label }) => (
+              <Link
+                key={href}
+                href={href}
+                onClick={() => setMobileOpen(false)}
+                className="flex items-center justify-between px-3 py-3.5 rounded-xl text-[14px] text-neutral-700 dark:text-neutral-300 hover:bg-gray-50 dark:hover:bg-[#1a1a1a] hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors group"
+              >
+                {label}
+                <MoveRight size={14} strokeWidth={1.5} className="text-neutral-400 group-hover:translate-x-0.5 transition-transform" />
+              </Link>
+            ))}
+          </nav>
+
+          {/* Mobile search + cart row */}
+          <div className="px-4 pb-4 flex gap-3 border-t border-gray-100 dark:border-[#222] pt-3">
+            <button className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl border border-gray-200 dark:border-[#333] text-[13px] text-neutral-600 dark:text-neutral-400">
+              <Search size={15} strokeWidth={1.5} />
+              Search
+            </button>
+            <button className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl border border-gray-200 dark:border-[#333] text-[13px] text-neutral-600 dark:text-neutral-400">
+              <ShoppingBag size={15} strokeWidth={1.5} />
+              Cart (0)
+            </button>
+          </div>
+        </div>
+      )}
     </header>
   );
 }

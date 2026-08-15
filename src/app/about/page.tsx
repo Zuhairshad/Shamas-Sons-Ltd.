@@ -33,9 +33,15 @@ export default function AboutPage() {
             priority
           />
           {/* Badge */}
-          <div className="absolute bottom-8 left-8 bg-white dark:bg-[#1a1a1a] rounded-full px-5 py-2.5 flex items-center gap-2.5 shadow-sm transition-colors">
-            <span className="w-2 h-2 rounded-full bg-black dark:bg-white inline-block" />
-            <span className="text-[13px] font-medium tracking-tight text-neutral-900 dark:text-neutral-100">We are Shamas Sons</span>
+          <div className="absolute bottom-8 left-8 bg-white dark:bg-[#1a1a1a] rounded-2xl px-5 py-3 flex items-center gap-3 shadow-sm transition-colors">
+            <Image
+              src="/logo.svg"
+              alt="Shamas & Sons"
+              width={32}
+              height={46}
+              className="h-8 w-auto dark:invert"
+            />
+            <span className="text-[13px] font-medium tracking-tight text-neutral-900 dark:text-neutral-100">Shamas &amp; Sons Ltd.</span>
           </div>
         </div>
 
