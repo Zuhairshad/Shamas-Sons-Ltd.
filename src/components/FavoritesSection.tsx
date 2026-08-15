@@ -1,27 +1,31 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronRight } from "lucide-react";
+import { MoveRight } from "lucide-react";
 
 const products = [
   {
+    id: 2,
     name: "Skala",
     sale: "50% OFF",
     src: "https://images.unsplash.com/photo-1549497538-303791108f95?auto=format&fit=crop&w=600&h=700&q=80",
     alt: "Skala spindle chair",
   },
   {
+    id: 10,
     name: "Nest",
     sale: null,
     src: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=600&h=700&q=80",
     alt: "Nest upholstered chair",
   },
   {
+    id: 9,
     name: "Runa",
     sale: null,
     src: "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=600&h=700&q=80",
     alt: "Runa wooden chair",
   },
   {
+    id: 12,
     name: "Lykke",
     sale: "54% OFF",
     src: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=600&h=700&q=80",
@@ -39,11 +43,11 @@ export default function FavoritesSection() {
         </h2>
       </div>
 
-      {/* ── Product grid ── */}
+      {/* ── Product grid + view-all arrow ── */}
       <div className="relative max-w-[1400px] mx-auto">
         <div className="grid grid-cols-4 gap-3">
           {products.map((p) => (
-            <Link key={p.name} href="/shop" className="group block">
+            <Link key={p.name} href={`/shop/${p.id}`} className="group block">
               <p className="text-[13px] text-neutral-600 dark:text-neutral-400 mb-2 font-light">{p.name}</p>
               <div className="relative bg-[#f3f3f3] dark:bg-[#222] rounded-2xl overflow-hidden aspect-[4/5] transition-colors">
                 <Image
@@ -63,13 +67,14 @@ export default function FavoritesSection() {
           ))}
         </div>
 
-        {/* ── Scroll arrow ── */}
-        <button
-          aria-label="Scroll right"
-          className="absolute -right-5 top-1/2 translate-y-4 w-10 h-10 rounded-full border border-gray-200 dark:border-[#333] bg-white dark:bg-[#1a1a1a] shadow-sm flex items-center justify-center hover:shadow-md transition-shadow"
+        {/* ── View all — navigates to /shop ── */}
+        <Link
+          href="/shop"
+          aria-label="View all products"
+          className="absolute -right-5 top-1/2 translate-y-4 w-10 h-10 rounded-full border border-gray-200 dark:border-[#333] bg-white dark:bg-[#1a1a1a] shadow-sm flex items-center justify-center hover:shadow-md transition-all group"
         >
-          <ChevronRight size={16} strokeWidth={1.5} className="text-neutral-600 dark:text-neutral-400" />
-        </button>
+          <MoveRight size={15} strokeWidth={1.5} className="text-neutral-600 dark:text-neutral-400 group-hover:translate-x-0.5 transition-transform" />
+        </Link>
       </div>
     </section>
   );

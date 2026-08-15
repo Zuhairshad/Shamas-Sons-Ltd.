@@ -43,7 +43,7 @@ export default function ContactPage() {
         {/* Left: interior photo */}
         <div className="relative overflow-hidden">
           <Image
-            src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=900&h=900&q=80"
+            src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=900&h=900&q=80"
             alt="Contact us"
             fill
             className="object-cover"
