@@ -3,23 +3,23 @@ import Link from "next/link";
 
 export default function AboutSection() {
   return (
-    <section className="bg-white">
+    <section className="bg-white dark:bg-[#111] transition-colors">
       <div className="max-w-[1400px] mx-auto grid grid-cols-[38%_62%] min-h-[520px]">
 
         {/* ── Left: text ── */}
         <div className="flex flex-col justify-between px-10 py-16">
-          <h2 className="text-4xl font-light leading-[1.25] text-neutral-900">
+          <h2 className="text-4xl font-light leading-[1.25] text-neutral-900 dark:text-neutral-100">
             Designing Spaces,<br />Inspiring Connection
           </h2>
           <div>
-            <p className="text-[13px] text-gray-500 leading-relaxed mb-6 max-w-[320px]">
+            <p className="text-[13px] text-gray-500 dark:text-gray-400 leading-relaxed mb-6 max-w-[320px]">
               At Shamas Sons, our mission is to create furniture that brings
               people together, inspired by the simplicity and warmth of
               Scandinavian design.
             </p>
             <Link
               href="/about"
-              className="text-[13px] underline underline-offset-4 text-neutral-800 hover:text-black"
+              className="text-[13px] underline underline-offset-4 text-neutral-800 dark:text-neutral-200 hover:text-black dark:hover:text-white"
             >
               More About Us
             </Link>

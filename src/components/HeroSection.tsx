@@ -60,7 +60,6 @@ export default function HeroSection() {
             priority={i === 0}
             sizes="100vw"
           />
-          {/* Overlay so the white card is always readable */}
           <div className="absolute inset-0 bg-black/30" />
         </div>
       ))}
@@ -84,16 +83,16 @@ export default function HeroSection() {
       </button>
 
       {/* ── Info card ── */}
-      <div className="absolute bottom-14 left-10 z-20 bg-white p-7 max-w-[300px] rounded-sm shadow-md">
-        <h1 className="text-[22px] font-light leading-[1.35] mb-3 whitespace-pre-line text-neutral-900">
+      <div className="absolute bottom-14 left-10 z-20 bg-white dark:bg-[#1a1a1a] p-7 max-w-[300px] rounded-sm shadow-md transition-colors">
+        <h1 className="text-[22px] font-light leading-[1.35] mb-3 whitespace-pre-line text-neutral-900 dark:text-neutral-100">
           {slides[current].heading}
         </h1>
-        <p className="text-[13px] text-gray-500 leading-relaxed mb-5">
+        <p className="text-[13px] text-gray-500 dark:text-gray-400 leading-relaxed mb-5">
           {slides[current].sub}
         </p>
         <Link
           href="/shop"
-          className="text-[13px] underline underline-offset-4 text-neutral-800 hover:text-black"
+          className="text-[13px] underline underline-offset-4 text-neutral-800 dark:text-neutral-200 hover:text-black dark:hover:text-white"
         >
           View Product
         </Link>

@@ -3,10 +3,10 @@ import Link from "next/link";
 
 export default function CollectionsSection() {
   return (
-    <section className="bg-white py-14 px-6">
+    <section className="bg-white dark:bg-[#111] py-14 px-6 transition-colors">
       {/* ── Section label ── */}
       <div className="text-center mb-10">
-        <h2 className="text-[13px] tracking-[0.12em] text-neutral-500 uppercase font-medium">
+        <h2 className="text-[13px] tracking-[0.12em] text-neutral-500 dark:text-neutral-400 uppercase font-medium">
           Collections
         </h2>
       </div>
@@ -24,14 +24,14 @@ export default function CollectionsSection() {
             sizes="50vw"
           />
           {/* Info card overlay */}
-          <div className="absolute bottom-8 left-8 bg-white p-6 rounded-xl max-w-[220px] shadow-sm">
-            <h3 className="text-xl font-light text-neutral-900 mb-1.5">Wood</h3>
-            <p className="text-[12px] text-gray-500 leading-relaxed mb-4">
+          <div className="absolute bottom-8 left-8 bg-white dark:bg-[#1a1a1a] p-6 rounded-xl max-w-[220px] shadow-sm transition-colors">
+            <h3 className="text-xl font-light text-neutral-900 dark:text-neutral-100 mb-1.5">Wood</h3>
+            <p className="text-[12px] text-gray-500 dark:text-gray-400 leading-relaxed mb-4">
               Our Wood Collection celebrates the natural beauty of wood.
             </p>
             <Link
               href="/collections/wood"
-              className="text-[12px] underline underline-offset-4 text-neutral-800 hover:text-black"
+              className="text-[12px] underline underline-offset-4 text-neutral-800 dark:text-neutral-200 hover:text-black dark:hover:text-white"
             >
               View Collection
             </Link>

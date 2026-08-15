@@ -31,10 +31,10 @@ const products = [
 
 export default function FavoritesSection() {
   return (
-    <section className="bg-white py-14 px-6">
+    <section className="bg-white dark:bg-[#111] py-14 px-6 transition-colors">
       {/* ── Section label ── */}
       <div className="text-center mb-10">
-        <h2 className="text-[13px] tracking-[0.12em] text-neutral-500 uppercase font-medium">
+        <h2 className="text-[13px] tracking-[0.12em] text-neutral-500 dark:text-neutral-400 uppercase font-medium">
           Our Favorites
         </h2>
       </div>
@@ -44,10 +44,8 @@ export default function FavoritesSection() {
         <div className="grid grid-cols-4 gap-3">
           {products.map((p) => (
             <Link key={p.name} href="/shop" className="group block">
-              {/* Product name above card */}
-              <p className="text-[13px] text-neutral-600 mb-2 font-light">{p.name}</p>
-              {/* Card */}
-              <div className="relative bg-[#f3f3f3] rounded-2xl overflow-hidden aspect-[4/5]">
+              <p className="text-[13px] text-neutral-600 dark:text-neutral-400 mb-2 font-light">{p.name}</p>
+              <div className="relative bg-[#f3f3f3] dark:bg-[#222] rounded-2xl overflow-hidden aspect-[4/5] transition-colors">
                 <Image
                   src={p.src}
                   alt={p.alt}
@@ -68,9 +66,9 @@ export default function FavoritesSection() {
         {/* ── Scroll arrow ── */}
         <button
           aria-label="Scroll right"
-          className="absolute -right-5 top-1/2 translate-y-4 w-10 h-10 rounded-full border border-gray-200 bg-white shadow-sm flex items-center justify-center hover:shadow-md transition-shadow"
+          className="absolute -right-5 top-1/2 translate-y-4 w-10 h-10 rounded-full border border-gray-200 dark:border-[#333] bg-white dark:bg-[#1a1a1a] shadow-sm flex items-center justify-center hover:shadow-md transition-shadow"
         >
-          <ChevronRight size={16} strokeWidth={1.5} className="text-neutral-600" />
+          <ChevronRight size={16} strokeWidth={1.5} className="text-neutral-600 dark:text-neutral-400" />
         </button>
       </div>
     </section>

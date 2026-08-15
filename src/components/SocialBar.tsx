@@ -1,6 +1,5 @@
 import Link from "next/link";
 
-/* Minimal SVG icons — thin-line style matching the Fjord aesthetic */
 const TwitterIcon = () => (
   <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" className="opacity-60">
     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
@@ -36,18 +35,18 @@ const socials = [
 
 export default function SocialBar() {
   return (
-    <div className="border-y border-gray-200 max-w-full">
-      <div className="grid grid-cols-4 divide-x divide-gray-200 max-w-[1400px] mx-auto">
+    <div className="border-y border-gray-200 dark:border-[#222] transition-colors max-w-full">
+      <div className="grid grid-cols-4 divide-x divide-gray-200 dark:divide-[#222] max-w-[1400px] mx-auto">
         {socials.map(({ name, href, Icon }) => (
           <Link
             key={name}
             href={href}
-            className="flex items-center justify-between px-8 py-6 hover:bg-gray-50 transition-colors group"
+            className="flex items-center justify-between px-8 py-6 hover:bg-gray-50 dark:hover:bg-[#1a1a1a] transition-colors group"
           >
-            <span className="text-sm text-neutral-700 group-hover:text-black transition-colors">
+            <span className="text-sm text-neutral-700 dark:text-neutral-300 group-hover:text-black dark:group-hover:text-white transition-colors">
               {name}
             </span>
-            <span className="text-neutral-500 group-hover:text-black transition-colors">
+            <span className="text-neutral-500 dark:text-neutral-400 group-hover:text-black dark:group-hover:text-white transition-colors">
               <Icon />
             </span>
           </Link>

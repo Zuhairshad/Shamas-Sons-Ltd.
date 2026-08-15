@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* ── Class-based dark mode ── */
+@variant dark (&:where(.dark, .dark *));
+
 /* ── Marquee animation ── */
 @keyframes marquee {
   from { transform: translateX(0%); }
@@ -12,6 +15,11 @@
   --foreground: #111111;
 }
 
+.dark {
+  --background: #111111;
+  --foreground: #f0f0f0;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -19,8 +27,8 @@
   --font-mono: var(--font-geist-mono);
 }
 
-/* always light — dark sections are explicitly coded */
 body {
   background: var(--background);
   color: var(--foreground);
+  transition: background 0.2s ease, color 0.2s ease;
 }

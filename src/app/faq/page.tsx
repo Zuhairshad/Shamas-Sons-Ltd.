@@ -59,23 +59,31 @@ const FAQ_SECTIONS: FaqSection[] = [
   },
 ];
 
-function AccordionItem({ item, isOpen, onToggle }: { item: FaqItem; isOpen: boolean; onToggle: () => void }) {
+function AccordionItem({
+  item,
+  isOpen,
+  onToggle,
+}: {
+  item: FaqItem;
+  isOpen: boolean;
+  onToggle: () => void;
+}) {
   return (
-    <div className="border-b border-gray-100 last:border-0">
+    <div className="border-b border-gray-100 dark:border-[#2a2a2a] last:border-0 transition-colors">
       <button
         onClick={onToggle}
         className="w-full flex items-center justify-between px-6 py-5 text-left group"
       >
-        <span className="text-[14px] text-neutral-800 group-hover:text-neutral-900 transition-colors pr-8">
+        <span className="text-[14px] text-neutral-800 dark:text-neutral-200 group-hover:text-neutral-900 dark:group-hover:text-neutral-100 transition-colors pr-8">
           {item.q}
         </span>
-        <span className="flex-shrink-0 text-neutral-400 group-hover:text-neutral-600 transition-colors">
+        <span className="flex-shrink-0 text-neutral-400 group-hover:text-neutral-600 dark:group-hover:text-neutral-300 transition-colors">
           {isOpen ? <Minus size={14} strokeWidth={1.5} /> : <Plus size={14} strokeWidth={1.5} />}
         </span>
       </button>
       {isOpen && (
         <div className="px-6 pb-5">
-          <p className="text-[13px] text-gray-500 leading-relaxed">{item.a}</p>
+          <p className="text-[13px] text-gray-500 dark:text-gray-400 leading-relaxed">{item.a}</p>
         </div>
       )}
     </div>
@@ -109,11 +117,14 @@ export default function FaqPage() {
         </div>
 
         {/* Right: FAQ content */}
-        <div className="bg-[#f5f4f1] px-14 py-14">
-          <h1 className="text-5xl font-light text-neutral-900 mb-4">FAQ</h1>
-          <p className="text-[13px] text-gray-500 leading-relaxed max-w-[380px] mb-12">
+        <div className="bg-[#f5f4f1] dark:bg-[#1a1a1a] px-14 py-14 transition-colors">
+          <h1 className="text-5xl font-light text-neutral-900 dark:text-neutral-100 mb-4">FAQ</h1>
+          <p className="text-[13px] text-gray-500 dark:text-gray-400 leading-relaxed max-w-[380px] mb-12">
             Can&apos;t find what you&apos;re looking for? Reach out to us via our{" "}
-            <a href="/contact" className="underline underline-offset-4 hover:text-neutral-800 transition-colors">
+            <a
+              href="/contact"
+              className="underline underline-offset-4 hover:text-neutral-800 dark:hover:text-neutral-200 transition-colors"
+            >
               contact page
             </a>{" "}
             and we&apos;ll be happy to help.
@@ -123,14 +134,14 @@ export default function FaqPage() {
             {FAQ_SECTIONS.map((section) => (
               <div key={section.title}>
                 {/* Section header */}
-                <div className="bg-gray-200/60 rounded-xl px-6 py-3.5 mb-1">
-                  <span className="text-[11px] tracking-widest text-neutral-500 uppercase font-medium">
+                <div className="bg-gray-200/60 dark:bg-[#2a2a2a] rounded-xl px-6 py-3.5 mb-1 transition-colors">
+                  <span className="text-[11px] tracking-widest text-neutral-500 dark:text-neutral-400 uppercase font-medium">
                     {section.title}
                   </span>
                 </div>
 
                 {/* Questions */}
-                <div className="bg-white rounded-xl overflow-hidden">
+                <div className="bg-white dark:bg-[#111] rounded-xl overflow-hidden transition-colors">
                   {section.items.map((item, idx) => {
                     const key = `${section.title}-${idx}`;
                     return (

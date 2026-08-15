@@ -19,9 +19,9 @@ import {
 function ProductCard({ product }: { product: Product }) {
   return (
     <Link href={`/shop/${product.id}`} className="group block">
-      <p className="text-[13px] text-neutral-600 mb-2 font-light">{product.name}</p>
+      <p className="text-[13px] text-neutral-600 dark:text-neutral-400 mb-2 font-light">{product.name}</p>
 
-      <div className="relative bg-[#f3f3f3] rounded-2xl overflow-hidden aspect-[4/5]">
+      <div className="relative bg-[#f3f3f3] dark:bg-[#222] rounded-2xl overflow-hidden aspect-[4/5] transition-colors">
         {/* Product image — blurs on hover */}
         <Image
           src={product.src}
@@ -39,11 +39,14 @@ function ProductCard({ product }: { product: Product }) {
         )}
 
         {/* Hover overlay — gradient + price row */}
-        <div className="absolute inset-x-0 bottom-0 z-10 flex items-end justify-between px-5 pb-5 pt-16 bg-gradient-to-t from-[#f0f0f0]/95 via-[#f0f0f0]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <span className="text-[13px] text-neutral-800 font-light tracking-wide">
+        <div className="absolute inset-x-0 bottom-0 z-10 flex items-end justify-between px-5 pb-5 pt-16
+          bg-gradient-to-t from-[#f0f0f0]/95 via-[#f0f0f0]/50 to-transparent
+          dark:from-[#222]/95 dark:via-[#222]/50
+          opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <span className="text-[13px] text-neutral-800 dark:text-neutral-200 font-light tracking-wide">
             {product.price}
           </span>
-          <span className="text-[13px] underline underline-offset-4 text-neutral-700">
+          <span className="text-[13px] underline underline-offset-4 text-neutral-700 dark:text-neutral-300">
             View
           </span>
         </div>
@@ -54,7 +57,6 @@ function ProductCard({ product }: { product: Product }) {
 
 /* ─── Shared shop layout ─────────────────────────────────── */
 interface ShopClientProps {
-  /** Which collection tab is pre-selected when the page loads */
   defaultCollection?: FilterId;
 }
 
@@ -72,37 +74,37 @@ export default function ShopClient({ defaultCollection = "all" }: ShopClientProp
       <Navbar />
 
       {/* ── Shop header ── */}
-      <div className="bg-[#f5f4f1] px-10 pt-16 pb-16">
-        <h1 className="text-5xl font-light text-neutral-900 mb-4">
+      <div className="bg-[#f5f4f1] dark:bg-[#1a1a1a] px-10 pt-16 pb-16 transition-colors">
+        <h1 className="text-5xl font-light text-neutral-900 dark:text-neutral-100 mb-4">
           {active === "all" ? "Shop" : meta.title}
         </h1>
-        <p className="text-[13px] text-gray-500 leading-relaxed max-w-[300px]">
+        <p className="text-[13px] text-gray-500 dark:text-gray-400 leading-relaxed max-w-[300px]">
           {meta.desc}
         </p>
       </div>
 
       {/* ── Collection filter tabs ── */}
-      <div className="border-y border-gray-200">
-        <div className="grid grid-cols-4 divide-x divide-gray-200">
+      <div className="border-y border-gray-200 dark:border-[#2a2a2a] transition-colors">
+        <div className="grid grid-cols-4 divide-x divide-gray-200 dark:divide-[#2a2a2a]">
           {/* Home / all tab */}
           <button
             onClick={() => setActive("all")}
             aria-label="All collections"
-            className={`flex items-center justify-between px-8 py-5 hover:bg-gray-50 transition-colors ${
-              active === "all" ? "bg-gray-50" : ""
+            className={`flex items-center justify-between px-8 py-5 hover:bg-gray-50 dark:hover:bg-[#1a1a1a] transition-colors ${
+              active === "all" ? "bg-gray-50 dark:bg-[#1a1a1a]" : ""
             }`}
           >
-            <Home size={15} strokeWidth={1.5} className="text-neutral-600" />
+            <Home size={15} strokeWidth={1.5} className="text-neutral-600 dark:text-neutral-400" />
           </button>
 
           {(["dark", "modern", "wood"] as const).map((id) => (
             <button
               key={id}
               onClick={() => setActive(id)}
-              className={`flex items-center justify-between px-8 py-5 hover:bg-gray-50 transition-colors text-[13px] capitalize ${
+              className={`flex items-center justify-between px-8 py-5 hover:bg-gray-50 dark:hover:bg-[#1a1a1a] transition-colors text-[13px] capitalize ${
                 active === id
-                  ? "bg-gray-50 font-medium text-neutral-900"
-                  : "text-neutral-600"
+                  ? "bg-gray-50 dark:bg-[#1a1a1a] font-medium text-neutral-900 dark:text-neutral-100"
+                  : "text-neutral-600 dark:text-neutral-400"
               }`}
             >
               <span>{id.charAt(0).toUpperCase() + id.slice(1)}</span>
@@ -110,7 +112,7 @@ export default function ShopClient({ defaultCollection = "all" }: ShopClientProp
                 size={14}
                 strokeWidth={1.5}
                 className={`transition-transform duration-200 ${
-                  active === id ? "translate-x-1 text-neutral-900" : "text-neutral-400"
+                  active === id ? "translate-x-1 text-neutral-900 dark:text-neutral-100" : "text-neutral-400"
                 }`}
               />
             </button>
@@ -119,7 +121,7 @@ export default function ShopClient({ defaultCollection = "all" }: ShopClientProp
       </div>
 
       {/* ── Product grid ── */}
-      <section className="bg-white px-6 py-10">
+      <section className="bg-white dark:bg-[#111] px-6 py-10 transition-colors">
         <div className="grid grid-cols-4 gap-3 max-w-[1400px] mx-auto">
           {filtered.map((p) => (
             <ProductCard key={p.id} product={p} />
