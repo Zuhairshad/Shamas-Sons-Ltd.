@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Home, MoveRight, Star } from "lucide-react";
+import { Home, MoveRight } from "lucide-react";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Navbar from "@/components/Navbar";
 import SocialBar from "@/components/SocialBar";
@@ -15,74 +15,50 @@ import {
   type Product,
 } from "@/data/products";
 
-/* ─── Star rating ─────────────────────────────────────────── */
-function StarRating({ rating, count }: { rating: number; count: string }) {
-  return (
-    <div className="flex items-center gap-1.5 mt-1.5">
-      <div className="flex items-center gap-0.5">
-        {Array.from({ length: 5 }).map((_, i) => (
-          <Star
-            key={i}
-            size={10}
-            strokeWidth={0}
-            className={
-              i < Math.floor(rating)
-                ? "fill-amber-400"
-                : i < rating
-                ? "fill-amber-200"
-                : "fill-neutral-300 dark:fill-neutral-600"
-            }
-          />
-        ))}
-      </div>
-      <span className="text-[11px] text-neutral-400 dark:text-neutral-500">
-        {rating.toFixed(1)} ({count})
-      </span>
-    </div>
-  );
-}
-
 /* ─── Product card ───────────────────────────────────────── */
 function ProductCard({ product }: { product: Product }) {
   return (
-    <Link href={`/shop/${product.id}`} className="group block">
-      <div className="relative bg-[#f3f3f3] dark:bg-[#222] rounded-2xl overflow-hidden aspect-[4/5] transition-colors">
-        {/* Product image */}
-        <Image
-          src={product.src}
-          alt={product.name}
-          fill
-          className="object-contain p-4 transition-all duration-500 ease-in-out group-hover:scale-105"
-          sizes="(max-width: 768px) 50vw, 25vw"
-        />
+    <Link
+      href={`/shop/${product.id}`}
+      className="group relative block bg-[#f3f3f3] dark:bg-[#222] rounded-2xl overflow-hidden aspect-[4/5] transition-colors"
+    >
+      {/* Name — top left, always visible; arrow fades in on hover */}
+      <span className="absolute top-3.5 left-4 z-10 text-[13px] font-light text-neutral-600 dark:text-neutral-400 leading-none">
+        {product.name}
+        <span className="ml-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+          →
+        </span>
+      </span>
 
-        {/* Sale badge */}
-        {product.sale && (
-          <span className="absolute top-3 right-3 z-20 bg-black text-white text-[11px] font-medium px-2.5 py-1 rounded-sm tracking-wide">
-            {product.sale}
-          </span>
-        )}
+      {/* Sale badge — top right */}
+      {product.sale && (
+        <span className="absolute top-3 right-3 z-10 bg-black text-white text-[11px] font-medium px-2.5 py-1 rounded-sm tracking-wide">
+          {product.sale}
+        </span>
+      )}
 
-        {/* Hover overlay */}
-        <div className="absolute inset-x-0 bottom-0 z-10 flex items-end justify-between px-5 pb-5 pt-16
-          bg-gradient-to-t from-[#f0f0f0]/95 via-[#f0f0f0]/50 to-transparent
-          dark:from-[#222]/95 dark:via-[#222]/50
-          opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <span className="text-[13px] text-neutral-800 dark:text-neutral-200 font-light tracking-wide">
-            {product.price}
-          </span>
-          <span className="text-[13px] underline underline-offset-4 text-neutral-700 dark:text-neutral-300">
-            View
-          </span>
-        </div>
-      </div>
+      {/* Image */}
+      <Image
+        src={product.src}
+        alt={product.name}
+        fill
+        className="object-contain p-8 transition-transform duration-500 ease-in-out group-hover:scale-[1.04]"
+        sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+      />
 
-      <div className="mt-2">
-        <p className="text-[13px] text-neutral-700 dark:text-neutral-300 font-light leading-snug">
-          {product.name}
-        </p>
-        <StarRating rating={product.rating} count={product.reviewCount} />
-        <p className="text-[13px] text-neutral-500 dark:text-neutral-400 mt-1">{product.price}</p>
+      {/* Hover overlay — price + View at bottom */}
+      <div
+        className="absolute inset-x-0 bottom-0 z-10 flex items-end justify-between px-4 pb-4 pt-20
+          bg-gradient-to-t from-[#efefef]/95 via-[#efefef]/60 to-transparent
+          dark:from-[#222]/95 dark:via-[#222]/60
+          opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+      >
+        <span className="text-[13px] text-neutral-800 dark:text-neutral-200 font-light">
+          {product.price}
+        </span>
+        <span className="text-[13px] underline underline-offset-4 text-neutral-700 dark:text-neutral-300">
+          View
+        </span>
       </div>
     </Link>
   );
@@ -161,7 +137,7 @@ export default function ShopClient({ defaultCollection = "all" }: ShopClientProp
 
       {/* ── Product grid ── */}
       <section className="bg-white dark:bg-[#111] px-6 py-10 transition-colors">
-        <div className="grid grid-cols-4 gap-4 max-w-[1400px] mx-auto">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 max-w-[1400px] mx-auto">
           {filtered.map((p) => (
             <ProductCard key={p.id} product={p} />
           ))}
