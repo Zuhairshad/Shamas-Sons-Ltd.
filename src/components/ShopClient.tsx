@@ -42,7 +42,7 @@ function ProductCard({ product }: { product: Product }) {
         src={product.src}
         alt={product.name}
         fill
-        className="object-contain p-8 transition-transform duration-500 ease-in-out group-hover:scale-[1.04]"
+        className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-[1.04]"
         sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
       />
 

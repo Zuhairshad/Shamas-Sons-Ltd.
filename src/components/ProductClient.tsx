@@ -198,12 +198,12 @@ export default function ProductClient({ product }: { product: Product }) {
           <div className="grid grid-cols-3 gap-4 max-w-[900px]">
             {related.map((p) => (
               <Link key={p.id} href={`/shop/${p.id}`} className="group block">
-                <div className="relative bg-[#e8e8e8] dark:bg-[#222] rounded-2xl overflow-hidden aspect-[4/5] transition-colors p-4">
+                <div className="relative bg-[#e8e8e8] dark:bg-[#222] rounded-2xl overflow-hidden aspect-[4/5] transition-colors">
                   <Image
                     src={p.src}
                     alt={p.name}
                     fill
-                    className="object-contain p-4 group-hover:scale-105 transition-transform duration-500"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
                     sizes="30vw"
                   />
                 </div>

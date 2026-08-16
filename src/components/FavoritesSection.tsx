@@ -78,7 +78,7 @@ export default function FavoritesSection() {
                 src={p.src}
                 alt={p.alt}
                 fill
-                className="object-contain p-8 group-hover:scale-[1.04] transition-transform duration-500"
+                className="object-cover group-hover:scale-[1.04] transition-transform duration-500"
                 sizes="(max-width: 640px) 50vw, 25vw"
               />
 
