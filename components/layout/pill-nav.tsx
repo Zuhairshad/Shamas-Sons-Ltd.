@@ -338,13 +338,13 @@ export function PillNav({
           {/* Cart button */}
           <button
             onClick={toggleCart}
-            className="w-[var(--nav-h)] h-[var(--nav-h)] rounded-full border-none inline-flex items-center justify-center cursor-pointer relative transition-transform duration-200 hover:scale-105 ml-2"
-            style={{ background: 'var(--pill-bg)', color: 'var(--hover-text)' }}
+            className="w-[var(--nav-h)] h-[var(--nav-h)] rounded-full border-none inline-flex items-center justify-center cursor-pointer relative transition-all duration-200 hover:scale-105 hover:!bg-primary group ml-2 shadow-sm"
+            style={{ background: 'var(--pill-bg)', color: 'var(--pill-text)' }}
             aria-label="Toggle cart"
           >
-            <ShoppingBag className="w-5 h-5" />
+            <ShoppingBag className="w-5 h-5 transition-colors group-hover:text-white" />
             {cartQuantity > 0 && (
-              <span className="absolute -top-1 -right-1 w-5 h-5 bg-foreground text-background text-[10px] font-bold rounded-full flex items-center justify-center">
+              <span className="absolute -top-1 -right-1 w-5 h-5 bg-primary text-white text-[10px] font-bold rounded-full flex items-center justify-center border-2 border-background shadow-md">
                 {cartQuantity}
               </span>
             )}
@@ -352,7 +352,7 @@ export function PillNav({
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden rounded-full border-0 flex flex-col items-center justify-center gap-1 cursor-pointer p-0 relative w-[var(--nav-h)] h-[var(--nav-h)]"
+            className="md:hidden rounded-full border-0 flex flex-col items-center justify-center gap-1 cursor-pointer p-0 relative w-[var(--nav-h)] h-[var(--nav-h)] transition-all duration-200 hover:scale-105"
             style={{ background: 'var(--pill-bg)' }}
             onClick={toggleMobileMenu}
             aria-label="Toggle menu"
@@ -361,11 +361,11 @@ export function PillNav({
           >
             <span
               className="hamburger-line w-4 h-0.5 rounded origin-center"
-              style={{ background: 'var(--hover-text)' }}
+              style={{ background: 'var(--pill-text)' }}
             />
             <span
               className="hamburger-line w-4 h-0.5 rounded origin-center"
-              style={{ background: 'var(--hover-text)' }}
+              style={{ background: 'var(--pill-text)' }}
             />
           </button>
         </div>
