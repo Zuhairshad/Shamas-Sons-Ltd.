@@ -29,7 +29,7 @@ export function HeroSection() {
   }, [])
 
   return (
-    <section className="relative min-h-[620px] overflow-hidden bg-black lg:min-h-[720px]">
+    <section className="relative min-h-[780px] overflow-hidden bg-black sm:min-h-[840px] lg:min-h-[920px]">
       <div className="absolute inset-0">
         <AnimatePresence initial={false}>
           <motion.div
@@ -67,7 +67,7 @@ export function HeroSection() {
       </div>
 
       <div className="absolute inset-0 bg-gradient-to-r from-black via-black/75 to-black/15" />
-      <div className="relative z-10 mx-auto flex min-h-[620px] max-w-7xl items-center px-6 py-24 lg:min-h-[720px] lg:px-8">
+      <div className="relative z-10 mx-auto flex min-h-[780px] max-w-7xl items-center px-6 py-24 sm:min-h-[840px] lg:min-h-[920px] lg:px-8">
         <div className="max-w-2xl">
           <motion.p initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} className="mb-5 flex items-center gap-2 text-sm font-medium uppercase tracking-[0.28em] text-primary">
             <Sparkles className="h-4 w-4" /> The original shine maker
