@@ -143,12 +143,12 @@ Made for the finish
                   </Link>
                 </Button>
               </div>
-              <div className="order-1 lg:order-2 relative aspect-square lg:aspect-[4/5] bg-muted rounded-lg overflow-hidden flex items-center justify-center">
+              <div className="order-1 lg:order-2 relative aspect-square lg:aspect-[4/5] bg-white rounded-2xl shadow-xl overflow-hidden flex items-center justify-center p-6 sm:p-10">
                 <Image
                   src="/picas/pp/61Ah67TnasL._AC_UL640_FMwebp_QL65_.webp"
                   alt={featuredCollection?.title || "Brasso Cleans & Polishes"}
                   fill
-                  className="object-contain p-6 sm:p-10"
+                  className="object-contain p-4 sm:p-6"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
