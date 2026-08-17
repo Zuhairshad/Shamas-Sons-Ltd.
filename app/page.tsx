@@ -45,44 +45,8 @@ export default async function HomePage() {
       {/* Hero Section with Scroll Velocity Marquee */}
       <HeroSection />
 
-      {/* Features / Why Choose Us */}
-      <section className="py-12 lg:py-16 border-b border-border bg-secondary/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-10">
-            <p className="text-primary font-medium tracking-widest uppercase mb-2 text-xs sm:text-sm">
-              Trusted Craftsmanship
-            </p>
-            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl tracking-wider text-foreground mb-4">
-              WHY HOUSEHOLDS REACH FOR OUR POLISH
-            </h2>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-              A formula built for brass, bronze, copper, chrome and stainless steel — available in liquid, cream and wadding form to match every task.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-            {features.map((feature) => (
-              <div 
-                key={feature.title} 
-                className="flex flex-col items-center text-center p-6 sm:p-8 bg-secondary/50 rounded-2xl border border-border/50 hover:border-primary/40 hover:bg-secondary/70 transition-all duration-300 shadow-sm"
-              >
-                <div className="p-3 sm:p-4 bg-primary/10 rounded-2xl mb-4 sm:mb-5 text-primary border border-primary/20">
-                  <feature.icon className="w-6 h-6 sm:w-7 sm:h-7" />
-                </div>
-                <h3 className="font-heading text-lg sm:text-xl tracking-wider text-foreground mb-2.5">
-                  {feature.title.toUpperCase()}
-                </h3>
-                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Products */}
-      <section className="py-16 lg:py-24">
+      {/* Featured Products (Best Sellers) */}
+      <section className="py-16 lg:py-24 border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-end justify-between mb-12">
             <div>
@@ -125,6 +89,42 @@ export default async function HomePage() {
             <Button asChild variant="outline">
               <Link href="/products">View All Products</Link>
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Features / Why Choose Us */}
+      <section className="py-16 lg:py-24 border-b border-border bg-secondary/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-10">
+            <p className="text-primary font-medium tracking-widest uppercase mb-2 text-xs sm:text-sm">
+              Trusted Craftsmanship
+            </p>
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl tracking-wider text-foreground mb-4">
+              WHY HOUSEHOLDS REACH FOR OUR POLISH
+            </h2>
+            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+              A formula built for brass, bronze, copper, chrome and stainless steel — available in liquid, cream and wadding form to match every task.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            {features.map((feature) => (
+              <div 
+                key={feature.title} 
+                className="flex flex-col items-center text-center p-6 sm:p-8 bg-secondary/50 rounded-2xl border border-border/50 hover:border-primary/40 hover:bg-secondary/70 transition-all duration-300 shadow-sm"
+              >
+                <div className="p-3 sm:p-4 bg-primary/10 rounded-2xl mb-4 sm:mb-5 text-primary border border-primary/20">
+                  <feature.icon className="w-6 h-6 sm:w-7 sm:h-7" />
+                </div>
+                <h3 className="font-heading text-lg sm:text-xl tracking-wider text-foreground mb-2.5">
+                  {feature.title.toUpperCase()}
+                </h3>
+                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                  {feature.description}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
