@@ -45,7 +45,7 @@ export function Footer() {
         <div className="border-t border-dotted border-border/40 mb-8" />
 
         {/* Business Information */}
-        <div className="mb-8 grid grid-cols-1 gap-x-8 gap-y-3 text-center sm:grid-cols-2 sm:text-left lg:grid-cols-4">
+        <div className="mb-8 grid grid-cols-1 gap-x-8 gap-y-4 text-center sm:grid-cols-2 sm:text-left lg:grid-cols-5">
           <div>
             <p className="text-xs uppercase tracking-wider text-muted-foreground/70">Business Name</p>
             <p className="text-sm text-foreground">Shamas &amp; Sons Ltd</p>
@@ -59,10 +59,18 @@ export function Footer() {
             <p className="text-sm text-foreground">13659351</p>
           </div>
           <div>
-            <p className="text-xs uppercase tracking-wider text-muted-foreground/70">Customer Service</p>
-            <p className="text-sm text-foreground">+44 7438 106866</p>
+            <p className="text-xs uppercase tracking-wider text-muted-foreground/70">Phone Number</p>
+            <a href="tel:+447438106866" className="text-sm text-foreground hover:text-primary transition-colors block">
+              +44 7438 106866
+            </a>
           </div>
-          <div className="sm:col-span-2 lg:col-span-4">
+          <div>
+            <p className="text-xs uppercase tracking-wider text-muted-foreground/70">Email Address</p>
+            <a href="mailto:shamas_shahzada@hotmail.com" className="text-sm text-foreground hover:text-primary transition-colors block">
+              shamas_shahzada@hotmail.com
+            </a>
+          </div>
+          <div className="sm:col-span-2 lg:col-span-5">
             <p className="text-xs uppercase tracking-wider text-muted-foreground/70">Registered Address</p>
             <p className="text-sm text-foreground">2 Hesper Road, Colchester, Essex, CO2 8JS, United Kingdom</p>
           </div>

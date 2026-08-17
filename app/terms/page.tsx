@@ -141,9 +141,13 @@ export default function TermsPage() {
                   CONTACT
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  If you have any questions about these Terms of Service, please contact us through our 
-                  contact page. We will do our best to respond to your inquiry in a timely manner.
+                  If you have any questions about these Terms of Service, please contact us at:
                 </p>
+                <div className="text-sm text-muted-foreground space-y-1">
+                  <p><strong className="text-foreground">Email:</strong> <a href="mailto:shamas_shahzada@hotmail.com" className="text-primary hover:underline">shamas_shahzada@hotmail.com</a></p>
+                  <p><strong className="text-foreground">Phone:</strong> <a href="tel:+447438106866" className="text-primary hover:underline">+44 7438 106866</a></p>
+                  <p><strong className="text-foreground">Address:</strong> 2 Hesper Road, Colchester, Essex CO2 8JS, United Kingdom</p>
+                </div>
               </div>
             </div>
           </motion.div>

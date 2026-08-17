@@ -379,15 +379,19 @@ Made for the finish
               </h3>
               <div>
                 <p className="text-xs uppercase tracking-wider text-muted-foreground/70">Phone Number</p>
-                <p className="text-sm text-foreground font-medium mt-0.5">0044 743 810 6866</p>
+                <a href="tel:+447438106866" className="text-sm text-foreground font-medium mt-0.5 hover:text-primary transition-colors block">
+                  +44 7438 106866
+                </a>
               </div>
               <div>
-                <p className="text-xs uppercase tracking-wider text-muted-foreground/70">Customer Service</p>
-                <p className="text-sm text-foreground font-medium mt-0.5">Available for support and queries</p>
+                <p className="text-xs uppercase tracking-wider text-muted-foreground/70">Email Address</p>
+                <a href="mailto:shamas_shahzada@hotmail.com" className="text-sm text-foreground font-medium mt-0.5 hover:text-primary transition-colors block">
+                  shamas_shahzada@hotmail.com
+                </a>
               </div>
               <div>
                 <p className="text-xs uppercase tracking-wider text-muted-foreground/70">Business Type</p>
-                <p className="text-sm text-foreground font-medium mt-0.5">Privately-owned business</p>
+                <p className="text-sm text-foreground font-medium mt-0.5">Privately-owned business (UK)</p>
               </div>
             </div>
 
@@ -407,7 +411,7 @@ Made for the finish
               <div>
                 <p className="text-xs uppercase tracking-wider text-muted-foreground/70">Registered Address</p>
                 <p className="text-sm text-foreground font-medium mt-0.5 leading-relaxed">
-                  2 Hesper Road, Colchester, Essex, CO2 8JS, GB
+                  2 Hesper Road, Colchester, Essex, CO2 8JS, United Kingdom
                 </p>
               </div>
             </div>

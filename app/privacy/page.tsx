@@ -117,9 +117,13 @@ export default function PrivacyPage() {
                   CONTACT US
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  If you have any questions about this Privacy Policy, please contact us through our 
-                  contact page or email us directly. We are committed to resolving any concerns you may have.
+                  If you have any questions about this Privacy Policy, please contact us at:
                 </p>
+                <div className="text-sm text-muted-foreground space-y-1">
+                  <p><strong className="text-foreground">Email:</strong> <a href="mailto:shamas_shahzada@hotmail.com" className="text-primary hover:underline">shamas_shahzada@hotmail.com</a></p>
+                  <p><strong className="text-foreground">Phone:</strong> <a href="tel:+447438106866" className="text-primary hover:underline">+44 7438 106866</a></p>
+                  <p><strong className="text-foreground">Address:</strong> 2 Hesper Road, Colchester, Essex CO2 8JS, United Kingdom</p>
+                </div>
               </div>
             </div>
           </motion.div>

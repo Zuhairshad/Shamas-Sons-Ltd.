@@ -9,26 +9,26 @@ const contactInfo = [
   {
     icon: Mail,
     title: 'Email',
-    content: 'hello@dripnex.com',
+    content: 'shamas_shahzada@hotmail.com',
     description: 'Send us an email anytime',
   },
   {
     icon: Phone,
     title: 'Phone',
-    content: '+1 (555) 123-4567',
-    description: 'Mon-Fri from 9am to 6pm',
+    content: '+44 7438 106866',
+    description: 'Mon-Fri from 9am to 6pm GMT',
   },
   {
     icon: MapPin,
-    title: 'Location',
-    content: 'New York, NY',
-    description: 'United States',
+    title: 'Registered Address',
+    content: '2 Hesper Road, Colchester',
+    description: 'Essex CO2 8JS, United Kingdom',
   },
   {
     icon: Clock,
     title: 'Response Time',
     content: 'Within 24 hours',
-    description: 'Usually much faster',
+    description: 'Dedicated customer support',
   },
 ]
 
@@ -36,22 +36,22 @@ const faqs = [
   {
     question: 'What is your shipping policy?',
     answer:
-      'We offer free standard shipping on all orders over $100. Standard shipping takes 5-7 business days. Express shipping is available for an additional fee.',
+      'We offer free standard UK shipping on all orders over £50. Standard UK delivery takes 2-4 business days. Express shipping is also available at checkout.',
   },
   {
     question: 'What is your return policy?',
     answer:
-      'We accept returns within 30 days of purchase. Items must be unworn, unwashed, and in original packaging. Contact us to initiate a return.',
+      'We accept returns within 30 days of purchase. Items must be in their original packaging. Contact us to initiate a return.',
   },
   {
     question: 'Do you ship internationally?',
     answer:
-      'Yes! We ship to over 30 countries worldwide. International shipping rates and delivery times vary by location.',
+      'Yes! We ship across Europe and internationally. Calculated shipping rates and delivery times are available at checkout.',
   },
   {
     question: 'How can I track my order?',
     answer:
-      'Once your order ships, you will receive an email with tracking information. You can also check your order status in your account.',
+      'Once your order ships, you will receive an email confirmation with tracking information to track your delivery in real time.',
   },
 ]
 
