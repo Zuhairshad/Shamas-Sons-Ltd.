@@ -2,7 +2,6 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { Instagram, Twitter, Facebook, Youtube, Linkedin } from 'lucide-react'
 
 const navLinks = [
   { label: 'Products', href: '/products' },
@@ -10,13 +9,6 @@ const navLinks = [
   { label: 'Contact', href: '/contact' },
   { label: 'Privacy', href: '/privacy' },
   { label: 'Terms', href: '/terms' },
-]
-
-const socialLinks = [
-  { icon: Twitter, href: '#', label: 'Twitter' },
-  { icon: Linkedin, href: '#', label: 'LinkedIn' },
-  { icon: Facebook, href: '#', label: 'Facebook' },
-  { icon: Instagram, href: '#', label: 'Instagram' },
 ]
 
 export function Footer() {
@@ -80,25 +72,11 @@ export function Footer() {
         <div className="border-t border-dotted border-border/40 mb-8" />
 
         {/* Bottom Row */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="flex items-center justify-center text-center">
           {/* Copyright */}
-          <p className="text-sm text-muted-foreground order-2 sm:order-1">
-            &copy; {new Date().getFullYear()} Shamas &amp; Sons Ltd
+          <p className="text-sm text-muted-foreground">
+            &copy; {new Date().getFullYear()} Shamas &amp; Sons Ltd. All rights reserved.
           </p>
-
-          {/* Social Links */}
-          <div className="flex items-center gap-4 order-1 sm:order-2">
-            {socialLinks.map((social) => (
-              <a
-                key={social.label}
-                href={social.href}
-                className="text-muted-foreground hover:text-foreground transition-colors"
-                aria-label={social.label}
-              >
-                <social.icon className="w-5 h-5" />
-              </a>
-            ))}
-          </div>
         </div>
       </div>
     </footer>
