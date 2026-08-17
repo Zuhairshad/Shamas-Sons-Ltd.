@@ -38,12 +38,12 @@ const MOCK_PRODUCTS_BASE: ShopifyProduct[] = [
     tags: ['liquid', 'polish', 'best-seller'],
     availableForSale: true,
     priceRange: {
-      minVariantPrice: { amount: '2161.61', currencyCode: 'PKR' },
-      maxVariantPrice: { amount: '2161.61', currencyCode: 'PKR' }
+      minVariantPrice: { amount: '5.99', currencyCode: 'GBP' },
+      maxVariantPrice: { amount: '5.99', currencyCode: 'GBP' }
     },
     compareAtPriceRange: {
-      minVariantPrice: { amount: '2499.00', currencyCode: 'PKR' },
-      maxVariantPrice: { amount: '2499.00', currencyCode: 'PKR' }
+      minVariantPrice: { amount: '6.99', currencyCode: 'GBP' },
+      maxVariantPrice: { amount: '6.99', currencyCode: 'GBP' }
     },
     featuredImage: {
       url: '/images/products/brasso-175ml-single.png',
@@ -71,8 +71,8 @@ const MOCK_PRODUCTS_BASE: ShopifyProduct[] = [
             title: 'Default Title',
             availableForSale: true,
             selectedOptions: [{ name: 'Title', value: 'Default Title' }],
-            price: { amount: '2161.61', currencyCode: 'PKR' },
-            compareAtPrice: { amount: '2499.00', currencyCode: 'PKR' },
+            price: { amount: '5.99', currencyCode: 'GBP' },
+            compareAtPrice: { amount: '6.99', currencyCode: 'GBP' },
             image: {
               url: '/images/products/brasso-175ml-single.png',
               altText: 'Brasso Metal Polish, 175 ml',
@@ -97,12 +97,12 @@ const MOCK_PRODUCTS_BASE: ShopifyProduct[] = [
     tags: ['wadding', 'wipe', 'best-seller'],
     availableForSale: true,
     priceRange: {
-      minVariantPrice: { amount: '3379.64', currencyCode: 'PKR' },
-      maxVariantPrice: { amount: '3379.64', currencyCode: 'PKR' }
+      minVariantPrice: { amount: '4.99', currencyCode: 'GBP' },
+      maxVariantPrice: { amount: '4.99', currencyCode: 'GBP' }
     },
     compareAtPriceRange: {
-      minVariantPrice: { amount: '3999.00', currencyCode: 'PKR' },
-      maxVariantPrice: { amount: '3999.00', currencyCode: 'PKR' }
+      minVariantPrice: { amount: '5.99', currencyCode: 'GBP' },
+      maxVariantPrice: { amount: '5.99', currencyCode: 'GBP' }
     },
     featuredImage: {
       url: '/images/products/brasso-wadding-75g.webp',
@@ -130,8 +130,8 @@ const MOCK_PRODUCTS_BASE: ShopifyProduct[] = [
             title: 'Default Title',
             availableForSale: true,
             selectedOptions: [{ name: 'Title', value: 'Default Title' }],
-            price: { amount: '3379.64', currencyCode: 'PKR' },
-            compareAtPrice: { amount: '3999.00', currencyCode: 'PKR' },
+            price: { amount: '4.99', currencyCode: 'GBP' },
+            compareAtPrice: { amount: '5.99', currencyCode: 'GBP' },
             image: {
               url: '/images/products/brasso-wadding-75g.webp',
               altText: 'Brasso Metal Polish Wadding, 75g',
@@ -156,12 +156,12 @@ const MOCK_PRODUCTS_BASE: ShopifyProduct[] = [
     tags: ['liquid', 'multipack'],
     availableForSale: true,
     priceRange: {
-      minVariantPrice: { amount: '3142.80', currencyCode: 'PKR' },
-      maxVariantPrice: { amount: '3142.80', currencyCode: 'PKR' }
+      minVariantPrice: { amount: '19.99', currencyCode: 'GBP' },
+      maxVariantPrice: { amount: '19.99', currencyCode: 'GBP' }
     },
     compareAtPriceRange: {
-      minVariantPrice: { amount: '3500.00', currencyCode: 'PKR' },
-      maxVariantPrice: { amount: '3500.00', currencyCode: 'PKR' }
+      minVariantPrice: { amount: '23.96', currencyCode: 'GBP' },
+      maxVariantPrice: { amount: '23.96', currencyCode: 'GBP' }
     },
     featuredImage: {
       url: '/images/products/brasso-175ml-pack-of-4.webp',
@@ -189,8 +189,8 @@ const MOCK_PRODUCTS_BASE: ShopifyProduct[] = [
             title: 'Default Title',
             availableForSale: true,
             selectedOptions: [{ name: 'Title', value: 'Default Title' }],
-            price: { amount: '3142.80', currencyCode: 'PKR' },
-            compareAtPrice: { amount: '3500.00', currencyCode: 'PKR' },
+            price: { amount: '19.99', currencyCode: 'GBP' },
+            compareAtPrice: { amount: '23.96', currencyCode: 'GBP' },
             image: {
               url: '/images/products/brasso-175ml-pack-of-4.webp',
               altText: 'Brasso Metal Polish 175ml (Pack of 4)',
@@ -215,12 +215,12 @@ const MOCK_PRODUCTS_BASE: ShopifyProduct[] = [
     tags: ['liquid', 'polish'],
     availableForSale: true,
     priceRange: {
-      minVariantPrice: { amount: '2627.77', currencyCode: 'PKR' },
-      maxVariantPrice: { amount: '2627.77', currencyCode: 'PKR' }
+      minVariantPrice: { amount: '5.49', currencyCode: 'GBP' },
+      maxVariantPrice: { amount: '5.49', currencyCode: 'GBP' }
     },
     compareAtPriceRange: {
-      minVariantPrice: { amount: '2627.77', currencyCode: 'PKR' },
-      maxVariantPrice: { amount: '2627.77', currencyCode: 'PKR' }
+      minVariantPrice: { amount: '5.49', currencyCode: 'GBP' },
+      maxVariantPrice: { amount: '5.49', currencyCode: 'GBP' }
     },
     featuredImage: {
       url: '/images/products/brasso-liquid-yellow-235ml.png',
@@ -248,7 +248,7 @@ const MOCK_PRODUCTS_BASE: ShopifyProduct[] = [
             title: 'Default Title',
             availableForSale: true,
             selectedOptions: [{ name: 'Title', value: 'Default Title' }],
-            price: { amount: '2627.77', currencyCode: 'PKR' },
+            price: { amount: '5.49', currencyCode: 'GBP' },
             compareAtPrice: null,
             image: {
               url: '/images/products/brasso-liquid-yellow-235ml.png',
@@ -274,12 +274,12 @@ const MOCK_PRODUCTS_BASE: ShopifyProduct[] = [
     tags: ['liquid', 'bulk', 'professional'],
     availableForSale: true,
     priceRange: {
-      minVariantPrice: { amount: '10902.06', currencyCode: 'PKR' },
-      maxVariantPrice: { amount: '10902.06', currencyCode: 'PKR' }
+      minVariantPrice: { amount: '28.99', currencyCode: 'GBP' },
+      maxVariantPrice: { amount: '28.99', currencyCode: 'GBP' }
     },
     compareAtPriceRange: {
-      minVariantPrice: { amount: '12500.00', currencyCode: 'PKR' },
-      maxVariantPrice: { amount: '12500.00', currencyCode: 'PKR' }
+      minVariantPrice: { amount: '34.99', currencyCode: 'GBP' },
+      maxVariantPrice: { amount: '34.99', currencyCode: 'GBP' }
     },
     featuredImage: {
       url: '/images/products/brasso-1l-pack-of-2.webp',
@@ -307,8 +307,8 @@ const MOCK_PRODUCTS_BASE: ShopifyProduct[] = [
             title: 'Default Title',
             availableForSale: true,
             selectedOptions: [{ name: 'Title', value: 'Default Title' }],
-            price: { amount: '10902.06', currencyCode: 'PKR' },
-            compareAtPrice: { amount: '12500.00', currencyCode: 'PKR' },
+            price: { amount: '28.99', currencyCode: 'GBP' },
+            compareAtPrice: { amount: '34.99', currencyCode: 'GBP' },
             image: {
               url: '/images/products/brasso-1l-pack-of-2.webp',
               altText: 'Brasso Metal Polish Liquid, 1L (Pack of 2)',
@@ -333,12 +333,12 @@ const MOCK_PRODUCTS_BASE: ShopifyProduct[] = [
     tags: ['liquid', 'multipack'],
     availableForSale: true,
     priceRange: {
-      minVariantPrice: { amount: '8270.53', currencyCode: 'PKR' },
-      maxVariantPrice: { amount: '8270.53', currencyCode: 'PKR' }
+      minVariantPrice: { amount: '27.99', currencyCode: 'GBP' },
+      maxVariantPrice: { amount: '27.99', currencyCode: 'GBP' }
     },
     compareAtPriceRange: {
-      minVariantPrice: { amount: '9000.00', currencyCode: 'PKR' },
-      maxVariantPrice: { amount: '9000.00', currencyCode: 'PKR' }
+      minVariantPrice: { amount: '32.99', currencyCode: 'GBP' },
+      maxVariantPrice: { amount: '32.99', currencyCode: 'GBP' }
     },
     featuredImage: {
       url: '/images/products/brasso-175ml-pack-of-6.webp',
@@ -366,8 +366,8 @@ const MOCK_PRODUCTS_BASE: ShopifyProduct[] = [
             title: 'Default Title',
             availableForSale: true,
             selectedOptions: [{ name: 'Title', value: 'Default Title' }],
-            price: { amount: '8270.53', currencyCode: 'PKR' },
-            compareAtPrice: { amount: '9000.00', currencyCode: 'PKR' },
+            price: { amount: '27.99', currencyCode: 'GBP' },
+            compareAtPrice: { amount: '32.99', currencyCode: 'GBP' },
             image: {
               url: '/images/products/brasso-175ml-pack-of-6.webp',
               altText: 'Brasso Metal Polish Liquid 175ml, Pack of 6',
@@ -392,12 +392,12 @@ const MOCK_PRODUCTS_BASE: ShopifyProduct[] = [
     tags: ['wadding', 'gel'],
     availableForSale: true,
     priceRange: {
-      minVariantPrice: { amount: '4492.40', currencyCode: 'PKR' },
-      maxVariantPrice: { amount: '4492.40', currencyCode: 'PKR' }
+      minVariantPrice: { amount: '5.29', currencyCode: 'GBP' },
+      maxVariantPrice: { amount: '5.29', currencyCode: 'GBP' }
     },
     compareAtPriceRange: {
-      minVariantPrice: { amount: '4492.40', currencyCode: 'PKR' },
-      maxVariantPrice: { amount: '4492.40', currencyCode: 'PKR' }
+      minVariantPrice: { amount: '5.29', currencyCode: 'GBP' },
+      maxVariantPrice: { amount: '5.29', currencyCode: 'GBP' }
     },
     featuredImage: {
       url: '/images/products/brasso-wadding-single.webp',
@@ -425,7 +425,7 @@ const MOCK_PRODUCTS_BASE: ShopifyProduct[] = [
             title: 'Default Title',
             availableForSale: true,
             selectedOptions: [{ name: 'Title', value: 'Default Title' }],
-            price: { amount: '4492.40', currencyCode: 'PKR' },
+            price: { amount: '5.29', currencyCode: 'GBP' },
             compareAtPrice: null,
             image: {
               url: '/images/products/brasso-wadding-single.webp',
@@ -451,12 +451,12 @@ const MOCK_PRODUCTS_BASE: ShopifyProduct[] = [
     tags: ['wadding', 'granule'],
     availableForSale: true,
     priceRange: {
-      minVariantPrice: { amount: '3755.57', currencyCode: 'PKR' },
-      maxVariantPrice: { amount: '3755.57', currencyCode: 'PKR' }
+      minVariantPrice: { amount: '5.49', currencyCode: 'GBP' },
+      maxVariantPrice: { amount: '5.49', currencyCode: 'GBP' }
     },
     compareAtPriceRange: {
-      minVariantPrice: { amount: '3755.57', currencyCode: 'PKR' },
-      maxVariantPrice: { amount: '3755.57', currencyCode: 'PKR' }
+      minVariantPrice: { amount: '5.49', currencyCode: 'GBP' },
+      maxVariantPrice: { amount: '5.49', currencyCode: 'GBP' }
     },
     featuredImage: {
       url: '/images/products/brasso-wadding-6pack.webp',
@@ -484,7 +484,7 @@ const MOCK_PRODUCTS_BASE: ShopifyProduct[] = [
             title: 'Default Title',
             availableForSale: true,
             selectedOptions: [{ name: 'Title', value: 'Default Title' }],
-            price: { amount: '3755.57', currencyCode: 'PKR' },
+            price: { amount: '5.49', currencyCode: 'GBP' },
             compareAtPrice: null,
             image: {
               url: '/images/products/brasso-wadding-6pack.webp',
@@ -510,12 +510,12 @@ const MOCK_PRODUCTS_BASE: ShopifyProduct[] = [
     tags: ['liquid', 'multipack'],
     availableForSale: true,
     priceRange: {
-      minVariantPrice: { amount: '6387.10', currencyCode: 'PKR' },
-      maxVariantPrice: { amount: '6387.10', currencyCode: 'PKR' }
+      minVariantPrice: { amount: '39.99', currencyCode: 'GBP' },
+      maxVariantPrice: { amount: '39.99', currencyCode: 'GBP' }
     },
     compareAtPriceRange: {
-      minVariantPrice: { amount: '6387.10', currencyCode: 'PKR' },
-      maxVariantPrice: { amount: '6387.10', currencyCode: 'PKR' }
+      minVariantPrice: { amount: '39.99', currencyCode: 'GBP' },
+      maxVariantPrice: { amount: '39.99', currencyCode: 'GBP' }
     },
     featuredImage: {
       url: '/images/products/brasso-1l-pack-of-3.webp',
@@ -543,7 +543,7 @@ const MOCK_PRODUCTS_BASE: ShopifyProduct[] = [
             title: 'Default Title',
             availableForSale: true,
             selectedOptions: [{ name: 'Title', value: 'Default Title' }],
-            price: { amount: '6387.10', currencyCode: 'PKR' },
+            price: { amount: '39.99', currencyCode: 'GBP' },
             compareAtPrice: null,
             image: {
               url: '/images/products/brasso-1l-pack-of-3.webp',
@@ -569,12 +569,12 @@ const MOCK_PRODUCTS_BASE: ShopifyProduct[] = [
     tags: ['polish', 'mini'],
     availableForSale: true,
     priceRange: {
-      minVariantPrice: { amount: '8939.69', currencyCode: 'PKR' },
-      maxVariantPrice: { amount: '8939.69', currencyCode: 'PKR' }
+      minVariantPrice: { amount: '9.99', currencyCode: 'GBP' },
+      maxVariantPrice: { amount: '9.99', currencyCode: 'GBP' }
     },
     compareAtPriceRange: {
-      minVariantPrice: { amount: '8939.69', currencyCode: 'PKR' },
-      maxVariantPrice: { amount: '8939.69', currencyCode: 'PKR' }
+      minVariantPrice: { amount: '9.99', currencyCode: 'GBP' },
+      maxVariantPrice: { amount: '9.99', currencyCode: 'GBP' }
     },
     featuredImage: {
       url: '/images/products/brasso-175ml-single.png',
@@ -602,7 +602,7 @@ const MOCK_PRODUCTS_BASE: ShopifyProduct[] = [
             title: 'Default Title',
             availableForSale: true,
             selectedOptions: [{ name: 'Title', value: 'Default Title' }],
-            price: { amount: '8939.69', currencyCode: 'PKR' },
+            price: { amount: '9.99', currencyCode: 'GBP' },
             compareAtPrice: null,
             image: {
               url: '/images/products/brasso-175ml-single.png',
@@ -883,8 +883,8 @@ let localCart: ShopifyCart = {
   checkoutUrl: '#',
   totalQuantity: 0,
   cost: {
-    totalAmount: { amount: '0', currencyCode: 'PKR' },
-    subtotalAmount: { amount: '0', currencyCode: 'PKR' },
+    totalAmount: { amount: '0', currencyCode: 'GBP' },
+    subtotalAmount: { amount: '0', currencyCode: 'GBP' },
     totalTaxAmount: null,
   },
   lines: { edges: [] },
@@ -1059,8 +1059,8 @@ function recalculateLocalCart() {
 
   localCart.totalQuantity = totalQuantity
   localCart.cost = {
-    totalAmount: { amount: subtotal.toFixed(2), currencyCode: 'PKR' },
-    subtotalAmount: { amount: subtotal.toFixed(2), currencyCode: 'PKR' },
+    totalAmount: { amount: subtotal.toFixed(2), currencyCode: 'GBP' },
+    subtotalAmount: { amount: subtotal.toFixed(2), currencyCode: 'GBP' },
     totalTaxAmount: null,
   }
 }

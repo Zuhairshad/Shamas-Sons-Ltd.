@@ -293,9 +293,10 @@ export function CartDrawer() {
                     <span className="text-xl font-semibold text-foreground">
                       <NumberFlow
                         value={subtotal}
+                        locales="en-GB"
                         format={{
                           style: 'currency',
-                          currency: cart.cost.subtotalAmount.currencyCode,
+                          currency: cart.cost.subtotalAmount.currencyCode || 'GBP',
                         }}
                       />
                     </span>

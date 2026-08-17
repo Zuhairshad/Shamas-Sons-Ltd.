@@ -1,11 +1,18 @@
 import type { ShopifyMoney, ShopifyProduct, ShopifyProductVariant } from './types'
 
 export function formatPrice(money: ShopifyMoney): string {
-  const amount = parseFloat(money.amount)
-  return `${money.currencyCode} ${amount.toLocaleString('en-US', {
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  })}`
+  const amount = parseFloat(money.amount) || 0
+  const currency = money.currencyCode === 'PKR' ? 'GBP' : (money.currencyCode || 'GBP')
+  try {
+    return new Intl.NumberFormat('en-GB', {
+      style: 'currency',
+      currency: currency,
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(amount)
+  } catch {
+    return `£${amount.toFixed(2)}`
+  }
 }
 
 export function getProductImages(product: ShopifyProduct) {
