@@ -94,33 +94,33 @@ export default async function HomePage() {
       </section>
 
       {/* Features / Why Choose Us */}
-      <section className="py-16 lg:py-24 border-b border-border bg-secondary/20">
+      <section className="py-20 lg:py-32 border-b border-border bg-secondary/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-10">
-            <p className="text-primary font-medium tracking-widest uppercase mb-2 text-xs sm:text-sm">
+          <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
+            <p className="text-primary font-semibold tracking-widest uppercase mb-3 text-xs sm:text-sm">
               Trusted Craftsmanship
             </p>
-            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl tracking-wider text-foreground mb-4">
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl tracking-wider text-foreground mb-6 leading-tight">
               WHY HOUSEHOLDS REACH FOR OUR POLISH
             </h2>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-              A formula built for brass, bronze, copper, chrome and stainless steel — available in liquid, cream and wadding form to match every task.
+            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
+              A specialized formula built for brass, bronze, copper, chrome, and stainless steel — available in liquid, cream, and wadding form to match every task.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
             {features.map((feature) => (
               <div 
                 key={feature.title} 
-                className="flex flex-col items-center text-center p-6 sm:p-8 bg-secondary/50 rounded-2xl border border-border/50 hover:border-primary/40 hover:bg-secondary/70 transition-all duration-300 shadow-sm"
+                className="flex flex-col items-center text-center p-8 sm:p-10 lg:p-12 bg-secondary/50 rounded-2xl border border-border/60 hover:border-primary/40 hover:bg-secondary/70 transition-all duration-300 shadow-md group"
               >
-                <div className="p-3 sm:p-4 bg-primary/10 rounded-2xl mb-4 sm:mb-5 text-primary border border-primary/20">
-                  <feature.icon className="w-6 h-6 sm:w-7 sm:h-7" />
+                <div className="p-4 sm:p-5 bg-primary/10 rounded-2xl mb-6 sm:mb-8 text-primary border border-primary/20 group-hover:scale-110 transition-transform duration-300">
+                  <feature.icon className="w-8 h-8 sm:w-10 sm:h-10" />
                 </div>
-                <h3 className="font-heading text-lg sm:text-xl tracking-wider text-foreground mb-2.5">
+                <h3 className="font-heading text-xl sm:text-2xl tracking-wider text-foreground mb-4">
                   {feature.title.toUpperCase()}
                 </h3>
-                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                   {feature.description}
                 </p>
               </div>
@@ -249,25 +249,30 @@ Made for the finish
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 lg:py-24">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <p className="text-primary font-medium tracking-widest uppercase mb-4">
+      <section className="py-20 lg:py-32">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 lg:mb-20">
+            <p className="text-primary font-semibold tracking-widest uppercase mb-3 text-xs sm:text-sm">
               Help Center
             </p>
-            <h2 className="font-heading text-4xl lg:text-5xl tracking-wider text-foreground">
+            <h2 className="font-heading text-4xl lg:text-6xl tracking-wider text-foreground mb-4">
               CARE GUIDE
             </h2>
+            <p className="text-base sm:text-lg text-muted-foreground max-w-xl mx-auto">
+              Everything you need to know about our products, shipping, orders, and care tips.
+            </p>
           </div>
 
-          <Accordion type="single" collapsible className="space-y-4">
+          <Accordion type="single" collapsible className="space-y-5 sm:space-y-6">
             <AccordionItem value="item-1" className="border-0">
-              <div className="bg-secondary/50 border border-border/50 rounded-xl overflow-hidden hover:border-primary/30 transition-colors">
-                <AccordionTrigger className="px-6 py-4 hover:no-underline">
-                  <span className="font-heading tracking-wider text-foreground">What is your shipping policy?</span>
+              <div className="bg-secondary/50 border border-border/60 rounded-2xl overflow-hidden hover:border-primary/40 transition-colors shadow-sm">
+                <AccordionTrigger className="px-7 sm:px-9 py-6 sm:py-7 hover:no-underline text-left">
+                  <span className="font-heading text-lg sm:text-xl tracking-wider text-foreground">
+                    What is your shipping policy?
+                  </span>
                 </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4 pt-0">
-                  <p className="text-muted-foreground">
+                <AccordionContent className="px-7 sm:px-9 pb-7 sm:pb-8 pt-0">
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                     We offer free standard shipping on all orders over $100. Standard shipping takes 5-7 business days. Express shipping is available for an additional fee. International shipping is available to select countries with calculated rates at checkout.
                   </p>
                 </AccordionContent>
@@ -275,12 +280,14 @@ Made for the finish
             </AccordionItem>
 
             <AccordionItem value="item-2" className="border-0">
-              <div className="bg-secondary/50 border border-border/50 rounded-xl overflow-hidden hover:border-primary/30 transition-colors">
-                <AccordionTrigger className="px-6 py-4 hover:no-underline">
-                  <span className="font-heading tracking-wider text-foreground">What is your return policy?</span>
+              <div className="bg-secondary/50 border border-border/60 rounded-2xl overflow-hidden hover:border-primary/40 transition-colors shadow-sm">
+                <AccordionTrigger className="px-7 sm:px-9 py-6 sm:py-7 hover:no-underline text-left">
+                  <span className="font-heading text-lg sm:text-xl tracking-wider text-foreground">
+                    What is your return policy?
+                  </span>
                 </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4 pt-0">
-                  <p className="text-muted-foreground">
+                <AccordionContent className="px-7 sm:px-9 pb-7 sm:pb-8 pt-0">
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                     We accept returns within 30 days of purchase. Items must be unworn, unwashed, and in original packaging. Contact our customer service team to initiate a return. Refunds are processed within 5-10 business days after we receive your item.
                   </p>
                 </AccordionContent>
@@ -288,12 +295,14 @@ Made for the finish
             </AccordionItem>
 
             <AccordionItem value="item-3" className="border-0">
-              <div className="bg-secondary/50 border border-border/50 rounded-xl overflow-hidden hover:border-primary/30 transition-colors">
-                <AccordionTrigger className="px-6 py-4 hover:no-underline">
-                  <span className="font-heading tracking-wider text-foreground">Do you ship internationally?</span>
+              <div className="bg-secondary/50 border border-border/60 rounded-2xl overflow-hidden hover:border-primary/40 transition-colors shadow-sm">
+                <AccordionTrigger className="px-7 sm:px-9 py-6 sm:py-7 hover:no-underline text-left">
+                  <span className="font-heading text-lg sm:text-xl tracking-wider text-foreground">
+                    Do you ship internationally?
+                  </span>
                 </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4 pt-0">
-                  <p className="text-muted-foreground">
+                <AccordionContent className="px-7 sm:px-9 pb-7 sm:pb-8 pt-0">
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                     Yes! We ship to over 30 countries worldwide. International shipping rates and delivery times vary by location. All international orders may be subject to customs duties and taxes. You can calculate shipping costs at checkout.
                   </p>
                 </AccordionContent>
@@ -301,12 +310,14 @@ Made for the finish
             </AccordionItem>
 
             <AccordionItem value="item-4" className="border-0">
-              <div className="bg-secondary/50 border border-border/50 rounded-xl overflow-hidden hover:border-primary/30 transition-colors">
-                <AccordionTrigger className="px-6 py-4 hover:no-underline">
-                  <span className="font-heading tracking-wider text-foreground">How can I track my order?</span>
+              <div className="bg-secondary/50 border border-border/60 rounded-2xl overflow-hidden hover:border-primary/40 transition-colors shadow-sm">
+                <AccordionTrigger className="px-7 sm:px-9 py-6 sm:py-7 hover:no-underline text-left">
+                  <span className="font-heading text-lg sm:text-xl tracking-wider text-foreground">
+                    How can I track my order?
+                  </span>
                 </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4 pt-0">
-                  <p className="text-muted-foreground">
+                <AccordionContent className="px-7 sm:px-9 pb-7 sm:pb-8 pt-0">
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                     Once your order ships, you will receive an email with tracking information. You can also check your order status in your account dashboard. Tracking links provide real-time updates on your package's location and estimated delivery date.
                   </p>
                 </AccordionContent>
@@ -314,12 +325,14 @@ Made for the finish
             </AccordionItem>
 
             <AccordionItem value="item-5" className="border-0">
-              <div className="bg-secondary/50 border border-border/50 rounded-xl overflow-hidden hover:border-primary/30 transition-colors">
-                <AccordionTrigger className="px-6 py-4 hover:no-underline">
-                  <span className="font-heading tracking-wider text-foreground">What payment methods do you accept?</span>
+              <div className="bg-secondary/50 border border-border/60 rounded-2xl overflow-hidden hover:border-primary/40 transition-colors shadow-sm">
+                <AccordionTrigger className="px-7 sm:px-9 py-6 sm:py-7 hover:no-underline text-left">
+                  <span className="font-heading text-lg sm:text-xl tracking-wider text-foreground">
+                    What payment methods do you accept?
+                  </span>
                 </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4 pt-0">
-                  <p className="text-muted-foreground">
+                <AccordionContent className="px-7 sm:px-9 pb-7 sm:pb-8 pt-0">
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                     We accept all major credit cards (Visa, Mastercard, American Express), PayPal, Apple Pay, and Google Pay. All payments are processed securely with 256-bit encryption. Your payment information is never stored on our servers.
                   </p>
                 </AccordionContent>
