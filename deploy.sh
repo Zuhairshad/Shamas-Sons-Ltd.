@@ -24,4 +24,7 @@ pnpm build
 pm2 startOrReload ecosystem.config.js --update-env
 pm2 save
 
+# Give Next a moment to finish booting, otherwise the status table reports the
+# startup CPU spike rather than the steady state.
+sleep 5
 pm2 status shams-amazon
