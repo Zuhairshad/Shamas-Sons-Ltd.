@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight, Truck, Shield, RefreshCw } from 'lucide-react'
+import { ArrowRight, Sparkles, Layers, Award } from 'lucide-react'
 import { getFeaturedProducts, getCollections } from '@/lib/shopify/client'
 import { ProductCard } from '@/components/product/product-card'
 import { Button } from '@/components/ui/button'
@@ -9,19 +9,19 @@ import { HeroSection } from '@/components/home/hero-section'
 
 const features = [
   {
-    icon: Truck,
-    title: 'Free Shipping',
-    description: 'On orders over $100',
+    icon: Sparkles,
+    title: 'Fast Tarnish Removal',
+    description: 'A few drops on a cloth lift built-up oxidation and tarnish from brass and copper in minutes, without aggressive scrubbing on lightly soiled surfaces.',
   },
   {
-    icon: Shield,
-    title: 'Secure Payment',
-    description: '100% secure checkout',
+    icon: Layers,
+    title: 'Multi-Metal Formula',
+    description: 'One versatile formula works across brass, bronze, copper, chrome, and stainless steel to cover most metal surfaces around your home or workshop.',
   },
   {
-    icon: RefreshCw,
-    title: 'Easy Returns',
-    description: '30-day return policy',
+    icon: Award,
+    title: 'Time-Tested Heritage',
+    description: 'Manufactured in Britain with over a century of trusted pedigree, staying true to a proven recipe that restores brilliant, long-lasting luster.',
   },
 ]
 
@@ -45,22 +45,34 @@ export default async function HomePage() {
       {/* Hero Section with Scroll Velocity Marquee */}
       <HeroSection />
 
-      {/* Features */}
-      <section className="py-8 lg:py-12 border-b border-border">
+      {/* Features / Why Choose Us */}
+      <section className="py-12 lg:py-16 border-b border-border bg-secondary/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-3 gap-2 sm:gap-4 lg:gap-8">
+          <div className="text-center max-w-3xl mx-auto mb-10">
+            <p className="text-primary font-medium tracking-widest uppercase mb-2 text-xs sm:text-sm">
+              Trusted Craftsmanship
+            </p>
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl tracking-wider text-foreground mb-4">
+              WHY HOUSEHOLDS REACH FOR OUR POLISH
+            </h2>
+            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+              A formula built for brass, bronze, copper, chrome and stainless steel — available in liquid, cream and wadding form to match every task.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             {features.map((feature) => (
               <div 
                 key={feature.title} 
-                className="flex flex-col items-center text-center p-3 sm:p-6 bg-secondary/50 rounded-xl border border-border/50 hover:border-primary/30 transition-colors"
+                className="flex flex-col items-center text-center p-6 sm:p-8 bg-secondary/50 rounded-2xl border border-border/50 hover:border-primary/40 hover:bg-secondary/70 transition-all duration-300 shadow-sm"
               >
-                <div className="p-2 sm:p-3 bg-primary/10 rounded-full mb-2 sm:mb-4">
-                  <feature.icon className="w-4 h-4 sm:w-6 sm:h-6 text-primary" />
+                <div className="p-3 sm:p-4 bg-primary/10 rounded-2xl mb-4 sm:mb-5 text-primary border border-primary/20">
+                  <feature.icon className="w-6 h-6 sm:w-7 sm:h-7" />
                 </div>
-                <h3 className="font-heading text-xs sm:text-sm lg:text-base tracking-wider text-foreground mb-0.5 sm:mb-1">
+                <h3 className="font-heading text-lg sm:text-xl tracking-wider text-foreground mb-2.5">
                   {feature.title.toUpperCase()}
                 </h3>
-                <p className="text-[10px] sm:text-xs lg:text-sm text-muted-foreground hidden sm:block">
+                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                   {feature.description}
                 </p>
               </div>
