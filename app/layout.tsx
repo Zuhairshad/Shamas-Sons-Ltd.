@@ -19,8 +19,8 @@ const jost = Jost({
 })
 
 export const metadata: Metadata = {
-  title: 'Brasso | Restore the Shine',
-  description: 'A modern metal polish storefront inspired by the trusted Brasso tradition.',
+  title: 'Shamas & Sons | Restore the Shine',
+  description: 'Premium multi-metal polish and surface restoration products by Shamas & Sons Ltd.',
   icons: {
     icon: '/logo.png',
   },

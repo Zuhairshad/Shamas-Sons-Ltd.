@@ -10,11 +10,11 @@ import { Button } from '@/components/ui/button'
 const heroImages = [
   {
     src: '/images/brasso-light.jpeg',
-    alt: 'Brasso metal polish on a sunlit surface',
+    alt: 'Shamas & Sons metal polish on a sunlit surface',
   },
   {
     src: '/images/brasso-dark.jpeg',
-    alt: 'Brasso metal polish on a dark surface',
+    alt: 'Shamas & Sons metal polish on a dark surface',
   },
 ]
 

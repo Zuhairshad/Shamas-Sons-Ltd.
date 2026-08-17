@@ -28,12 +28,12 @@ const apiVersion = '2025-01'
 const MOCK_PRODUCTS: ShopifyProduct[] = [
   {
     id: 'gid://shopify/Product/B002G0BULU',
-    handle: 'brasso-metal-polish-175ml-b002g0bulu',
-    title: 'Brasso Metal Polish, 175 ml',
+    handle: 'shamas-metal-polish-175ml-b002g0bulu',
+    title: 'Shamas & Sons Metal Polish, 175 ml',
     description: 'Liquid metal polish for brass, copper, chrome, and stainless steel. Restores brilliance and protects against tarnish.',
     descriptionHtml: '<p>Liquid metal polish for brass, copper, chrome, and stainless steel. Restores brilliance and protects against tarnish.</p>',
     productType: 'Liquid',
-    vendor: 'Brasso',
+    vendor: 'Shamas & Sons',
     tags: ['liquid', 'polish', 'best-seller'],
     availableForSale: true,
     priceRange: {
@@ -46,7 +46,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
     },
     featuredImage: {
       url: 'https://m.media-amazon.com/images/I/61Ah67TnasL._AC_UL960_FMwebp_QL65_.jpg',
-      altText: 'Brasso Metal Polish, 175 ml',
+      altText: 'Shamas & Sons Metal Polish, 175 ml',
       width: 480,
       height: 480
     },
@@ -55,7 +55,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
         {
           node: {
             url: 'https://m.media-amazon.com/images/I/61Ah67TnasL._AC_UL960_FMwebp_QL65_.jpg',
-            altText: 'Brasso Metal Polish, 175 ml',
+            altText: 'Shamas & Sons Metal Polish, 175 ml',
             width: 480,
             height: 480
           }
@@ -74,7 +74,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
             compareAtPrice: { amount: '6.99', currencyCode: 'GBP' },
             image: {
               url: 'https://m.media-amazon.com/images/I/61Ah67TnasL._AC_UL960_FMwebp_QL65_.jpg',
-              altText: 'Brasso Metal Polish, 175 ml',
+              altText: 'Shamas & Sons Metal Polish, 175 ml',
               width: 480,
               height: 480
             }
@@ -83,16 +83,16 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
       ]
     },
     options: [{ id: 'opt-1', name: 'Size', values: ['175 ml'] }],
-    seo: { title: 'Brasso Metal Polish, 175 ml', description: 'Buy Brasso Metal Polish 175ml online' }
+    seo: { title: 'Shamas & Sons Metal Polish, 175 ml', description: 'Buy Shamas & Sons Metal Polish 175ml online' }
   },
   {
     id: 'gid://shopify/Product/B00BE27CYK',
-    handle: 'brasso-metal-polish-wadding-75g-b00be27cyk',
-    title: 'Brasso Metal Polish Wadding, 75g',
+    handle: 'shamas-metal-polish-wadding-75g-b00be27cyk',
+    title: 'Shamas & Sons Metal Polish Wadding, 75g',
     description: 'Pre-soaked cotton wadding for easy tarnish removal and shine restoration. No liquid spills, easy to use.',
     descriptionHtml: '<p>Pre-soaked cotton wadding for easy tarnish removal and shine restoration. No liquid spills, easy to use.</p>',
     productType: 'Wipe',
-    vendor: 'Brasso',
+    vendor: 'Shamas & Sons',
     tags: ['wadding', 'wipe', 'best-seller'],
     availableForSale: true,
     priceRange: {
@@ -105,7 +105,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
     },
     featuredImage: {
       url: 'https://m.media-amazon.com/images/I/71hkhaLTBzL._AC_UL960_FMwebp_QL65_.jpg',
-      altText: 'Brasso Metal Polish Wadding, 75g',
+      altText: 'Shamas & Sons Metal Polish Wadding, 75g',
       width: 480,
       height: 480
     },
@@ -114,7 +114,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
         {
           node: {
             url: 'https://m.media-amazon.com/images/I/71hkhaLTBzL._AC_UL960_FMwebp_QL65_.jpg',
-            altText: 'Brasso Metal Polish Wadding, 75g',
+            altText: 'Shamas & Sons Metal Polish Wadding, 75g',
             width: 480,
             height: 480
           }
@@ -133,7 +133,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
             compareAtPrice: { amount: '5.99', currencyCode: 'GBP' },
             image: {
               url: 'https://m.media-amazon.com/images/I/71hkhaLTBzL._AC_UL960_FMwebp_QL65_.jpg',
-              altText: 'Brasso Metal Polish Wadding, 75g',
+              altText: 'Shamas & Sons Metal Polish Wadding, 75g',
               width: 480,
               height: 480
             }
@@ -142,16 +142,16 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
       ]
     },
     options: [{ id: 'opt-2', name: 'Size', values: ['75g'] }],
-    seo: { title: 'Brasso Metal Polish Wadding, 75g', description: 'Buy Brasso Metal Polish Wadding online' }
+    seo: { title: 'Shamas & Sons Metal Polish Wadding, 75g', description: 'Buy Shamas & Sons Metal Polish Wadding online' }
   },
   {
     id: 'gid://shopify/Product/B01EX17UHM',
-    handle: 'brasso-metal-polish-175ml-pack-of-2-b01ex17uhm',
-    title: 'Brasso Metal Polish 175ml (Pack of 2)',
+    handle: 'shamas-metal-polish-175ml-pack-of-2-b01ex17uhm',
+    title: 'Shamas & Sons Metal Polish 175ml (Pack of 2)',
     description: 'Value twin-pack of 175ml bottles. Restores brilliance and delivers long-lasting protection across all household metals.',
     descriptionHtml: '<p>Value twin-pack of 175ml bottles. Restores brilliance and delivers long-lasting protection across all household metals.</p>',
     productType: 'Liquid',
-    vendor: 'Brasso',
+    vendor: 'Shamas & Sons',
     tags: ['liquid', 'multipack'],
     availableForSale: true,
     priceRange: {
@@ -164,7 +164,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
     },
     featuredImage: {
       url: 'https://m.media-amazon.com/images/I/81CfGXgkE-L._AC_UL960_FMwebp_QL65_.jpg',
-      altText: 'Brasso Metal Polish 175ml (Pack of 2)',
+      altText: 'Shamas & Sons Metal Polish 175ml (Pack of 2)',
       width: 480,
       height: 480
     },
@@ -173,7 +173,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
         {
           node: {
             url: 'https://m.media-amazon.com/images/I/81CfGXgkE-L._AC_UL960_FMwebp_QL65_.jpg',
-            altText: 'Brasso Metal Polish 175ml (Pack of 2)',
+            altText: 'Shamas & Sons Metal Polish 175ml (Pack of 2)',
             width: 480,
             height: 480
           }
@@ -192,7 +192,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
             compareAtPrice: { amount: '11.98', currencyCode: 'GBP' },
             image: {
               url: 'https://m.media-amazon.com/images/I/81CfGXgkE-L._AC_UL960_FMwebp_QL65_.jpg',
-              altText: 'Brasso Metal Polish 175ml (Pack of 2)',
+              altText: 'Shamas & Sons Metal Polish 175ml (Pack of 2)',
               width: 480,
               height: 480
             }
@@ -201,16 +201,16 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
       ]
     },
     options: [{ id: 'opt-3', name: 'Format', values: ['Pack of 2'] }],
-    seo: { title: 'Brasso Metal Polish 175ml (Pack of 2)', description: 'Buy Brasso Metal Polish Twin Pack online' }
+    seo: { title: 'Shamas & Sons Metal Polish 175ml (Pack of 2)', description: 'Buy Shamas & Sons Metal Polish Twin Pack online' }
   },
   {
     id: 'gid://shopify/Product/B0798LB9KW',
-    handle: 'brasso-b150-metal-polish-150ml-b0798lb9kw',
-    title: 'Brasso B150 Metal Polish, 150 mL',
+    handle: 'shamas-b150-metal-polish-150ml-b0798lb9kw',
+    title: 'Shamas & Sons B150 Metal Polish, 150 mL',
     description: 'Classic metal polish liquid in a 150ml container. Removes stubborn tarnish, oxidation, and dirt effortlessly.',
     descriptionHtml: '<p>Classic metal polish liquid in a 150ml container. Removes stubborn tarnish, oxidation, and dirt effortlessly.</p>',
     productType: 'Liquid',
-    vendor: 'Brasso',
+    vendor: 'Shamas & Sons',
     tags: ['liquid', 'polish'],
     availableForSale: true,
     priceRange: {
@@ -223,7 +223,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
     },
     featuredImage: {
       url: 'https://m.media-amazon.com/images/I/61Syipok7KL._AC_UL960_FMwebp_QL65_.jpg',
-      altText: 'Brasso B150 Metal Polish, 150 mL',
+      altText: 'Shamas & Sons B150 Metal Polish, 150 mL',
       width: 480,
       height: 480
     },
@@ -232,7 +232,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
         {
           node: {
             url: 'https://m.media-amazon.com/images/I/61Syipok7KL._AC_UL960_FMwebp_QL65_.jpg',
-            altText: 'Brasso B150 Metal Polish, 150 mL',
+            altText: 'Shamas & Sons B150 Metal Polish, 150 mL',
             width: 480,
             height: 480
           }
@@ -251,7 +251,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
             compareAtPrice: null,
             image: {
               url: 'https://m.media-amazon.com/images/I/61Syipok7KL._AC_UL960_FMwebp_QL65_.jpg',
-              altText: 'Brasso B150 Metal Polish, 150 mL',
+              altText: 'Shamas & Sons B150 Metal Polish, 150 mL',
               width: 480,
               height: 480
             }
@@ -260,16 +260,16 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
       ]
     },
     options: [{ id: 'opt-4', name: 'Size', values: ['150 mL'] }],
-    seo: { title: 'Brasso B150 Metal Polish, 150 mL', description: 'Buy Brasso B150 Metal Polish online' }
+    seo: { title: 'Shamas & Sons B150 Metal Polish, 150 mL', description: 'Buy Shamas & Sons B150 Metal Polish online' }
   },
   {
     id: 'gid://shopify/Product/B0CSXLR79Q',
-    handle: 'brasso-metal-polish-liquid-1l-pack-of-2-b0csxlr79q',
-    title: 'Brasso Metal Polish Liquid, 1L (Pack of 2)',
+    handle: 'shamas-metal-polish-liquid-1l-pack-of-2-b0csxlr79q',
+    title: 'Shamas & Sons Metal Polish Liquid, 1L (Pack of 2)',
     description: 'Professional-grade bulk pack for larger restoration projects. Ideal for commercial bars, hospitality, and workshops.',
     descriptionHtml: '<p>Professional-grade bulk pack for larger restoration projects. Ideal for commercial bars, hospitality, and workshops.</p>',
     productType: 'Liquid',
-    vendor: 'Brasso',
+    vendor: 'Shamas & Sons',
     tags: ['liquid', 'bulk', 'professional'],
     availableForSale: true,
     priceRange: {
@@ -282,7 +282,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
     },
     featuredImage: {
       url: 'https://m.media-amazon.com/images/I/712oFUjZ0zL._AC_UL960_FMwebp_QL65_.jpg',
-      altText: 'Brasso Metal Polish Liquid, 1L (Pack of 2)',
+      altText: 'Shamas & Sons Metal Polish Liquid, 1L (Pack of 2)',
       width: 480,
       height: 480
     },
@@ -291,7 +291,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
         {
           node: {
             url: 'https://m.media-amazon.com/images/I/712oFUjZ0zL._AC_UL960_FMwebp_QL65_.jpg',
-            altText: 'Brasso Metal Polish Liquid, 1L (Pack of 2)',
+            altText: 'Shamas & Sons Metal Polish Liquid, 1L (Pack of 2)',
             width: 480,
             height: 480
           }
@@ -310,7 +310,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
             compareAtPrice: { amount: '34.99', currencyCode: 'GBP' },
             image: {
               url: 'https://m.media-amazon.com/images/I/712oFUjZ0zL._AC_UL960_FMwebp_QL65_.jpg',
-              altText: 'Brasso Metal Polish Liquid, 1L (Pack of 2)',
+              altText: 'Shamas & Sons Metal Polish Liquid, 1L (Pack of 2)',
               width: 480,
               height: 480
             }
@@ -319,16 +319,16 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
       ]
     },
     options: [{ id: 'opt-5', name: 'Size', values: ['1L Pack of 2'] }],
-    seo: { title: 'Brasso Metal Polish Liquid, 1L (Pack of 2)', description: 'Buy Brasso Bulk Liquid 1L Pack online' }
+    seo: { title: 'Shamas & Sons Metal Polish Liquid, 1L (Pack of 2)', description: 'Buy Shamas & Sons Bulk Liquid 1L Pack online' }
   },
   {
     id: 'gid://shopify/Product/B0082AA2G2',
-    handle: 'brasso-metal-polish-liquid-175ml-pack-of-4-b0082aa2g2',
-    title: 'Brasso Metal Polish Liquid 175ml, Pack of 4',
+    handle: 'shamas-metal-polish-liquid-175ml-pack-of-4-b0082aa2g2',
+    title: 'Shamas & Sons Metal Polish Liquid 175ml, Pack of 4',
     description: 'Value multipack containing four 175ml bottles. Trusted British formula providing long-lasting shine.',
     descriptionHtml: '<p>Value multipack containing four 175ml bottles. Trusted British formula providing long-lasting shine.</p>',
     productType: 'Liquid',
-    vendor: 'Brasso',
+    vendor: 'Shamas & Sons',
     tags: ['liquid', 'multipack', 'best-seller'],
     availableForSale: true,
     priceRange: {
@@ -341,7 +341,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
     },
     featuredImage: {
       url: 'https://m.media-amazon.com/images/I/815fhQPtz9L._AC_UL960_FMwebp_QL65_.jpg',
-      altText: 'Brasso Metal Polish Liquid 175ml, Pack of 4',
+      altText: 'Shamas & Sons Metal Polish Liquid 175ml, Pack of 4',
       width: 480,
       height: 480
     },
@@ -350,7 +350,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
         {
           node: {
             url: 'https://m.media-amazon.com/images/I/815fhQPtz9L._AC_UL960_FMwebp_QL65_.jpg',
-            altText: 'Brasso Metal Polish Liquid 175ml, Pack of 4',
+            altText: 'Shamas & Sons Metal Polish Liquid 175ml, Pack of 4',
             width: 480,
             height: 480
           }
@@ -369,7 +369,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
             compareAtPrice: { amount: '23.96', currencyCode: 'GBP' },
             image: {
               url: 'https://m.media-amazon.com/images/I/815fhQPtz9L._AC_UL960_FMwebp_QL65_.jpg',
-              altText: 'Brasso Metal Polish Liquid 175ml, Pack of 4',
+              altText: 'Shamas & Sons Metal Polish Liquid 175ml, Pack of 4',
               width: 480,
               height: 480
             }
@@ -378,16 +378,16 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
       ]
     },
     options: [{ id: 'opt-6', name: 'Format', values: ['Pack of 4'] }],
-    seo: { title: 'Brasso Metal Polish Liquid 175ml, Pack of 4', description: 'Buy Brasso 175ml Pack of 4 online' }
+    seo: { title: 'Shamas & Sons Metal Polish Liquid 175ml, Pack of 4', description: 'Buy Shamas & Sons 175ml Pack of 4 online' }
   },
   {
     id: 'gid://shopify/Product/B01MYENZTJ',
-    handle: 'brasso-0592-w-wadding-75g-b01myenztj',
-    title: 'Brasso 0592-W Wadding, 75g',
+    handle: 'shamas-0592-w-wadding-75g-b01myenztj',
+    title: 'Shamas & Sons 0592-W Wadding, 75g',
     description: 'Gel format wadding canister providing a gorgeous gloss with radiant shine and dazzling effect.',
     descriptionHtml: '<p>Gel format wadding canister providing a gorgeous gloss with radiant shine and dazzling effect.</p>',
     productType: 'Gel',
-    vendor: 'Brasso',
+    vendor: 'Shamas & Sons',
     tags: ['wadding', 'gel'],
     availableForSale: true,
     priceRange: {
@@ -400,7 +400,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
     },
     featuredImage: {
       url: 'https://m.media-amazon.com/images/I/71Oedp3OsNL._AC_UL960_FMwebp_QL65_.jpg',
-      altText: 'Brasso 0592-W Wadding, 75g',
+      altText: 'Shamas & Sons 0592-W Wadding, 75g',
       width: 480,
       height: 480
     },
@@ -409,7 +409,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
         {
           node: {
             url: 'https://m.media-amazon.com/images/I/71Oedp3OsNL._AC_UL960_FMwebp_QL65_.jpg',
-            altText: 'Brasso 0592-W Wadding, 75g',
+            altText: 'Shamas & Sons 0592-W Wadding, 75g',
             width: 480,
             height: 480
           }
@@ -428,7 +428,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
             compareAtPrice: null,
             image: {
               url: 'https://m.media-amazon.com/images/I/71Oedp3OsNL._AC_UL960_FMwebp_QL65_.jpg',
-              altText: 'Brasso 0592-W Wadding, 75g',
+              altText: 'Shamas & Sons 0592-W Wadding, 75g',
               width: 480,
               height: 480
             }
@@ -437,16 +437,16 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
       ]
     },
     options: [{ id: 'opt-7', name: 'Size', values: ['75g Gel Canister'] }],
-    seo: { title: 'Brasso 0592-W Wadding, 75g', description: 'Buy Brasso 0592-W Gel Wadding online' }
+    seo: { title: 'Shamas & Sons 0592-W Wadding, 75g', description: 'Buy Shamas & Sons 0592-W Gel Wadding online' }
   },
   {
     id: 'gid://shopify/Product/B004G8YNIM',
-    handle: 'brasso-metal-polish-wadding-75g-granule-b004g8ynim',
-    title: 'Brasso Metal Polish Wadding, 75g (Granule)',
+    handle: 'shamas-metal-polish-wadding-75g-granule-b004g8ynim',
+    title: 'Shamas & Sons Metal Polish Wadding, 75g (Granule)',
     description: 'Special wadding formulation with micro-abrasive cleaning granules for extra tough tarnish removal.',
     descriptionHtml: '<p>Special wadding formulation with micro-abrasive cleaning granules for extra tough tarnish removal.</p>',
     productType: 'Granule',
-    vendor: 'Brasso',
+    vendor: 'Shamas & Sons',
     tags: ['wadding', 'granule'],
     availableForSale: true,
     priceRange: {
@@ -459,7 +459,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
     },
     featuredImage: {
       url: 'https://m.media-amazon.com/images/I/71a0vxYvO0L._AC_UL960_FMwebp_QL65_.jpg',
-      altText: 'Brasso Metal Polish Wadding, 75g (Granule)',
+      altText: 'Shamas & Sons Metal Polish Wadding, 75g (Granule)',
       width: 480,
       height: 480
     },
@@ -468,7 +468,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
         {
           node: {
             url: 'https://m.media-amazon.com/images/I/71a0vxYvO0L._AC_UL960_FMwebp_QL65_.jpg',
-            altText: 'Brasso Metal Polish Wadding, 75g (Granule)',
+            altText: 'Shamas & Sons Metal Polish Wadding, 75g (Granule)',
             width: 480,
             height: 480
           }
@@ -487,7 +487,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
             compareAtPrice: null,
             image: {
               url: 'https://m.media-amazon.com/images/I/71a0vxYvO0L._AC_UL960_FMwebp_QL65_.jpg',
-              altText: 'Brasso Metal Polish Wadding, 75g (Granule)',
+              altText: 'Shamas & Sons Metal Polish Wadding, 75g (Granule)',
               width: 480,
               height: 480
             }
@@ -496,16 +496,16 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
       ]
     },
     options: [{ id: 'opt-8', name: 'Size', values: ['75g Granule'] }],
-    seo: { title: 'Brasso Metal Polish Wadding, 75g (Granule)', description: 'Buy Brasso Wadding Granule online' }
+    seo: { title: 'Shamas & Sons Metal Polish Wadding, 75g (Granule)', description: 'Buy Shamas & Sons Wadding Granule online' }
   },
   {
     id: 'gid://shopify/Product/B0F94NH8V2',
-    handle: 'brasso-liquid-1-litre-06135-b0f94nh8v2',
-    title: 'Brasso Liquid 1 Litre 06135',
+    handle: 'shamas-liquid-1-litre-06135-b0f94nh8v2',
+    title: 'Shamas & Sons Liquid 1 Litre 06135',
     description: 'High-volume 1-litre metal polish liquid for large surfaces, heritage fixtures, and professional restoration.',
     descriptionHtml: '<p>High-volume 1-litre metal polish liquid for large surfaces, heritage fixtures, and professional restoration.</p>',
     productType: 'Liquid',
-    vendor: 'Brasso',
+    vendor: 'Shamas & Sons',
     tags: ['liquid', 'bulk', 'professional'],
     availableForSale: true,
     priceRange: {
@@ -518,7 +518,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
     },
     featuredImage: {
       url: 'https://m.media-amazon.com/images/I/21dsfMRmviL._AC_UL400_FMwebp_QL65_.jpg',
-      altText: 'Brasso Liquid 1 Litre 06135',
+      altText: 'Shamas & Sons Liquid 1 Litre 06135',
       width: 400,
       height: 400
     },
@@ -527,7 +527,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
         {
           node: {
             url: 'https://m.media-amazon.com/images/I/21dsfMRmviL._AC_UL400_FMwebp_QL65_.jpg',
-            altText: 'Brasso Liquid 1 Litre 06135',
+            altText: 'Shamas & Sons Liquid 1 Litre 06135',
             width: 400,
             height: 400
           }
@@ -546,7 +546,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
             compareAtPrice: null,
             image: {
               url: 'https://m.media-amazon.com/images/I/21dsfMRmviL._AC_UL400_FMwebp_QL65_.jpg',
-              altText: 'Brasso Liquid 1 Litre 06135',
+              altText: 'Shamas & Sons Liquid 1 Litre 06135',
               width: 400,
               height: 400
             }
@@ -555,16 +555,16 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
       ]
     },
     options: [{ id: 'opt-9', name: 'Size', values: ['1 Litre'] }],
-    seo: { title: 'Brasso Liquid 1 Litre 06135', description: 'Buy Brasso Liquid 1 Litre online' }
+    seo: { title: 'Shamas & Sons Liquid 1 Litre 06135', description: 'Buy Shamas & Sons Liquid 1 Litre online' }
   },
   {
     id: 'gid://shopify/Product/B0CKXX6YCY',
-    handle: 'brasso-metal-polish-175ml-pack-of-6-b0ckxx6ycy',
-    title: 'Brasso Metal Polish, 175 ml (Pack of 6)',
+    handle: 'shamas-metal-polish-175ml-pack-of-6-b0ckxx6ycy',
+    title: 'Shamas & Sons Metal Polish, 175 ml (Pack of 6)',
     description: 'Bulk 6-pack of 175ml bottles. The ultimate supply for workshops, cleaners, and regular brass care.',
     descriptionHtml: '<p>Bulk 6-pack of 175ml bottles. The ultimate supply for workshops, cleaners, and regular brass care.</p>',
     productType: 'Liquid',
-    vendor: 'Brasso',
+    vendor: 'Shamas & Sons',
     tags: ['liquid', 'multipack'],
     availableForSale: true,
     priceRange: {
@@ -577,7 +577,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
     },
     featuredImage: {
       url: 'https://m.media-amazon.com/images/I/810n3lfq1zL._AC_UL960_FMwebp_QL65_.jpg',
-      altText: 'Brasso Metal Polish, 175 ml (Pack of 6)',
+      altText: 'Shamas & Sons Metal Polish, 175 ml (Pack of 6)',
       width: 480,
       height: 480
     },
@@ -586,7 +586,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
         {
           node: {
             url: 'https://m.media-amazon.com/images/I/810n3lfq1zL._AC_UL960_FMwebp_QL65_.jpg',
-            altText: 'Brasso Metal Polish, 175 ml (Pack of 6)',
+            altText: 'Shamas & Sons Metal Polish, 175 ml (Pack of 6)',
             width: 480,
             height: 480
           }
@@ -605,7 +605,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
             compareAtPrice: { amount: '35.94', currencyCode: 'GBP' },
             image: {
               url: 'https://m.media-amazon.com/images/I/810n3lfq1zL._AC_UL960_FMwebp_QL65_.jpg',
-              altText: 'Brasso Metal Polish, 175 ml (Pack of 6)',
+              altText: 'Shamas & Sons Metal Polish, 175 ml (Pack of 6)',
               width: 480,
               height: 480
             }
@@ -614,16 +614,16 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
       ]
     },
     options: [{ id: 'opt-10', name: 'Format', values: ['Pack of 6'] }],
-    seo: { title: 'Brasso Metal Polish, 175 ml (Pack of 6)', description: 'Buy Brasso Metal Polish Pack of 6 online' }
+    seo: { title: 'Shamas & Sons Metal Polish, 175 ml (Pack of 6)', description: 'Buy Shamas & Sons Metal Polish Pack of 6 online' }
   },
   {
     id: 'gid://shopify/Product/B0CKXVG728',
-    handle: 'brasso-metal-polish-175ml-pack-of-3-b0ckxvg728',
-    title: 'Brasso Metal Polish, 175 ml (Pack of 3)',
+    handle: 'shamas-metal-polish-175ml-pack-of-3-b0ckxvg728',
+    title: 'Shamas & Sons Metal Polish, 175 ml (Pack of 3)',
     description: 'Convenient 3-pack bundle of 175ml bottles. Great savings for multi-room home cleaning.',
     descriptionHtml: '<p>Convenient 3-pack bundle of 175ml bottles. Great savings for multi-room home cleaning.</p>',
     productType: 'Liquid',
-    vendor: 'Brasso',
+    vendor: 'Shamas & Sons',
     tags: ['liquid', 'multipack'],
     availableForSale: true,
     priceRange: {
@@ -636,7 +636,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
     },
     featuredImage: {
       url: 'https://m.media-amazon.com/images/I/81tTDD9PnEL._AC_UL960_FMwebp_QL65_.jpg',
-      altText: 'Brasso Metal Polish, 175 ml (Pack of 3)',
+      altText: 'Shamas & Sons Metal Polish, 175 ml (Pack of 3)',
       width: 480,
       height: 480
     },
@@ -645,7 +645,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
         {
           node: {
             url: 'https://m.media-amazon.com/images/I/81tTDD9PnEL._AC_UL960_FMwebp_QL65_.jpg',
-            altText: 'Brasso Metal Polish, 175 ml (Pack of 3)',
+            altText: 'Shamas & Sons Metal Polish, 175 ml (Pack of 3)',
             width: 480,
             height: 480
           }
@@ -664,7 +664,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
             compareAtPrice: { amount: '17.97', currencyCode: 'GBP' },
             image: {
               url: 'https://m.media-amazon.com/images/I/81tTDD9PnEL._AC_UL960_FMwebp_QL65_.jpg',
-              altText: 'Brasso Metal Polish, 175 ml (Pack of 3)',
+              altText: 'Shamas & Sons Metal Polish, 175 ml (Pack of 3)',
               width: 480,
               height: 480
             }
@@ -673,16 +673,16 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
       ]
     },
     options: [{ id: 'opt-11', name: 'Format', values: ['Pack of 3'] }],
-    seo: { title: 'Brasso Metal Polish, 175 ml (Pack of 3)', description: 'Buy Brasso 175ml 3-Pack online' }
+    seo: { title: 'Shamas & Sons Metal Polish, 175 ml (Pack of 3)', description: 'Buy Shamas & Sons 175ml 3-Pack online' }
   },
   {
     id: 'gid://shopify/Product/B007BM7POO',
-    handle: 'brasso-metal-polish-liquid-175ml-pack-of-8-b007bm7poo',
-    title: 'Brasso Metal Polish Liquid 175ml Pack of 8',
+    handle: 'shamas-metal-polish-liquid-175ml-pack-of-8-b007bm7poo',
+    title: 'Shamas & Sons Metal Polish Liquid 175ml Pack of 8',
     description: 'Wholesale 8-pack of 175ml bottles. Designed for property managers, cleaners, and restorers.',
     descriptionHtml: '<p>Wholesale 8-pack of 175ml bottles. Designed for property managers, cleaners, and restorers.</p>',
     productType: 'Liquid',
-    vendor: 'Brasso',
+    vendor: 'Shamas & Sons',
     tags: ['liquid', 'multipack', 'bulk'],
     availableForSale: true,
     priceRange: {
@@ -695,7 +695,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
     },
     featuredImage: {
       url: 'https://m.media-amazon.com/images/I/81+Nd-3WPbL._AC_UL960_FMwebp_QL65_.jpg',
-      altText: 'Brasso Metal Polish Liquid 175ml Pack of 8',
+      altText: 'Shamas & Sons Metal Polish Liquid 175ml Pack of 8',
       width: 480,
       height: 480
     },
@@ -704,7 +704,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
         {
           node: {
             url: 'https://m.media-amazon.com/images/I/81+Nd-3WPbL._AC_UL960_FMwebp_QL65_.jpg',
-            altText: 'Brasso Metal Polish Liquid 175ml Pack of 8',
+            altText: 'Shamas & Sons Metal Polish Liquid 175ml Pack of 8',
             width: 480,
             height: 480
           }
@@ -723,7 +723,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
             compareAtPrice: { amount: '47.92', currencyCode: 'GBP' },
             image: {
               url: 'https://m.media-amazon.com/images/I/81+Nd-3WPbL._AC_UL960_FMwebp_QL65_.jpg',
-              altText: 'Brasso Metal Polish Liquid 175ml Pack of 8',
+              altText: 'Shamas & Sons Metal Polish Liquid 175ml Pack of 8',
               width: 480,
               height: 480
             }
@@ -732,16 +732,16 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
       ]
     },
     options: [{ id: 'opt-12', name: 'Format', values: ['Pack of 8'] }],
-    seo: { title: 'Brasso Metal Polish Liquid 175ml Pack of 8', description: 'Buy Brasso 175ml 8-Pack online' }
+    seo: { title: 'Shamas & Sons Metal Polish Liquid 175ml Pack of 8', description: 'Buy Shamas & Sons 175ml 8-Pack online' }
   },
   {
     id: 'gid://shopify/Product/B0D1KVC63X',
-    handle: 'brasso-metal-polish-wadding-12x75g-b0d1kvc63x',
-    title: 'Brasso Metal Polish Wadding 12 x 75g',
+    handle: 'shamas-metal-polish-wadding-12x75g-b0d1kvc63x',
+    title: 'Shamas & Sons Metal Polish Wadding 12 x 75g',
     description: 'Bulk case of 12 x 75g tins. Pre-soaked cotton wadding for mess-free tarnish removal on copper, brass, chrome, and steel.',
     descriptionHtml: '<p>Bulk case of 12 x 75g tins. Pre-soaked cotton wadding for mess-free tarnish removal on copper, brass, chrome, and steel.</p>',
     productType: 'Wipe',
-    vendor: 'Brasso',
+    vendor: 'Shamas & Sons',
     tags: ['wadding', 'wipe', 'bulk'],
     availableForSale: true,
     priceRange: {
@@ -754,7 +754,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
     },
     featuredImage: {
       url: 'https://m.media-amazon.com/images/I/81bODTX2BKL._AC_UL960_FMwebp_QL65_.jpg',
-      altText: 'Brasso Metal Polish Wadding 12 x 75g',
+      altText: 'Shamas & Sons Metal Polish Wadding 12 x 75g',
       width: 480,
       height: 480
     },
@@ -763,7 +763,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
         {
           node: {
             url: 'https://m.media-amazon.com/images/I/81bODTX2BKL._AC_UL960_FMwebp_QL65_.jpg',
-            altText: 'Brasso Metal Polish Wadding 12 x 75g',
+            altText: 'Shamas & Sons Metal Polish Wadding 12 x 75g',
             width: 480,
             height: 480
           }
@@ -782,7 +782,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
             compareAtPrice: { amount: '59.88', currencyCode: 'GBP' },
             image: {
               url: 'https://m.media-amazon.com/images/I/81bODTX2BKL._AC_UL960_FMwebp_QL65_.jpg',
-              altText: 'Brasso Metal Polish Wadding 12 x 75g',
+              altText: 'Shamas & Sons Metal Polish Wadding 12 x 75g',
               width: 480,
               height: 480
             }
@@ -791,16 +791,16 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
       ]
     },
     options: [{ id: 'opt-13', name: 'Size', values: ['12 x 75g Box'] }],
-    seo: { title: 'Brasso Metal Polish Wadding 12 x 75g', description: 'Buy Brasso Wadding 12-Pack Bulk Case online' }
+    seo: { title: 'Shamas & Sons Metal Polish Wadding 12 x 75g', description: 'Buy Shamas & Sons Wadding 12-Pack Bulk Case online' }
   },
   {
     id: 'gid://shopify/Product/B00BONJE5Y',
-    handle: 'brasso-metal-polish-gorgeous-gloss-17ml-box-of-4-b00bonje5y',
-    title: 'Brasso Metal Polish - Gorgeous Gloss 17ml (Box of 4)',
+    handle: 'shamas-metal-polish-gorgeous-gloss-17ml-box-of-4-b00bonje5y',
+    title: 'Shamas & Sons Metal Polish - Gorgeous Gloss 17ml (Box of 4)',
     description: 'Pocket-sized metal polish offering gorgeous gloss with radiant shine and dazzling effect.',
     descriptionHtml: '<p>Pocket-sized metal polish offering gorgeous gloss with radiant shine and dazzling effect.</p>',
     productType: 'Polish',
-    vendor: 'Brasso',
+    vendor: 'Shamas & Sons',
     tags: ['polish', 'mini'],
     availableForSale: true,
     priceRange: {
@@ -813,7 +813,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
     },
     featuredImage: {
       url: 'https://m.media-amazon.com/images/I/815fhQPtz9L._AC_UL960_FMwebp_QL65_.jpg',
-      altText: 'Brasso Metal Polish - Gorgeous Gloss 17ml (Box of 4)',
+      altText: 'Shamas & Sons Metal Polish - Gorgeous Gloss 17ml (Box of 4)',
       width: 480,
       height: 480
     },
@@ -822,7 +822,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
         {
           node: {
             url: 'https://m.media-amazon.com/images/I/815fhQPtz9L._AC_UL960_FMwebp_QL65_.jpg',
-            altText: 'Brasso Metal Polish - Gorgeous Gloss 17ml (Box of 4)',
+            altText: 'Shamas & Sons Metal Polish - Gorgeous Gloss 17ml (Box of 4)',
             width: 480,
             height: 480
           }
@@ -841,7 +841,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
             compareAtPrice: null,
             image: {
               url: 'https://m.media-amazon.com/images/I/815fhQPtz9L._AC_UL960_FMwebp_QL65_.jpg',
-              altText: 'Brasso Metal Polish - Gorgeous Gloss 17ml (Box of 4)',
+              altText: 'Shamas & Sons Metal Polish - Gorgeous Gloss 17ml (Box of 4)',
               width: 480,
               height: 480
             }
@@ -850,16 +850,16 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
       ]
     },
     options: [{ id: 'opt-14', name: 'Size', values: ['Box of 4'] }],
-    seo: { title: 'Brasso Metal Polish - Gorgeous Gloss 17ml (Box of 4)', description: 'Buy Brasso Gorgeous Gloss Box of 4 online' }
+    seo: { title: 'Shamas & Sons Metal Polish - Gorgeous Gloss 17ml (Box of 4)', description: 'Buy Shamas & Sons Gorgeous Gloss Box of 4 online' }
   },
   {
     id: 'gid://shopify/Product/B0DB219PB9',
-    handle: 'brasso-metal-polish-liquid-1l-pack-of-3-b0db219pb9',
-    title: 'Brasso Metal Polish Liquid, 1L (Pack of 3)',
+    handle: 'shamas-metal-polish-liquid-1l-pack-of-3-b0db219pb9',
+    title: 'Shamas & Sons Metal Polish Liquid, 1L (Pack of 3)',
     description: 'Bulk 3-pack of 1L bottles. Ideal for heavy metal cleaning, industrial upkeep, and commercial environments.',
     descriptionHtml: '<p>Bulk 3-pack of 1L bottles. Ideal for heavy metal cleaning, industrial upkeep, and commercial environments.</p>',
     productType: 'Liquid',
-    vendor: 'Brasso',
+    vendor: 'Shamas & Sons',
     tags: ['liquid', 'bulk', 'multipack'],
     availableForSale: true,
     priceRange: {
@@ -872,7 +872,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
     },
     featuredImage: {
       url: 'https://m.media-amazon.com/images/I/81MwbVMEh4L._AC_UL960_FMwebp_QL65_.jpg',
-      altText: 'Brasso Metal Polish Liquid, 1L (Pack of 3)',
+      altText: 'Shamas & Sons Metal Polish Liquid, 1L (Pack of 3)',
       width: 480,
       height: 480
     },
@@ -881,7 +881,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
         {
           node: {
             url: 'https://m.media-amazon.com/images/I/81MwbVMEh4L._AC_UL960_FMwebp_QL65_.jpg',
-            altText: 'Brasso Metal Polish Liquid, 1L (Pack of 3)',
+            altText: 'Shamas & Sons Metal Polish Liquid, 1L (Pack of 3)',
             width: 480,
             height: 480
           }
@@ -900,7 +900,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
             compareAtPrice: { amount: '47.99', currencyCode: 'GBP' },
             image: {
               url: 'https://m.media-amazon.com/images/I/81MwbVMEh4L._AC_UL960_FMwebp_QL65_.jpg',
-              altText: 'Brasso Metal Polish Liquid, 1L (Pack of 3)',
+              altText: 'Shamas & Sons Metal Polish Liquid, 1L (Pack of 3)',
               width: 480,
               height: 480
             }
@@ -909,16 +909,16 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
       ]
     },
     options: [{ id: 'opt-15', name: 'Size', values: ['1L Pack of 3'] }],
-    seo: { title: 'Brasso Metal Polish Liquid, 1L (Pack of 3)', description: 'Buy Brasso 1L Pack of 3 online' }
+    seo: { title: 'Shamas & Sons Metal Polish Liquid, 1L (Pack of 3)', description: 'Buy Shamas & Sons 1L Pack of 3 online' }
   },
   {
     id: 'gid://shopify/Product/B07MMFXSM6',
-    handle: 'brasso-metal-polish-liquid-175ml-multi-metal-restorer-b07mmfxsm6',
-    title: 'Brasso Metal Polish Liquid 175ml (Multi-Metal Restorer)',
+    handle: 'shamas-metal-polish-liquid-175ml-multi-metal-restorer-b07mmfxsm6',
+    title: 'Shamas & Sons Metal Polish Liquid 175ml (Multi-Metal Restorer)',
     description: 'Restores shine on brass, copper, stainless steel, chrome & pewter. Removes tarnish, oxidation & dirt effortlessly.',
     descriptionHtml: '<p>Restores shine on brass, copper, stainless steel, chrome & pewter. Removes tarnish, oxidation & dirt effortlessly.</p>',
     productType: 'Liquid',
-    vendor: 'Brasso',
+    vendor: 'Shamas & Sons',
     tags: ['liquid', 'polish', 'restorer'],
     availableForSale: true,
     priceRange: {
@@ -931,7 +931,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
     },
     featuredImage: {
       url: 'https://m.media-amazon.com/images/I/61Syipok7KL._AC_UL960_FMwebp_QL65_.jpg',
-      altText: 'Brasso Metal Polish Liquid 175ml (Multi-Metal Restorer)',
+      altText: 'Shamas & Sons Metal Polish Liquid 175ml (Multi-Metal Restorer)',
       width: 480,
       height: 480
     },
@@ -940,7 +940,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
         {
           node: {
             url: 'https://m.media-amazon.com/images/I/61Syipok7KL._AC_UL960_FMwebp_QL65_.jpg',
-            altText: 'Brasso Metal Polish Liquid 175ml (Multi-Metal Restorer)',
+            altText: 'Shamas & Sons Metal Polish Liquid 175ml (Multi-Metal Restorer)',
             width: 480,
             height: 480
           }
@@ -959,7 +959,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
             compareAtPrice: null,
             image: {
               url: 'https://m.media-amazon.com/images/I/61Syipok7KL._AC_UL960_FMwebp_QL65_.jpg',
-              altText: 'Brasso Metal Polish Liquid 175ml (Multi-Metal Restorer)',
+              altText: 'Shamas & Sons Metal Polish Liquid 175ml (Multi-Metal Restorer)',
               width: 480,
               height: 480
             }
@@ -968,16 +968,16 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
       ]
     },
     options: [{ id: 'opt-16', name: 'Size', values: ['175 ml'] }],
-    seo: { title: 'Brasso Metal Polish Liquid 175ml (Multi-Metal Restorer)', description: 'Buy Brasso Metal Polish Restorer 175ml online' }
+    seo: { title: 'Shamas & Sons Metal Polish Liquid 175ml (Multi-Metal Restorer)', description: 'Buy Shamas & Sons Metal Polish Restorer 175ml online' }
   },
   {
     id: 'gid://shopify/Product/B0044RRNIM',
-    handle: 'brasso-gadgetcare-50ml-b0044rrnim',
-    title: 'Brasso GadgetCare 50 ml',
+    handle: 'shamas-gadgetcare-50ml-b0044rrnim',
+    title: 'Shamas & Sons GadgetCare 50 ml',
     description: 'Specialized precision cleaner for electronics, smooth metals, screens, and fine handheld gadgets.',
     descriptionHtml: '<p>Specialized precision cleaner for electronics, smooth metals, screens, and fine handheld gadgets.</p>',
     productType: 'Liquid',
-    vendor: 'Brasso',
+    vendor: 'Shamas & Sons',
     tags: ['liquid', 'gadgetcare', 'precision'],
     availableForSale: true,
     priceRange: {
@@ -990,7 +990,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
     },
     featuredImage: {
       url: 'https://m.media-amazon.com/images/I/61KNUNXpJEL._AC_UL960_FMwebp_QL65_.jpg',
-      altText: 'Brasso GadgetCare 50 ml',
+      altText: 'Shamas & Sons GadgetCare 50 ml',
       width: 480,
       height: 480
     },
@@ -999,7 +999,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
         {
           node: {
             url: 'https://m.media-amazon.com/images/I/61KNUNXpJEL._AC_UL960_FMwebp_QL65_.jpg',
-            altText: 'Brasso GadgetCare 50 ml',
+            altText: 'Shamas & Sons GadgetCare 50 ml',
             width: 480,
             height: 480
           }
@@ -1018,7 +1018,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
             compareAtPrice: null,
             image: {
               url: 'https://m.media-amazon.com/images/I/61KNUNXpJEL._AC_UL960_FMwebp_QL65_.jpg',
-              altText: 'Brasso GadgetCare 50 ml',
+              altText: 'Shamas & Sons GadgetCare 50 ml',
               width: 480,
               height: 480
             }
@@ -1027,16 +1027,16 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
       ]
     },
     options: [{ id: 'opt-17', name: 'Size', values: ['50 ml'] }],
-    seo: { title: 'Brasso GadgetCare 50 ml', description: 'Buy Brasso GadgetCare 50ml online' }
+    seo: { title: 'Shamas & Sons GadgetCare 50 ml', description: 'Buy Shamas & Sons GadgetCare 50ml online' }
   },
   {
     id: 'gid://shopify/Product/B07R16DKNH',
-    handle: 'brasso-metal-polisher-wadding-2x175ml-b07r16dknh',
-    title: 'Brasso Metal Polisher Wadding 2 x 175ml',
+    handle: 'shamas-metal-polisher-wadding-2x175ml-b07r16dknh',
+    title: 'Shamas & Sons Metal Polisher Wadding 2 x 175ml',
     description: 'Twin canister metal polish wadding pack for brass, copper, stainless steel & chrome.',
     descriptionHtml: '<p>Twin canister metal polish wadding pack for brass, copper, stainless steel & chrome.</p>',
     productType: 'Wipe',
-    vendor: 'Brasso',
+    vendor: 'Shamas & Sons',
     tags: ['wadding', 'wipe', 'multipack'],
     availableForSale: true,
     priceRange: {
@@ -1049,7 +1049,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
     },
     featuredImage: {
       url: 'https://m.media-amazon.com/images/I/81lb1m1V67L._AC_UL960_FMwebp_QL65_.jpg',
-      altText: 'Brasso Metal Polisher Wadding 2 x 175ml',
+      altText: 'Shamas & Sons Metal Polisher Wadding 2 x 175ml',
       width: 480,
       height: 480
     },
@@ -1058,7 +1058,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
         {
           node: {
             url: 'https://m.media-amazon.com/images/I/81lb1m1V67L._AC_UL960_FMwebp_QL65_.jpg',
-            altText: 'Brasso Metal Polisher Wadding 2 x 175ml',
+            altText: 'Shamas & Sons Metal Polisher Wadding 2 x 175ml',
             width: 480,
             height: 480
           }
@@ -1077,7 +1077,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
             compareAtPrice: null,
             image: {
               url: 'https://m.media-amazon.com/images/I/81lb1m1V67L._AC_UL960_FMwebp_QL65_.jpg',
-              altText: 'Brasso Metal Polisher Wadding 2 x 175ml',
+              altText: 'Shamas & Sons Metal Polisher Wadding 2 x 175ml',
               width: 480,
               height: 480
             }
@@ -1086,7 +1086,7 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
       ]
     },
     options: [{ id: 'opt-18', name: 'Size', values: ['2 x 175ml'] }],
-    seo: { title: 'Brasso Metal Polisher Wadding 2 x 175ml', description: 'Buy Brasso Metal Polisher Wadding 2 x 175ml online' }
+    seo: { title: 'Shamas & Sons Metal Polisher Wadding 2 x 175ml', description: 'Buy Shamas & Sons Metal Polisher Wadding 2 x 175ml online' }
   }
 ]
 
@@ -1095,7 +1095,7 @@ const MOCK_COLLECTIONS: ShopifyCollection[] = [
     id: 'gid://shopify/Collection/1',
     handle: 'all-products',
     title: 'All Products',
-    description: 'Explore our complete line of Brasso metal care products.',
+    description: 'Explore our complete line of Shamas & Sons metal care products.',
     image: {
       url: '/images/products/brasso-175ml-single.png',
       altText: 'All Products',
