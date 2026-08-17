@@ -1,7 +1,7 @@
 'use client'
 
 import { useRouter, useSearchParams } from 'next/navigation'
-import { SlidersHorizontal, ChevronDown } from 'lucide-react'
+import { SlidersHorizontal, ChevronDown, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
@@ -17,6 +17,14 @@ const sortOptions = [
   { value: 'price-desc', label: 'Price: High to Low' },
   { value: 'title-asc', label: 'A-Z' },
   { value: 'title-desc', label: 'Z-A' },
+]
+
+const categoryOptions = [
+  { value: null, label: 'All Products' },
+  { value: 'liquid', label: 'Liquids' },
+  { value: 'wipe', label: 'Wadding & Wipes' },
+  { value: 'multipack', label: 'Multipacks' },
+  { value: 'polish', label: 'Gel & Polish' },
 ]
 
 interface ProductFiltersProps {
@@ -35,46 +43,86 @@ export function ProductFilters({ currentSort, currentType }: ProductFiltersProps
     } else {
       params.delete(key)
     }
-    router.push(`/products?${params.toString()}`)
+    const queryString = params.toString()
+    router.push(`/products${queryString ? `?${queryString}` : ''}`)
   }
 
   const currentSortLabel =
     sortOptions.find((opt) => opt.value === currentSort)?.label || 'Best Selling'
 
-  return (
-    <div className="flex items-center justify-between mb-8 pb-4 border-b border-border">
-      <div className="flex items-center gap-2">
-        <SlidersHorizontal className="w-4 h-4 text-muted-foreground" />
-        <span className="text-sm text-muted-foreground">Filters</span>
-        {currentType && (
-          <button
-            onClick={() => updateFilters('type', null)}
-            className="ml-2 px-2 py-1 bg-secondary text-sm rounded hover:bg-secondary/80 transition-colors"
-          >
-            {currentType} &times;
-          </button>
-        )}
-      </div>
+  const hasActiveFilters = Boolean(currentType || (currentSort && currentSort !== 'best-selling'))
 
-      <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <Button variant="outline" className="gap-2">
-            Sort: {currentSortLabel}
-            <ChevronDown className="w-4 h-4" />
-          </Button>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent align="end" className="w-48">
-          {sortOptions.map((option) => (
-            <DropdownMenuItem
-              key={option.value}
-              onClick={() => updateFilters('sort', option.value)}
-              className={currentSort === option.value ? 'bg-secondary' : ''}
+  const clearAllFilters = () => {
+    router.push('/products')
+  }
+
+  return (
+    <div className="mb-8 space-y-4 pb-4 border-b border-border">
+      {/* Category Pills & Sorting Bar */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        {/* Category Pills */}
+        <div className="flex items-center gap-2 overflow-x-auto pb-2 sm:pb-0 scrollbar-none">
+          <div className="flex items-center gap-1.5 text-muted-foreground mr-1 text-xs uppercase tracking-wider font-semibold">
+            <SlidersHorizontal className="w-3.5 h-3.5" />
+            <span className="hidden md:inline">Category:</span>
+          </div>
+          {categoryOptions.map((cat) => {
+            const isSelected = (!currentType && cat.value === null) || currentType === cat.value
+            return (
+              <button
+                key={cat.label}
+                onClick={() => updateFilters('type', cat.value)}
+                className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider whitespace-nowrap transition-all duration-200 ${
+                  isSelected
+                    ? 'bg-primary text-primary-foreground shadow-md'
+                    : 'bg-secondary/60 text-foreground hover:bg-secondary hover:text-primary border border-border/40'
+                }`}
+              >
+                {cat.label}
+              </button>
+            )
+          })}
+        </div>
+
+        {/* Sort & Reset Actions */}
+        <div className="flex items-center gap-2 self-end sm:self-auto">
+          {hasActiveFilters && (
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={clearAllFilters}
+              className="text-xs text-muted-foreground hover:text-foreground gap-1 h-9 px-3"
             >
-              {option.label}
-            </DropdownMenuItem>
-          ))}
-        </DropdownMenuContent>
-      </DropdownMenu>
+              <X className="w-3.5 h-3.5" /> Reset
+            </Button>
+          )}
+
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline" className="gap-2 h-9 text-xs font-semibold uppercase tracking-wider">
+                Sort: {currentSortLabel}
+                <ChevronDown className="w-3.5 h-3.5" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="w-48 bg-card border border-border">
+              {sortOptions.map((option) => (
+                <DropdownMenuItem
+                  key={option.value}
+                  onClick={() => updateFilters('sort', option.value === 'best-selling' ? null : option.value)}
+                  className={`cursor-pointer text-xs font-medium uppercase tracking-wider ${
+                    (currentSort === option.value || (!currentSort && option.value === 'best-selling'))
+                      ? 'bg-primary/10 text-primary font-bold'
+                      : ''
+                  }`}
+                >
+                  {option.label}
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
+      </div>
     </div>
   )
 }
+

@@ -755,14 +755,56 @@ export async function getProducts(options?: {
     return data.products.edges.map((edge) => edge.node)
   } catch {
     let result = [...MOCK_PRODUCTS]
+
+    // Query & Product Type Filtering
     if (options?.query) {
-      const q = options.query.toLowerCase()
-      result = result.filter(
-        (p) =>
-          p.title.toLowerCase().includes(q) ||
-          p.description.toLowerCase().includes(q)
-      )
+      const q = options.query.trim().toLowerCase()
+      if (q.startsWith('product_type:')) {
+        const typeValue = q.replace('product_type:', '').trim().toLowerCase()
+        result = result.filter((p) => {
+          const pType = p.productType?.toLowerCase() || ''
+          const pTags = p.tags?.map((t) => t.toLowerCase()) || []
+          return pType.includes(typeValue) || pTags.includes(typeValue) || pTags.some(t => t.includes(typeValue))
+        })
+      } else if (q.startsWith('tag:')) {
+        const tagValue = q.replace('tag:', '').trim().toLowerCase()
+        result = result.filter((p) =>
+          p.tags?.some((t) => t.toLowerCase() === tagValue)
+        )
+      } else {
+        result = result.filter(
+          (p) =>
+            p.title.toLowerCase().includes(q) ||
+            p.description.toLowerCase().includes(q) ||
+            p.productType?.toLowerCase().includes(q) ||
+            p.tags?.some((t) => t.toLowerCase().includes(q))
+        )
+      }
     }
+
+    // Sorting
+    if (options?.sortKey) {
+      const { sortKey, reverse } = options
+      result.sort((a, b) => {
+        let cmp = 0
+        if (sortKey === 'PRICE') {
+          const priceA = parseFloat(a.priceRange.minVariantPrice.amount) || 0
+          const priceB = parseFloat(b.priceRange.minVariantPrice.amount) || 0
+          cmp = priceA - priceB
+        } else if (sortKey === 'TITLE') {
+          cmp = a.title.localeCompare(b.title)
+        } else if (sortKey === 'CREATED_AT') {
+          cmp = a.id.localeCompare(b.id)
+        } else {
+          // BEST_SELLING
+          const aIsBest = a.tags?.includes('best-seller') ? 1 : 0
+          const bIsBest = b.tags?.includes('best-seller') ? 1 : 0
+          cmp = bIsBest - aIsBest
+        }
+        return reverse ? -cmp : cmp
+      })
+    }
+
     return result.slice(0, options?.first ?? 20)
   }
 }
