@@ -25,11 +25,10 @@ const domain = process.env.NEXT_PUBLIC_SHOPIFY_DOMAIN
 const storefrontToken = process.env.NEXT_PUBLIC_SHOPIFY_STOREFRONT_TOKEN
 const apiVersion = '2025-01'
 
-// Mock Data Database for Local Development & Testing with Unique Variant Images
-const MOCK_PRODUCTS_BASE: ShopifyProduct[] = [
+const MOCK_PRODUCTS: ShopifyProduct[] = [
   {
-    id: 'gid://shopify/Product/1',
-    handle: 'brasso-metal-polish-175ml',
+    id: 'gid://shopify/Product/B002G0BULU',
+    handle: 'brasso-metal-polish-175ml-b002g0bulu',
     title: 'Brasso Metal Polish, 175 ml',
     description: 'Liquid metal polish for brass, copper, chrome, and stainless steel. Restores brilliance and protects against tarnish.',
     descriptionHtml: '<p>Liquid metal polish for brass, copper, chrome, and stainless steel. Restores brilliance and protects against tarnish.</p>',
@@ -46,19 +45,19 @@ const MOCK_PRODUCTS_BASE: ShopifyProduct[] = [
       maxVariantPrice: { amount: '6.99', currencyCode: 'GBP' }
     },
     featuredImage: {
-      url: '/images/products/brasso-175ml-single.png',
+      url: 'https://m.media-amazon.com/images/I/61Ah67TnasL._AC_UL960_FMwebp_QL65_.jpg',
       altText: 'Brasso Metal Polish, 175 ml',
-      width: 318,
-      height: 785
+      width: 480,
+      height: 480
     },
     images: {
       edges: [
         {
           node: {
-            url: '/images/products/brasso-175ml-single.png',
+            url: 'https://m.media-amazon.com/images/I/61Ah67TnasL._AC_UL960_FMwebp_QL65_.jpg',
             altText: 'Brasso Metal Polish, 175 ml',
-            width: 318,
-            height: 785
+            width: 480,
+            height: 480
           }
         }
       ]
@@ -67,28 +66,28 @@ const MOCK_PRODUCTS_BASE: ShopifyProduct[] = [
       edges: [
         {
           node: {
-            id: 'gid://shopify/ProductVariant/101',
-            title: 'Default Title',
+            id: 'gid://shopify/ProductVariant/v-B002G0BULU',
+            title: '175 ml',
             availableForSale: true,
-            selectedOptions: [{ name: 'Title', value: 'Default Title' }],
+            selectedOptions: [{ name: 'Size', value: '175 ml' }],
             price: { amount: '5.99', currencyCode: 'GBP' },
             compareAtPrice: { amount: '6.99', currencyCode: 'GBP' },
             image: {
-              url: '/images/products/brasso-175ml-single.png',
+              url: 'https://m.media-amazon.com/images/I/61Ah67TnasL._AC_UL960_FMwebp_QL65_.jpg',
               altText: 'Brasso Metal Polish, 175 ml',
-              width: 318,
-              height: 785
+              width: 480,
+              height: 480
             }
           }
         }
       ]
     },
-    options: [{ id: 'opt-1', name: 'Title', values: ['Default Title'] }],
-    seo: { title: 'Brasso Metal Polish, 175 ml', description: 'Buy Brasso Metal Polish online' }
+    options: [{ id: 'opt-1', name: 'Size', values: ['175 ml'] }],
+    seo: { title: 'Brasso Metal Polish, 175 ml', description: 'Buy Brasso Metal Polish 175ml online' }
   },
   {
-    id: 'gid://shopify/Product/2',
-    handle: 'brasso-metal-polish-wadding-75g',
+    id: 'gid://shopify/Product/B00BE27CYK',
+    handle: 'brasso-metal-polish-wadding-75g-b00be27cyk',
     title: 'Brasso Metal Polish Wadding, 75g',
     description: 'Pre-soaked cotton wadding for easy tarnish removal and shine restoration. No liquid spills, easy to use.',
     descriptionHtml: '<p>Pre-soaked cotton wadding for easy tarnish removal and shine restoration. No liquid spills, easy to use.</p>',
@@ -105,18 +104,18 @@ const MOCK_PRODUCTS_BASE: ShopifyProduct[] = [
       maxVariantPrice: { amount: '5.99', currencyCode: 'GBP' }
     },
     featuredImage: {
-      url: '/images/products/brasso-wadding-75g.webp',
+      url: 'https://m.media-amazon.com/images/I/71hkhaLTBzL._AC_UL960_FMwebp_QL65_.jpg',
       altText: 'Brasso Metal Polish Wadding, 75g',
-      width: 349,
+      width: 480,
       height: 480
     },
     images: {
       edges: [
         {
           node: {
-            url: '/images/products/brasso-wadding-75g.webp',
+            url: 'https://m.media-amazon.com/images/I/71hkhaLTBzL._AC_UL960_FMwebp_QL65_.jpg',
             altText: 'Brasso Metal Polish Wadding, 75g',
-            width: 349,
+            width: 480,
             height: 480
           }
         }
@@ -126,56 +125,56 @@ const MOCK_PRODUCTS_BASE: ShopifyProduct[] = [
       edges: [
         {
           node: {
-            id: 'gid://shopify/ProductVariant/201',
-            title: 'Default Title',
+            id: 'gid://shopify/ProductVariant/v-B00BE27CYK',
+            title: '75g',
             availableForSale: true,
-            selectedOptions: [{ name: 'Title', value: 'Default Title' }],
+            selectedOptions: [{ name: 'Size', value: '75g' }],
             price: { amount: '4.99', currencyCode: 'GBP' },
             compareAtPrice: { amount: '5.99', currencyCode: 'GBP' },
             image: {
-              url: '/images/products/brasso-wadding-75g.webp',
+              url: 'https://m.media-amazon.com/images/I/71hkhaLTBzL._AC_UL960_FMwebp_QL65_.jpg',
               altText: 'Brasso Metal Polish Wadding, 75g',
-              width: 349,
+              width: 480,
               height: 480
             }
           }
         }
       ]
     },
-    options: [{ id: 'opt-2', name: 'Title', values: ['Default Title'] }],
+    options: [{ id: 'opt-2', name: 'Size', values: ['75g'] }],
     seo: { title: 'Brasso Metal Polish Wadding, 75g', description: 'Buy Brasso Metal Polish Wadding online' }
   },
   {
-    id: 'gid://shopify/Product/3',
-    handle: 'brasso-metal-polish-175ml-pack-of-4',
-    title: 'Brasso Metal Polish 175ml (Pack of 4)',
-    description: 'Value pack of four 175ml bottles. Restore gloss with gorgeous radiant shine and dazzling effect.',
-    descriptionHtml: '<p>Value pack of four 175ml bottles. Restore gloss with gorgeous radiant shine and dazzling effect.</p>',
+    id: 'gid://shopify/Product/B01EX17UHM',
+    handle: 'brasso-metal-polish-175ml-pack-of-2-b01ex17uhm',
+    title: 'Brasso Metal Polish 175ml (Pack of 2)',
+    description: 'Value twin-pack of 175ml bottles. Restores brilliance and delivers long-lasting protection across all household metals.',
+    descriptionHtml: '<p>Value twin-pack of 175ml bottles. Restores brilliance and delivers long-lasting protection across all household metals.</p>',
     productType: 'Liquid',
     vendor: 'Brasso',
     tags: ['liquid', 'multipack'],
     availableForSale: true,
     priceRange: {
-      minVariantPrice: { amount: '19.99', currencyCode: 'GBP' },
-      maxVariantPrice: { amount: '19.99', currencyCode: 'GBP' }
+      minVariantPrice: { amount: '9.99', currencyCode: 'GBP' },
+      maxVariantPrice: { amount: '9.99', currencyCode: 'GBP' }
     },
     compareAtPriceRange: {
-      minVariantPrice: { amount: '23.96', currencyCode: 'GBP' },
-      maxVariantPrice: { amount: '23.96', currencyCode: 'GBP' }
+      minVariantPrice: { amount: '11.98', currencyCode: 'GBP' },
+      maxVariantPrice: { amount: '11.98', currencyCode: 'GBP' }
     },
     featuredImage: {
-      url: '/images/products/brasso-175ml-pack-of-4.webp',
-      altText: 'Brasso Metal Polish 175ml (Pack of 4)',
-      width: 473,
+      url: 'https://m.media-amazon.com/images/I/81CfGXgkE-L._AC_UL960_FMwebp_QL65_.jpg',
+      altText: 'Brasso Metal Polish 175ml (Pack of 2)',
+      width: 480,
       height: 480
     },
     images: {
       edges: [
         {
           node: {
-            url: '/images/products/brasso-175ml-pack-of-4.webp',
-            altText: 'Brasso Metal Polish 175ml (Pack of 4)',
-            width: 473,
+            url: 'https://m.media-amazon.com/images/I/81CfGXgkE-L._AC_UL960_FMwebp_QL65_.jpg',
+            altText: 'Brasso Metal Polish 175ml (Pack of 2)',
+            width: 480,
             height: 480
           }
         }
@@ -185,31 +184,31 @@ const MOCK_PRODUCTS_BASE: ShopifyProduct[] = [
       edges: [
         {
           node: {
-            id: 'gid://shopify/ProductVariant/301',
-            title: 'Default Title',
+            id: 'gid://shopify/ProductVariant/v-B01EX17UHM',
+            title: 'Pack of 2',
             availableForSale: true,
-            selectedOptions: [{ name: 'Title', value: 'Default Title' }],
-            price: { amount: '19.99', currencyCode: 'GBP' },
-            compareAtPrice: { amount: '23.96', currencyCode: 'GBP' },
+            selectedOptions: [{ name: 'Format', value: 'Pack of 2' }],
+            price: { amount: '9.99', currencyCode: 'GBP' },
+            compareAtPrice: { amount: '11.98', currencyCode: 'GBP' },
             image: {
-              url: '/images/products/brasso-175ml-pack-of-4.webp',
-              altText: 'Brasso Metal Polish 175ml (Pack of 4)',
-              width: 473,
+              url: 'https://m.media-amazon.com/images/I/81CfGXgkE-L._AC_UL960_FMwebp_QL65_.jpg',
+              altText: 'Brasso Metal Polish 175ml (Pack of 2)',
+              width: 480,
               height: 480
             }
           }
         }
       ]
     },
-    options: [{ id: 'opt-3', name: 'Title', values: ['Default Title'] }],
-    seo: { title: 'Brasso Metal Polish 175ml (Pack of 4)', description: 'Buy Brasso multipack online' }
+    options: [{ id: 'opt-3', name: 'Format', values: ['Pack of 2'] }],
+    seo: { title: 'Brasso Metal Polish 175ml (Pack of 2)', description: 'Buy Brasso Metal Polish Twin Pack online' }
   },
   {
-    id: 'gid://shopify/Product/4',
-    handle: 'brasso-b150-metal-polish-150ml',
+    id: 'gid://shopify/Product/B0798LB9KW',
+    handle: 'brasso-b150-metal-polish-150ml-b0798lb9kw',
     title: 'Brasso B150 Metal Polish, 150 mL',
-    description: 'Classic metal polish liquid in a 150ml container. Removes tarnish, oxidation, and dirt.',
-    descriptionHtml: '<p>Classic metal polish liquid in a 150ml container. Removes tarnish, oxidation, and dirt.</p>',
+    description: 'Classic metal polish liquid in a 150ml container. Removes stubborn tarnish, oxidation, and dirt effortlessly.',
+    descriptionHtml: '<p>Classic metal polish liquid in a 150ml container. Removes stubborn tarnish, oxidation, and dirt effortlessly.</p>',
     productType: 'Liquid',
     vendor: 'Brasso',
     tags: ['liquid', 'polish'],
@@ -223,19 +222,19 @@ const MOCK_PRODUCTS_BASE: ShopifyProduct[] = [
       maxVariantPrice: { amount: '5.49', currencyCode: 'GBP' }
     },
     featuredImage: {
-      url: '/images/products/brasso-liquid-yellow-235ml.png',
+      url: 'https://m.media-amazon.com/images/I/61Syipok7KL._AC_UL960_FMwebp_QL65_.jpg',
       altText: 'Brasso B150 Metal Polish, 150 mL',
-      width: 320,
-      height: 779
+      width: 480,
+      height: 480
     },
     images: {
       edges: [
         {
           node: {
-            url: '/images/products/brasso-liquid-yellow-235ml.png',
+            url: 'https://m.media-amazon.com/images/I/61Syipok7KL._AC_UL960_FMwebp_QL65_.jpg',
             altText: 'Brasso B150 Metal Polish, 150 mL',
-            width: 320,
-            height: 779
+            width: 480,
+            height: 480
           }
         }
       ]
@@ -244,31 +243,31 @@ const MOCK_PRODUCTS_BASE: ShopifyProduct[] = [
       edges: [
         {
           node: {
-            id: 'gid://shopify/ProductVariant/401',
-            title: 'Default Title',
+            id: 'gid://shopify/ProductVariant/v-B0798LB9KW',
+            title: '150 mL',
             availableForSale: true,
-            selectedOptions: [{ name: 'Title', value: 'Default Title' }],
+            selectedOptions: [{ name: 'Size', value: '150 mL' }],
             price: { amount: '5.49', currencyCode: 'GBP' },
             compareAtPrice: null,
             image: {
-              url: '/images/products/brasso-liquid-yellow-235ml.png',
+              url: 'https://m.media-amazon.com/images/I/61Syipok7KL._AC_UL960_FMwebp_QL65_.jpg',
               altText: 'Brasso B150 Metal Polish, 150 mL',
-              width: 320,
-              height: 779
+              width: 480,
+              height: 480
             }
           }
         }
       ]
     },
-    options: [{ id: 'opt-4', name: 'Title', values: ['Default Title'] }],
-    seo: { title: 'Brasso B150 Metal Polish, 150 mL', description: 'Buy Brasso B150 online' }
+    options: [{ id: 'opt-4', name: 'Size', values: ['150 mL'] }],
+    seo: { title: 'Brasso B150 Metal Polish, 150 mL', description: 'Buy Brasso B150 Metal Polish online' }
   },
   {
-    id: 'gid://shopify/Product/5',
-    handle: 'brasso-metal-polish-liquid-1l-pack-of-2',
+    id: 'gid://shopify/Product/B0CSXLR79Q',
+    handle: 'brasso-metal-polish-liquid-1l-pack-of-2-b0csxlr79q',
     title: 'Brasso Metal Polish Liquid, 1L (Pack of 2)',
-    description: 'Professional-grade bulk pack for larger cleaning projects. Perfect for hospitality and maintenance teams.',
-    descriptionHtml: '<p>Professional-grade bulk pack for larger cleaning projects. Perfect for hospitality and maintenance teams.</p>',
+    description: 'Professional-grade bulk pack for larger restoration projects. Ideal for commercial bars, hospitality, and workshops.',
+    descriptionHtml: '<p>Professional-grade bulk pack for larger restoration projects. Ideal for commercial bars, hospitality, and workshops.</p>',
     productType: 'Liquid',
     vendor: 'Brasso',
     tags: ['liquid', 'bulk', 'professional'],
@@ -282,18 +281,18 @@ const MOCK_PRODUCTS_BASE: ShopifyProduct[] = [
       maxVariantPrice: { amount: '34.99', currencyCode: 'GBP' }
     },
     featuredImage: {
-      url: '/images/products/brasso-1l-pack-of-2.webp',
+      url: 'https://m.media-amazon.com/images/I/712oFUjZ0zL._AC_UL960_FMwebp_QL65_.jpg',
       altText: 'Brasso Metal Polish Liquid, 1L (Pack of 2)',
-      width: 335,
+      width: 480,
       height: 480
     },
     images: {
       edges: [
         {
           node: {
-            url: '/images/products/brasso-1l-pack-of-2.webp',
+            url: 'https://m.media-amazon.com/images/I/712oFUjZ0zL._AC_UL960_FMwebp_QL65_.jpg',
             altText: 'Brasso Metal Polish Liquid, 1L (Pack of 2)',
-            width: 335,
+            width: 480,
             height: 480
           }
         }
@@ -303,57 +302,57 @@ const MOCK_PRODUCTS_BASE: ShopifyProduct[] = [
       edges: [
         {
           node: {
-            id: 'gid://shopify/ProductVariant/501',
-            title: 'Default Title',
+            id: 'gid://shopify/ProductVariant/v-B0CSXLR79Q',
+            title: '1L Pack of 2',
             availableForSale: true,
-            selectedOptions: [{ name: 'Title', value: 'Default Title' }],
+            selectedOptions: [{ name: 'Size', value: '1L Pack of 2' }],
             price: { amount: '28.99', currencyCode: 'GBP' },
             compareAtPrice: { amount: '34.99', currencyCode: 'GBP' },
             image: {
-              url: '/images/products/brasso-1l-pack-of-2.webp',
+              url: 'https://m.media-amazon.com/images/I/712oFUjZ0zL._AC_UL960_FMwebp_QL65_.jpg',
               altText: 'Brasso Metal Polish Liquid, 1L (Pack of 2)',
-              width: 335,
+              width: 480,
               height: 480
             }
           }
         }
       ]
     },
-    options: [{ id: 'opt-5', name: 'Title', values: ['Default Title'] }],
-    seo: { title: 'Brasso Metal Polish Liquid, 1L (Pack of 2)', description: 'Buy Brasso bulk liquid online' }
+    options: [{ id: 'opt-5', name: 'Size', values: ['1L Pack of 2'] }],
+    seo: { title: 'Brasso Metal Polish Liquid, 1L (Pack of 2)', description: 'Buy Brasso Bulk Liquid 1L Pack online' }
   },
   {
-    id: 'gid://shopify/Product/6',
-    handle: 'brasso-metal-polish-liquid-175ml-pack-of-6',
-    title: 'Brasso Metal Polish Liquid 175ml, Pack of 6',
-    description: 'Multipack containing six 175ml bottles. Long-lasting shine for brass, copper, and chrome.',
-    descriptionHtml: '<p>Multipack containing six 175ml bottles. Long-lasting shine for brass, copper, and chrome.</p>',
+    id: 'gid://shopify/Product/B0082AA2G2',
+    handle: 'brasso-metal-polish-liquid-175ml-pack-of-4-b0082aa2g2',
+    title: 'Brasso Metal Polish Liquid 175ml, Pack of 4',
+    description: 'Value multipack containing four 175ml bottles. Trusted British formula providing long-lasting shine.',
+    descriptionHtml: '<p>Value multipack containing four 175ml bottles. Trusted British formula providing long-lasting shine.</p>',
     productType: 'Liquid',
     vendor: 'Brasso',
-    tags: ['liquid', 'multipack'],
+    tags: ['liquid', 'multipack', 'best-seller'],
     availableForSale: true,
     priceRange: {
-      minVariantPrice: { amount: '27.99', currencyCode: 'GBP' },
-      maxVariantPrice: { amount: '27.99', currencyCode: 'GBP' }
+      minVariantPrice: { amount: '19.99', currencyCode: 'GBP' },
+      maxVariantPrice: { amount: '19.99', currencyCode: 'GBP' }
     },
     compareAtPriceRange: {
-      minVariantPrice: { amount: '32.99', currencyCode: 'GBP' },
-      maxVariantPrice: { amount: '32.99', currencyCode: 'GBP' }
+      minVariantPrice: { amount: '23.96', currencyCode: 'GBP' },
+      maxVariantPrice: { amount: '23.96', currencyCode: 'GBP' }
     },
     featuredImage: {
-      url: '/images/products/brasso-175ml-pack-of-6.webp',
-      altText: 'Brasso Metal Polish Liquid 175ml, Pack of 6',
+      url: 'https://m.media-amazon.com/images/I/815fhQPtz9L._AC_UL960_FMwebp_QL65_.jpg',
+      altText: 'Brasso Metal Polish Liquid 175ml, Pack of 4',
       width: 480,
-      height: 417
+      height: 480
     },
     images: {
       edges: [
         {
           node: {
-            url: '/images/products/brasso-175ml-pack-of-6.webp',
-            altText: 'Brasso Metal Polish Liquid 175ml, Pack of 6',
+            url: 'https://m.media-amazon.com/images/I/815fhQPtz9L._AC_UL960_FMwebp_QL65_.jpg',
+            altText: 'Brasso Metal Polish Liquid 175ml, Pack of 4',
             width: 480,
-            height: 417
+            height: 480
           }
         }
       ]
@@ -362,28 +361,28 @@ const MOCK_PRODUCTS_BASE: ShopifyProduct[] = [
       edges: [
         {
           node: {
-            id: 'gid://shopify/ProductVariant/601',
-            title: 'Default Title',
+            id: 'gid://shopify/ProductVariant/v-B0082AA2G2',
+            title: 'Pack of 4',
             availableForSale: true,
-            selectedOptions: [{ name: 'Title', value: 'Default Title' }],
-            price: { amount: '27.99', currencyCode: 'GBP' },
-            compareAtPrice: { amount: '32.99', currencyCode: 'GBP' },
+            selectedOptions: [{ name: 'Format', value: 'Pack of 4' }],
+            price: { amount: '19.99', currencyCode: 'GBP' },
+            compareAtPrice: { amount: '23.96', currencyCode: 'GBP' },
             image: {
-              url: '/images/products/brasso-175ml-pack-of-6.webp',
-              altText: 'Brasso Metal Polish Liquid 175ml, Pack of 6',
+              url: 'https://m.media-amazon.com/images/I/815fhQPtz9L._AC_UL960_FMwebp_QL65_.jpg',
+              altText: 'Brasso Metal Polish Liquid 175ml, Pack of 4',
               width: 480,
-              height: 417
+              height: 480
             }
           }
         }
       ]
     },
-    options: [{ id: 'opt-6', name: 'Title', values: ['Default Title'] }],
-    seo: { title: 'Brasso Metal Polish Liquid 175ml, Pack of 6', description: 'Buy Brasso pack of 6 online' }
+    options: [{ id: 'opt-6', name: 'Format', values: ['Pack of 4'] }],
+    seo: { title: 'Brasso Metal Polish Liquid 175ml, Pack of 4', description: 'Buy Brasso 175ml Pack of 4 online' }
   },
   {
-    id: 'gid://shopify/Product/7',
-    handle: 'brasso-0592-w-wadding-75g',
+    id: 'gid://shopify/Product/B01MYENZTJ',
+    handle: 'brasso-0592-w-wadding-75g-b01myenztj',
     title: 'Brasso 0592-W Wadding, 75g',
     description: 'Gel format wadding canister providing a gorgeous gloss with radiant shine and dazzling effect.',
     descriptionHtml: '<p>Gel format wadding canister providing a gorgeous gloss with radiant shine and dazzling effect.</p>',
@@ -400,18 +399,18 @@ const MOCK_PRODUCTS_BASE: ShopifyProduct[] = [
       maxVariantPrice: { amount: '5.29', currencyCode: 'GBP' }
     },
     featuredImage: {
-      url: '/images/products/brasso-wadding-single.webp',
+      url: 'https://m.media-amazon.com/images/I/71Oedp3OsNL._AC_UL960_FMwebp_QL65_.jpg',
       altText: 'Brasso 0592-W Wadding, 75g',
-      width: 381,
+      width: 480,
       height: 480
     },
     images: {
       edges: [
         {
           node: {
-            url: '/images/products/brasso-wadding-single.webp',
+            url: 'https://m.media-amazon.com/images/I/71Oedp3OsNL._AC_UL960_FMwebp_QL65_.jpg',
             altText: 'Brasso 0592-W Wadding, 75g',
-            width: 381,
+            width: 480,
             height: 480
           }
         }
@@ -421,31 +420,31 @@ const MOCK_PRODUCTS_BASE: ShopifyProduct[] = [
       edges: [
         {
           node: {
-            id: 'gid://shopify/ProductVariant/701',
-            title: 'Default Title',
+            id: 'gid://shopify/ProductVariant/v-B01MYENZTJ',
+            title: '75g Gel Canister',
             availableForSale: true,
-            selectedOptions: [{ name: 'Title', value: 'Default Title' }],
+            selectedOptions: [{ name: 'Size', value: '75g Gel Canister' }],
             price: { amount: '5.29', currencyCode: 'GBP' },
             compareAtPrice: null,
             image: {
-              url: '/images/products/brasso-wadding-single.webp',
+              url: 'https://m.media-amazon.com/images/I/71Oedp3OsNL._AC_UL960_FMwebp_QL65_.jpg',
               altText: 'Brasso 0592-W Wadding, 75g',
-              width: 381,
+              width: 480,
               height: 480
             }
           }
         }
       ]
     },
-    options: [{ id: 'opt-7', name: 'Title', values: ['Default Title'] }],
-    seo: { title: 'Brasso 0592-W Wadding, 75g', description: 'Buy Brasso 0592-W online' }
+    options: [{ id: 'opt-7', name: 'Size', values: ['75g Gel Canister'] }],
+    seo: { title: 'Brasso 0592-W Wadding, 75g', description: 'Buy Brasso 0592-W Gel Wadding online' }
   },
   {
-    id: 'gid://shopify/Product/8',
-    handle: 'brasso-metal-polish-wadding-75g-granule',
+    id: 'gid://shopify/Product/B004G8YNIM',
+    handle: 'brasso-metal-polish-wadding-75g-granule-b004g8ynim',
     title: 'Brasso Metal Polish Wadding, 75g (Granule)',
-    description: 'Special wadding formulation with cleaning granules for extra tough tarnish removal.',
-    descriptionHtml: '<p>Special wadding formulation with cleaning granules for extra tough tarnish removal.</p>',
+    description: 'Special wadding formulation with micro-abrasive cleaning granules for extra tough tarnish removal.',
+    descriptionHtml: '<p>Special wadding formulation with micro-abrasive cleaning granules for extra tough tarnish removal.</p>',
     productType: 'Granule',
     vendor: 'Brasso',
     tags: ['wadding', 'granule'],
@@ -459,19 +458,19 @@ const MOCK_PRODUCTS_BASE: ShopifyProduct[] = [
       maxVariantPrice: { amount: '5.49', currencyCode: 'GBP' }
     },
     featuredImage: {
-      url: '/images/products/brasso-wadding-6pack.webp',
+      url: 'https://m.media-amazon.com/images/I/71a0vxYvO0L._AC_UL960_FMwebp_QL65_.jpg',
       altText: 'Brasso Metal Polish Wadding, 75g (Granule)',
       width: 480,
-      height: 379
+      height: 480
     },
     images: {
       edges: [
         {
           node: {
-            url: '/images/products/brasso-wadding-6pack.webp',
+            url: 'https://m.media-amazon.com/images/I/71a0vxYvO0L._AC_UL960_FMwebp_QL65_.jpg',
             altText: 'Brasso Metal Polish Wadding, 75g (Granule)',
             width: 480,
-            height: 379
+            height: 480
           }
         }
       ]
@@ -480,57 +479,116 @@ const MOCK_PRODUCTS_BASE: ShopifyProduct[] = [
       edges: [
         {
           node: {
-            id: 'gid://shopify/ProductVariant/801',
-            title: 'Default Title',
+            id: 'gid://shopify/ProductVariant/v-B004G8YNIM',
+            title: '75g Granule',
             availableForSale: true,
-            selectedOptions: [{ name: 'Title', value: 'Default Title' }],
+            selectedOptions: [{ name: 'Size', value: '75g Granule' }],
             price: { amount: '5.49', currencyCode: 'GBP' },
             compareAtPrice: null,
             image: {
-              url: '/images/products/brasso-wadding-6pack.webp',
+              url: 'https://m.media-amazon.com/images/I/71a0vxYvO0L._AC_UL960_FMwebp_QL65_.jpg',
               altText: 'Brasso Metal Polish Wadding, 75g (Granule)',
               width: 480,
-              height: 379
+              height: 480
             }
           }
         }
       ]
     },
-    options: [{ id: 'opt-8', name: 'Title', values: ['Default Title'] }],
+    options: [{ id: 'opt-8', name: 'Size', values: ['75g Granule'] }],
     seo: { title: 'Brasso Metal Polish Wadding, 75g (Granule)', description: 'Buy Brasso Wadding Granule online' }
   },
   {
-    id: 'gid://shopify/Product/9',
-    handle: 'brasso-metal-polish-liquid-1l-pack-of-3',
-    title: 'Brasso Metal Polish Liquid, 1L (Pack of 3)',
-    description: 'Value pack of three 1L bottles. Removes tarnish, oxidation, and dirt.',
-    descriptionHtml: '<p>Value pack of three 1L bottles. Removes tarnish, oxidation, and dirt.</p>',
+    id: 'gid://shopify/Product/B0F94NH8V2',
+    handle: 'brasso-liquid-1-litre-06135-b0f94nh8v2',
+    title: 'Brasso Liquid 1 Litre 06135',
+    description: 'High-volume 1-litre metal polish liquid for large surfaces, heritage fixtures, and professional restoration.',
+    descriptionHtml: '<p>High-volume 1-litre metal polish liquid for large surfaces, heritage fixtures, and professional restoration.</p>',
+    productType: 'Liquid',
+    vendor: 'Brasso',
+    tags: ['liquid', 'bulk', 'professional'],
+    availableForSale: true,
+    priceRange: {
+      minVariantPrice: { amount: '15.99', currencyCode: 'GBP' },
+      maxVariantPrice: { amount: '15.99', currencyCode: 'GBP' }
+    },
+    compareAtPriceRange: {
+      minVariantPrice: { amount: '15.99', currencyCode: 'GBP' },
+      maxVariantPrice: { amount: '15.99', currencyCode: 'GBP' }
+    },
+    featuredImage: {
+      url: 'https://m.media-amazon.com/images/I/21dsfMRmviL._AC_UL400_FMwebp_QL65_.jpg',
+      altText: 'Brasso Liquid 1 Litre 06135',
+      width: 400,
+      height: 400
+    },
+    images: {
+      edges: [
+        {
+          node: {
+            url: 'https://m.media-amazon.com/images/I/21dsfMRmviL._AC_UL400_FMwebp_QL65_.jpg',
+            altText: 'Brasso Liquid 1 Litre 06135',
+            width: 400,
+            height: 400
+          }
+        }
+      ]
+    },
+    variants: {
+      edges: [
+        {
+          node: {
+            id: 'gid://shopify/ProductVariant/v-B0F94NH8V2',
+            title: '1 Litre',
+            availableForSale: true,
+            selectedOptions: [{ name: 'Size', value: '1 Litre' }],
+            price: { amount: '15.99', currencyCode: 'GBP' },
+            compareAtPrice: null,
+            image: {
+              url: 'https://m.media-amazon.com/images/I/21dsfMRmviL._AC_UL400_FMwebp_QL65_.jpg',
+              altText: 'Brasso Liquid 1 Litre 06135',
+              width: 400,
+              height: 400
+            }
+          }
+        }
+      ]
+    },
+    options: [{ id: 'opt-9', name: 'Size', values: ['1 Litre'] }],
+    seo: { title: 'Brasso Liquid 1 Litre 06135', description: 'Buy Brasso Liquid 1 Litre online' }
+  },
+  {
+    id: 'gid://shopify/Product/B0CKXX6YCY',
+    handle: 'brasso-metal-polish-175ml-pack-of-6-b0ckxx6ycy',
+    title: 'Brasso Metal Polish, 175 ml (Pack of 6)',
+    description: 'Bulk 6-pack of 175ml bottles. The ultimate supply for workshops, cleaners, and regular brass care.',
+    descriptionHtml: '<p>Bulk 6-pack of 175ml bottles. The ultimate supply for workshops, cleaners, and regular brass care.</p>',
     productType: 'Liquid',
     vendor: 'Brasso',
     tags: ['liquid', 'multipack'],
     availableForSale: true,
     priceRange: {
-      minVariantPrice: { amount: '39.99', currencyCode: 'GBP' },
-      maxVariantPrice: { amount: '39.99', currencyCode: 'GBP' }
+      minVariantPrice: { amount: '27.99', currencyCode: 'GBP' },
+      maxVariantPrice: { amount: '27.99', currencyCode: 'GBP' }
     },
     compareAtPriceRange: {
-      minVariantPrice: { amount: '39.99', currencyCode: 'GBP' },
-      maxVariantPrice: { amount: '39.99', currencyCode: 'GBP' }
+      minVariantPrice: { amount: '35.94', currencyCode: 'GBP' },
+      maxVariantPrice: { amount: '35.94', currencyCode: 'GBP' }
     },
     featuredImage: {
-      url: '/images/products/brasso-1l-pack-of-3.webp',
-      altText: 'Brasso Metal Polish Liquid, 1L (Pack of 3)',
+      url: 'https://m.media-amazon.com/images/I/810n3lfq1zL._AC_UL960_FMwebp_QL65_.jpg',
+      altText: 'Brasso Metal Polish, 175 ml (Pack of 6)',
       width: 480,
-      height: 441
+      height: 480
     },
     images: {
       edges: [
         {
           node: {
-            url: '/images/products/brasso-1l-pack-of-3.webp',
-            altText: 'Brasso Metal Polish Liquid, 1L (Pack of 3)',
+            url: 'https://m.media-amazon.com/images/I/810n3lfq1zL._AC_UL960_FMwebp_QL65_.jpg',
+            altText: 'Brasso Metal Polish, 175 ml (Pack of 6)',
             width: 480,
-            height: 441
+            height: 480
           }
         }
       ]
@@ -539,29 +597,206 @@ const MOCK_PRODUCTS_BASE: ShopifyProduct[] = [
       edges: [
         {
           node: {
-            id: 'gid://shopify/ProductVariant/901',
-            title: 'Default Title',
+            id: 'gid://shopify/ProductVariant/v-B0CKXX6YCY',
+            title: 'Pack of 6',
             availableForSale: true,
-            selectedOptions: [{ name: 'Title', value: 'Default Title' }],
-            price: { amount: '39.99', currencyCode: 'GBP' },
-            compareAtPrice: null,
+            selectedOptions: [{ name: 'Format', value: 'Pack of 6' }],
+            price: { amount: '27.99', currencyCode: 'GBP' },
+            compareAtPrice: { amount: '35.94', currencyCode: 'GBP' },
             image: {
-              url: '/images/products/brasso-1l-pack-of-3.webp',
-              altText: 'Brasso Metal Polish Liquid, 1L (Pack of 3)',
+              url: 'https://m.media-amazon.com/images/I/810n3lfq1zL._AC_UL960_FMwebp_QL65_.jpg',
+              altText: 'Brasso Metal Polish, 175 ml (Pack of 6)',
               width: 480,
-              height: 441
+              height: 480
             }
           }
         }
       ]
     },
-    options: [{ id: 'opt-9', name: 'Title', values: ['Default Title'] }],
-    seo: { title: 'Brasso Metal Polish Liquid, 1L (Pack of 3)', description: 'Buy Brasso Pack of 3 online' }
+    options: [{ id: 'opt-10', name: 'Format', values: ['Pack of 6'] }],
+    seo: { title: 'Brasso Metal Polish, 175 ml (Pack of 6)', description: 'Buy Brasso Metal Polish Pack of 6 online' }
   },
   {
-    id: 'gid://shopify/Product/10',
-    handle: 'brasso-metal-polish-gorgeous-gloss-17ml',
-    title: 'Brasso Metal Polish - Gorgeous Gloss, 17ml (Box of 4)',
+    id: 'gid://shopify/Product/B0CKXVG728',
+    handle: 'brasso-metal-polish-175ml-pack-of-3-b0ckxvg728',
+    title: 'Brasso Metal Polish, 175 ml (Pack of 3)',
+    description: 'Convenient 3-pack bundle of 175ml bottles. Great savings for multi-room home cleaning.',
+    descriptionHtml: '<p>Convenient 3-pack bundle of 175ml bottles. Great savings for multi-room home cleaning.</p>',
+    productType: 'Liquid',
+    vendor: 'Brasso',
+    tags: ['liquid', 'multipack'],
+    availableForSale: true,
+    priceRange: {
+      minVariantPrice: { amount: '14.99', currencyCode: 'GBP' },
+      maxVariantPrice: { amount: '14.99', currencyCode: 'GBP' }
+    },
+    compareAtPriceRange: {
+      minVariantPrice: { amount: '17.97', currencyCode: 'GBP' },
+      maxVariantPrice: { amount: '17.97', currencyCode: 'GBP' }
+    },
+    featuredImage: {
+      url: 'https://m.media-amazon.com/images/I/81tTDD9PnEL._AC_UL960_FMwebp_QL65_.jpg',
+      altText: 'Brasso Metal Polish, 175 ml (Pack of 3)',
+      width: 480,
+      height: 480
+    },
+    images: {
+      edges: [
+        {
+          node: {
+            url: 'https://m.media-amazon.com/images/I/81tTDD9PnEL._AC_UL960_FMwebp_QL65_.jpg',
+            altText: 'Brasso Metal Polish, 175 ml (Pack of 3)',
+            width: 480,
+            height: 480
+          }
+        }
+      ]
+    },
+    variants: {
+      edges: [
+        {
+          node: {
+            id: 'gid://shopify/ProductVariant/v-B0CKXVG728',
+            title: 'Pack of 3',
+            availableForSale: true,
+            selectedOptions: [{ name: 'Format', value: 'Pack of 3' }],
+            price: { amount: '14.99', currencyCode: 'GBP' },
+            compareAtPrice: { amount: '17.97', currencyCode: 'GBP' },
+            image: {
+              url: 'https://m.media-amazon.com/images/I/81tTDD9PnEL._AC_UL960_FMwebp_QL65_.jpg',
+              altText: 'Brasso Metal Polish, 175 ml (Pack of 3)',
+              width: 480,
+              height: 480
+            }
+          }
+        }
+      ]
+    },
+    options: [{ id: 'opt-11', name: 'Format', values: ['Pack of 3'] }],
+    seo: { title: 'Brasso Metal Polish, 175 ml (Pack of 3)', description: 'Buy Brasso 175ml 3-Pack online' }
+  },
+  {
+    id: 'gid://shopify/Product/B007BM7POO',
+    handle: 'brasso-metal-polish-liquid-175ml-pack-of-8-b007bm7poo',
+    title: 'Brasso Metal Polish Liquid 175ml Pack of 8',
+    description: 'Wholesale 8-pack of 175ml bottles. Designed for property managers, cleaners, and restorers.',
+    descriptionHtml: '<p>Wholesale 8-pack of 175ml bottles. Designed for property managers, cleaners, and restorers.</p>',
+    productType: 'Liquid',
+    vendor: 'Brasso',
+    tags: ['liquid', 'multipack', 'bulk'],
+    availableForSale: true,
+    priceRange: {
+      minVariantPrice: { amount: '36.99', currencyCode: 'GBP' },
+      maxVariantPrice: { amount: '36.99', currencyCode: 'GBP' }
+    },
+    compareAtPriceRange: {
+      minVariantPrice: { amount: '47.92', currencyCode: 'GBP' },
+      maxVariantPrice: { amount: '47.92', currencyCode: 'GBP' }
+    },
+    featuredImage: {
+      url: 'https://m.media-amazon.com/images/I/81+Nd-3WPbL._AC_UL960_FMwebp_QL65_.jpg',
+      altText: 'Brasso Metal Polish Liquid 175ml Pack of 8',
+      width: 480,
+      height: 480
+    },
+    images: {
+      edges: [
+        {
+          node: {
+            url: 'https://m.media-amazon.com/images/I/81+Nd-3WPbL._AC_UL960_FMwebp_QL65_.jpg',
+            altText: 'Brasso Metal Polish Liquid 175ml Pack of 8',
+            width: 480,
+            height: 480
+          }
+        }
+      ]
+    },
+    variants: {
+      edges: [
+        {
+          node: {
+            id: 'gid://shopify/ProductVariant/v-B007BM7POO',
+            title: 'Pack of 8',
+            availableForSale: true,
+            selectedOptions: [{ name: 'Format', value: 'Pack of 8' }],
+            price: { amount: '36.99', currencyCode: 'GBP' },
+            compareAtPrice: { amount: '47.92', currencyCode: 'GBP' },
+            image: {
+              url: 'https://m.media-amazon.com/images/I/81+Nd-3WPbL._AC_UL960_FMwebp_QL65_.jpg',
+              altText: 'Brasso Metal Polish Liquid 175ml Pack of 8',
+              width: 480,
+              height: 480
+            }
+          }
+        }
+      ]
+    },
+    options: [{ id: 'opt-12', name: 'Format', values: ['Pack of 8'] }],
+    seo: { title: 'Brasso Metal Polish Liquid 175ml Pack of 8', description: 'Buy Brasso 175ml 8-Pack online' }
+  },
+  {
+    id: 'gid://shopify/Product/B0D1KVC63X',
+    handle: 'brasso-metal-polish-wadding-12x75g-b0d1kvc63x',
+    title: 'Brasso Metal Polish Wadding 12 x 75g',
+    description: 'Bulk case of 12 x 75g tins. Pre-soaked cotton wadding for mess-free tarnish removal on copper, brass, chrome, and steel.',
+    descriptionHtml: '<p>Bulk case of 12 x 75g tins. Pre-soaked cotton wadding for mess-free tarnish removal on copper, brass, chrome, and steel.</p>',
+    productType: 'Wipe',
+    vendor: 'Brasso',
+    tags: ['wadding', 'wipe', 'bulk'],
+    availableForSale: true,
+    priceRange: {
+      minVariantPrice: { amount: '49.99', currencyCode: 'GBP' },
+      maxVariantPrice: { amount: '49.99', currencyCode: 'GBP' }
+    },
+    compareAtPriceRange: {
+      minVariantPrice: { amount: '59.88', currencyCode: 'GBP' },
+      maxVariantPrice: { amount: '59.88', currencyCode: 'GBP' }
+    },
+    featuredImage: {
+      url: 'https://m.media-amazon.com/images/I/81bODTX2BKL._AC_UL960_FMwebp_QL65_.jpg',
+      altText: 'Brasso Metal Polish Wadding 12 x 75g',
+      width: 480,
+      height: 480
+    },
+    images: {
+      edges: [
+        {
+          node: {
+            url: 'https://m.media-amazon.com/images/I/81bODTX2BKL._AC_UL960_FMwebp_QL65_.jpg',
+            altText: 'Brasso Metal Polish Wadding 12 x 75g',
+            width: 480,
+            height: 480
+          }
+        }
+      ]
+    },
+    variants: {
+      edges: [
+        {
+          node: {
+            id: 'gid://shopify/ProductVariant/v-B0D1KVC63X',
+            title: '12 x 75g Box',
+            availableForSale: true,
+            selectedOptions: [{ name: 'Size', value: '12 x 75g Box' }],
+            price: { amount: '49.99', currencyCode: 'GBP' },
+            compareAtPrice: { amount: '59.88', currencyCode: 'GBP' },
+            image: {
+              url: 'https://m.media-amazon.com/images/I/81bODTX2BKL._AC_UL960_FMwebp_QL65_.jpg',
+              altText: 'Brasso Metal Polish Wadding 12 x 75g',
+              width: 480,
+              height: 480
+            }
+          }
+        }
+      ]
+    },
+    options: [{ id: 'opt-13', name: 'Size', values: ['12 x 75g Box'] }],
+    seo: { title: 'Brasso Metal Polish Wadding 12 x 75g', description: 'Buy Brasso Wadding 12-Pack Bulk Case online' }
+  },
+  {
+    id: 'gid://shopify/Product/B00BONJE5Y',
+    handle: 'brasso-metal-polish-gorgeous-gloss-17ml-box-of-4-b00bonje5y',
+    title: 'Brasso Metal Polish - Gorgeous Gloss 17ml (Box of 4)',
     description: 'Pocket-sized metal polish offering gorgeous gloss with radiant shine and dazzling effect.',
     descriptionHtml: '<p>Pocket-sized metal polish offering gorgeous gloss with radiant shine and dazzling effect.</p>',
     productType: 'Polish',
@@ -577,19 +812,19 @@ const MOCK_PRODUCTS_BASE: ShopifyProduct[] = [
       maxVariantPrice: { amount: '9.99', currencyCode: 'GBP' }
     },
     featuredImage: {
-      url: '/images/products/brasso-175ml-single.png',
-      altText: 'Brasso Metal Polish - Gorgeous Gloss, 17ml (Box of 4)',
-      width: 318,
-      height: 785
+      url: 'https://m.media-amazon.com/images/I/815fhQPtz9L._AC_UL960_FMwebp_QL65_.jpg',
+      altText: 'Brasso Metal Polish - Gorgeous Gloss 17ml (Box of 4)',
+      width: 480,
+      height: 480
     },
     images: {
       edges: [
         {
           node: {
-            url: '/images/products/brasso-175ml-single.png',
-            altText: 'Brasso Metal Polish - Gorgeous Gloss, 17ml (Box of 4)',
-            width: 318,
-            height: 785
+            url: 'https://m.media-amazon.com/images/I/815fhQPtz9L._AC_UL960_FMwebp_QL65_.jpg',
+            altText: 'Brasso Metal Polish - Gorgeous Gloss 17ml (Box of 4)',
+            width: 480,
+            height: 480
           }
         }
       ]
@@ -598,49 +833,261 @@ const MOCK_PRODUCTS_BASE: ShopifyProduct[] = [
       edges: [
         {
           node: {
-            id: 'gid://shopify/ProductVariant/1001',
-            title: 'Default Title',
+            id: 'gid://shopify/ProductVariant/v-B00BONJE5Y',
+            title: 'Box of 4',
             availableForSale: true,
-            selectedOptions: [{ name: 'Title', value: 'Default Title' }],
+            selectedOptions: [{ name: 'Size', value: 'Box of 4' }],
             price: { amount: '9.99', currencyCode: 'GBP' },
             compareAtPrice: null,
             image: {
-              url: '/images/products/brasso-175ml-single.png',
-              altText: 'Brasso Metal Polish - Gorgeous Gloss, 17ml (Box of 4)',
-              width: 318,
-              height: 785
+              url: 'https://m.media-amazon.com/images/I/815fhQPtz9L._AC_UL960_FMwebp_QL65_.jpg',
+              altText: 'Brasso Metal Polish - Gorgeous Gloss 17ml (Box of 4)',
+              width: 480,
+              height: 480
             }
           }
         }
       ]
     },
-    options: [{ id: 'opt-10', name: 'Title', values: ['Default Title'] }],
-    seo: { title: 'Brasso Metal Polish - Gorgeous Gloss, 17ml (Box of 4)', description: 'Buy Brasso Gorgeous Gloss online' }
-  }
-]
-
-// Duplicate the base catalog a few times so the storefront has a fuller product grid to browse.
-function duplicateProducts(base: ShopifyProduct[], copies: number): ShopifyProduct[] {
-  return Array.from({ length: copies }, (_, copyIndex) =>
-    base.map((product) => ({
-      ...product,
-      id: `${product.id}-copy${copyIndex + 1}`,
-      handle: `${product.handle}-${copyIndex + 2}`,
-      variants: {
-        edges: product.variants.edges.map((edge) => ({
+    options: [{ id: 'opt-14', name: 'Size', values: ['Box of 4'] }],
+    seo: { title: 'Brasso Metal Polish - Gorgeous Gloss 17ml (Box of 4)', description: 'Buy Brasso Gorgeous Gloss Box of 4 online' }
+  },
+  {
+    id: 'gid://shopify/Product/B0DB219PB9',
+    handle: 'brasso-metal-polish-liquid-1l-pack-of-3-b0db219pb9',
+    title: 'Brasso Metal Polish Liquid, 1L (Pack of 3)',
+    description: 'Bulk 3-pack of 1L bottles. Ideal for heavy metal cleaning, industrial upkeep, and commercial environments.',
+    descriptionHtml: '<p>Bulk 3-pack of 1L bottles. Ideal for heavy metal cleaning, industrial upkeep, and commercial environments.</p>',
+    productType: 'Liquid',
+    vendor: 'Brasso',
+    tags: ['liquid', 'bulk', 'multipack'],
+    availableForSale: true,
+    priceRange: {
+      minVariantPrice: { amount: '39.99', currencyCode: 'GBP' },
+      maxVariantPrice: { amount: '39.99', currencyCode: 'GBP' }
+    },
+    compareAtPriceRange: {
+      minVariantPrice: { amount: '47.99', currencyCode: 'GBP' },
+      maxVariantPrice: { amount: '47.99', currencyCode: 'GBP' }
+    },
+    featuredImage: {
+      url: 'https://m.media-amazon.com/images/I/81MwbVMEh4L._AC_UL960_FMwebp_QL65_.jpg',
+      altText: 'Brasso Metal Polish Liquid, 1L (Pack of 3)',
+      width: 480,
+      height: 480
+    },
+    images: {
+      edges: [
+        {
           node: {
-            ...edge.node,
-            id: `${edge.node.id}-copy${copyIndex + 1}`,
-          },
-        })),
-      },
-    }))
-  ).flat()
-}
-
-const MOCK_PRODUCTS: ShopifyProduct[] = [
-  ...MOCK_PRODUCTS_BASE,
-  ...duplicateProducts(MOCK_PRODUCTS_BASE, 2),
+            url: 'https://m.media-amazon.com/images/I/81MwbVMEh4L._AC_UL960_FMwebp_QL65_.jpg',
+            altText: 'Brasso Metal Polish Liquid, 1L (Pack of 3)',
+            width: 480,
+            height: 480
+          }
+        }
+      ]
+    },
+    variants: {
+      edges: [
+        {
+          node: {
+            id: 'gid://shopify/ProductVariant/v-B0DB219PB9',
+            title: '1L Pack of 3',
+            availableForSale: true,
+            selectedOptions: [{ name: 'Size', value: '1L Pack of 3' }],
+            price: { amount: '39.99', currencyCode: 'GBP' },
+            compareAtPrice: { amount: '47.99', currencyCode: 'GBP' },
+            image: {
+              url: 'https://m.media-amazon.com/images/I/81MwbVMEh4L._AC_UL960_FMwebp_QL65_.jpg',
+              altText: 'Brasso Metal Polish Liquid, 1L (Pack of 3)',
+              width: 480,
+              height: 480
+            }
+          }
+        }
+      ]
+    },
+    options: [{ id: 'opt-15', name: 'Size', values: ['1L Pack of 3'] }],
+    seo: { title: 'Brasso Metal Polish Liquid, 1L (Pack of 3)', description: 'Buy Brasso 1L Pack of 3 online' }
+  },
+  {
+    id: 'gid://shopify/Product/B07MMFXSM6',
+    handle: 'brasso-metal-polish-liquid-175ml-multi-metal-restorer-b07mmfxsm6',
+    title: 'Brasso Metal Polish Liquid 175ml (Multi-Metal Restorer)',
+    description: 'Restores shine on brass, copper, stainless steel, chrome & pewter. Removes tarnish, oxidation & dirt effortlessly.',
+    descriptionHtml: '<p>Restores shine on brass, copper, stainless steel, chrome & pewter. Removes tarnish, oxidation & dirt effortlessly.</p>',
+    productType: 'Liquid',
+    vendor: 'Brasso',
+    tags: ['liquid', 'polish', 'restorer'],
+    availableForSale: true,
+    priceRange: {
+      minVariantPrice: { amount: '6.49', currencyCode: 'GBP' },
+      maxVariantPrice: { amount: '6.49', currencyCode: 'GBP' }
+    },
+    compareAtPriceRange: {
+      minVariantPrice: { amount: '6.49', currencyCode: 'GBP' },
+      maxVariantPrice: { amount: '6.49', currencyCode: 'GBP' }
+    },
+    featuredImage: {
+      url: 'https://m.media-amazon.com/images/I/61Syipok7KL._AC_UL960_FMwebp_QL65_.jpg',
+      altText: 'Brasso Metal Polish Liquid 175ml (Multi-Metal Restorer)',
+      width: 480,
+      height: 480
+    },
+    images: {
+      edges: [
+        {
+          node: {
+            url: 'https://m.media-amazon.com/images/I/61Syipok7KL._AC_UL960_FMwebp_QL65_.jpg',
+            altText: 'Brasso Metal Polish Liquid 175ml (Multi-Metal Restorer)',
+            width: 480,
+            height: 480
+          }
+        }
+      ]
+    },
+    variants: {
+      edges: [
+        {
+          node: {
+            id: 'gid://shopify/ProductVariant/v-B07MMFXSM6',
+            title: '175 ml',
+            availableForSale: true,
+            selectedOptions: [{ name: 'Size', value: '175 ml' }],
+            price: { amount: '6.49', currencyCode: 'GBP' },
+            compareAtPrice: null,
+            image: {
+              url: 'https://m.media-amazon.com/images/I/61Syipok7KL._AC_UL960_FMwebp_QL65_.jpg',
+              altText: 'Brasso Metal Polish Liquid 175ml (Multi-Metal Restorer)',
+              width: 480,
+              height: 480
+            }
+          }
+        }
+      ]
+    },
+    options: [{ id: 'opt-16', name: 'Size', values: ['175 ml'] }],
+    seo: { title: 'Brasso Metal Polish Liquid 175ml (Multi-Metal Restorer)', description: 'Buy Brasso Metal Polish Restorer 175ml online' }
+  },
+  {
+    id: 'gid://shopify/Product/B0044RRNIM',
+    handle: 'brasso-gadgetcare-50ml-b0044rrnim',
+    title: 'Brasso GadgetCare 50 ml',
+    description: 'Specialized precision cleaner for electronics, smooth metals, screens, and fine handheld gadgets.',
+    descriptionHtml: '<p>Specialized precision cleaner for electronics, smooth metals, screens, and fine handheld gadgets.</p>',
+    productType: 'Liquid',
+    vendor: 'Brasso',
+    tags: ['liquid', 'gadgetcare', 'precision'],
+    availableForSale: true,
+    priceRange: {
+      minVariantPrice: { amount: '8.99', currencyCode: 'GBP' },
+      maxVariantPrice: { amount: '8.99', currencyCode: 'GBP' }
+    },
+    compareAtPriceRange: {
+      minVariantPrice: { amount: '8.99', currencyCode: 'GBP' },
+      maxVariantPrice: { amount: '8.99', currencyCode: 'GBP' }
+    },
+    featuredImage: {
+      url: 'https://m.media-amazon.com/images/I/61KNUNXpJEL._AC_UL960_FMwebp_QL65_.jpg',
+      altText: 'Brasso GadgetCare 50 ml',
+      width: 480,
+      height: 480
+    },
+    images: {
+      edges: [
+        {
+          node: {
+            url: 'https://m.media-amazon.com/images/I/61KNUNXpJEL._AC_UL960_FMwebp_QL65_.jpg',
+            altText: 'Brasso GadgetCare 50 ml',
+            width: 480,
+            height: 480
+          }
+        }
+      ]
+    },
+    variants: {
+      edges: [
+        {
+          node: {
+            id: 'gid://shopify/ProductVariant/v-B0044RRNIM',
+            title: '50 ml',
+            availableForSale: true,
+            selectedOptions: [{ name: 'Size', value: '50 ml' }],
+            price: { amount: '8.99', currencyCode: 'GBP' },
+            compareAtPrice: null,
+            image: {
+              url: 'https://m.media-amazon.com/images/I/61KNUNXpJEL._AC_UL960_FMwebp_QL65_.jpg',
+              altText: 'Brasso GadgetCare 50 ml',
+              width: 480,
+              height: 480
+            }
+          }
+        }
+      ]
+    },
+    options: [{ id: 'opt-17', name: 'Size', values: ['50 ml'] }],
+    seo: { title: 'Brasso GadgetCare 50 ml', description: 'Buy Brasso GadgetCare 50ml online' }
+  },
+  {
+    id: 'gid://shopify/Product/B07R16DKNH',
+    handle: 'brasso-metal-polisher-wadding-2x175ml-b07r16dknh',
+    title: 'Brasso Metal Polisher Wadding 2 x 175ml',
+    description: 'Twin canister metal polish wadding pack for brass, copper, stainless steel & chrome.',
+    descriptionHtml: '<p>Twin canister metal polish wadding pack for brass, copper, stainless steel & chrome.</p>',
+    productType: 'Wipe',
+    vendor: 'Brasso',
+    tags: ['wadding', 'wipe', 'multipack'],
+    availableForSale: true,
+    priceRange: {
+      minVariantPrice: { amount: '11.99', currencyCode: 'GBP' },
+      maxVariantPrice: { amount: '11.99', currencyCode: 'GBP' }
+    },
+    compareAtPriceRange: {
+      minVariantPrice: { amount: '11.99', currencyCode: 'GBP' },
+      maxVariantPrice: { amount: '11.99', currencyCode: 'GBP' }
+    },
+    featuredImage: {
+      url: 'https://m.media-amazon.com/images/I/81lb1m1V67L._AC_UL960_FMwebp_QL65_.jpg',
+      altText: 'Brasso Metal Polisher Wadding 2 x 175ml',
+      width: 480,
+      height: 480
+    },
+    images: {
+      edges: [
+        {
+          node: {
+            url: 'https://m.media-amazon.com/images/I/81lb1m1V67L._AC_UL960_FMwebp_QL65_.jpg',
+            altText: 'Brasso Metal Polisher Wadding 2 x 175ml',
+            width: 480,
+            height: 480
+          }
+        }
+      ]
+    },
+    variants: {
+      edges: [
+        {
+          node: {
+            id: 'gid://shopify/ProductVariant/v-B07R16DKNH',
+            title: '2 x 175ml',
+            availableForSale: true,
+            selectedOptions: [{ name: 'Size', value: '2 x 175ml' }],
+            price: { amount: '11.99', currencyCode: 'GBP' },
+            compareAtPrice: null,
+            image: {
+              url: 'https://m.media-amazon.com/images/I/81lb1m1V67L._AC_UL960_FMwebp_QL65_.jpg',
+              altText: 'Brasso Metal Polisher Wadding 2 x 175ml',
+              width: 480,
+              height: 480
+            }
+          }
+        }
+      ]
+    },
+    options: [{ id: 'opt-18', name: 'Size', values: ['2 x 175ml'] }],
+    seo: { title: 'Brasso Metal Polisher Wadding 2 x 175ml', description: 'Buy Brasso Metal Polisher Wadding 2 x 175ml online' }
+  }
 ]
 
 const MOCK_COLLECTIONS: ShopifyCollection[] = [
