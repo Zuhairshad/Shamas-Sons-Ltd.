@@ -42,7 +42,7 @@ export default function RootLayout({
     <html lang="en" className={`${bebasNeue.variable} ${jost.variable} bg-background`}>
       <body className="font-sans antialiased">
         <CartProvider>
-          <PillNav items={navItems} logo="/logo.png" logoAlt="SHAMAS & SONS" baseColor="#0A0A0A" pillColor="#E4001B" hoveredPillTextColor="#F5F5F5" pillTextColor="#0A0A0A" />
+          <PillNav items={navItems} logo="/logo.png" logoAlt="SHAMAS & SONS" baseColor="#0A0A0A" pillColor="#FFFFFF" hoveredPillTextColor="#FFFFFF" pillTextColor="#0A0A0A" />
           <main className="min-h-screen pt-10 bg-background">{children}</main>
           <Footer />
           <CartDrawer />

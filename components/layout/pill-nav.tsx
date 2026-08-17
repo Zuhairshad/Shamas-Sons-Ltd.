@@ -298,7 +298,7 @@ export function PillNav({
                     onMouseLeave={() => handleLeave(i)}
                   >
                     <span
-                      className="hover-circle absolute left-1/2 bottom-0 rounded-full z-[1] block pointer-events-none bg-white"
+                      className="hover-circle absolute left-1/2 bottom-0 rounded-full z-[1] block pointer-events-none bg-primary"
                       style={{ willChange: 'transform' }}
                       aria-hidden="true"
                       ref={(el) => {
@@ -313,7 +313,7 @@ export function PillNav({
                         {item.label}
                       </span>
                       <span
-                        className="pill-label-hover absolute left-0 top-0 z-[3] inline-block text-primary"
+                        className="pill-label-hover absolute left-0 top-0 z-[3] inline-block text-white"
                         style={{ willChange: 'transform, opacity' }}
                         aria-hidden="true"
                       >
@@ -386,8 +386,8 @@ export function PillNav({
                   href={item.href}
                   className={`block py-3.5 px-5 text-[15px] font-semibold uppercase tracking-wide rounded-full transition-all duration-200 ${
                     isActive
-                      ? 'bg-primary text-primary-foreground'
-                      : 'bg-primary text-primary-foreground hover:opacity-80'
+                      ? 'bg-primary text-white'
+                      : 'bg-white text-black hover:bg-primary hover:text-white'
                   }`}
                   onClick={closeMobileMenu}
                 >

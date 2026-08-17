@@ -9,12 +9,8 @@ import { Button } from '@/components/ui/button'
 
 const heroImages = [
   {
-    src: '/images/brasso-light.jpeg',
-    alt: 'Brasso metal polish on a sunlit surface',
-  },
-  {
-    src: '/images/brasso-dark.jpeg',
-    alt: 'Brasso metal polish on a dark surface',
+    src: '/picas/pp/61Ah67TnasL._AC_UL640_FMwebp_QL65_.webp',
+    alt: 'Brasso Cleans & Polishes 7 Metal Polish',
   },
 ]
 
@@ -53,18 +49,20 @@ export function HeroSection() {
       </div>
 
       {/* Slide indicators */}
-      <div className="absolute bottom-6 right-6 z-20 flex gap-2 lg:bottom-10 lg:right-10">
-        {heroImages.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setActiveIndex(index)}
-            aria-label={`Show slide ${index + 1}`}
-            className={`h-1.5 rounded-full transition-all duration-300 ${
-              index === activeIndex ? 'w-8 bg-primary' : 'w-1.5 bg-white/40 hover:bg-white/60'
-            }`}
-          />
-        ))}
-      </div>
+      {heroImages.length > 1 && (
+        <div className="absolute bottom-6 right-6 z-20 flex gap-2 lg:bottom-10 lg:right-10">
+          {heroImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setActiveIndex(index)}
+              aria-label={`Show slide ${index + 1}`}
+              className={`h-1.5 rounded-full transition-all duration-300 ${
+                index === activeIndex ? 'w-8 bg-primary' : 'w-1.5 bg-white/40 hover:bg-white/60'
+              }`}
+            />
+          ))}
+        </div>
+      )}
 
       <div className="absolute inset-0 bg-gradient-to-r from-black via-black/75 to-black/15" />
       <div className="relative z-10 mx-auto flex min-h-[780px] max-w-7xl items-center px-6 py-24 sm:min-h-[840px] lg:min-h-[920px] lg:px-8">
