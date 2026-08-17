@@ -144,25 +144,13 @@ Made for the finish
                 </Button>
               </div>
               <div className="order-1 lg:order-2 relative aspect-square lg:aspect-[4/5] bg-muted rounded-lg overflow-hidden">
-                {featuredCollection.image ? (
-                  <Image
-                    src={featuredCollection.image.url}
-                    alt={featuredCollection.image.altText || featuredCollection.title}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                  />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center">
-                    <Image
-                      src="/logo.png"
-                      alt="Collection"
-                      width={95}
-                      height={200}
-                      className="opacity-20 invert object-contain"
-                    />
-                  </div>
-                )}
+                <Image
+                  src="/picas/pp/61Ah67TnasL._AC_UL640_FMwebp_QL65_.webp"
+                  alt={featuredCollection?.title || "Brasso Cleans & Polishes"}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
               </div>
             </div>
           </div>
