@@ -26,7 +26,7 @@ interface InteractiveCheckoutProps {
 }
 
 function InteractiveCheckout({
-    products = defaultProducts,
+    products = [],
 }: InteractiveCheckoutProps) {
     const [cart, setCart] = useState<CartItem[]>([]);
 
@@ -280,4 +280,6 @@ function InteractiveCheckout({
     );
 }
 
-export { InteractiveCheckout, Product }
+export { InteractiveCheckout }
+export type { Product }
+

@@ -60,6 +60,7 @@ type CartContextType = {
   addToCart: (merchandiseId: string, quantity?: number) => Promise<void>
   updateQuantity: (lineId: string, quantity: number) => Promise<void>
   removeFromCart: (lineId: string) => Promise<void>
+  clearCart: () => void
 }
 
 const CartContext = createContext<CartContextType | null>(null)
@@ -219,6 +220,11 @@ export function CartProvider({ children }: { children: ReactNode }) {
     }
   }, [])
 
+  const clearCart = useCallback(() => {
+    localStorage.removeItem(CART_ID_KEY)
+    dispatch({ type: 'SET_CART', cart: null })
+  }, [])
+
   return (
     <CartContext.Provider
       value={{
@@ -233,9 +239,11 @@ export function CartProvider({ children }: { children: ReactNode }) {
         addToCart,
         updateQuantity,
         removeFromCart,
+        clearCart,
       }}
     >
       {children}
     </CartContext.Provider>
   )
 }
+

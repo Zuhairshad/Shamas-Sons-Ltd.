@@ -96,9 +96,11 @@ const polishFaqs = [
   },
 ]
 
+import type { ShopifyProduct, ShopifyCollection } from '@/lib/shopify/types'
+
 export default async function HomePage() {
-  let products = []
-  let collections = []
+  let products: ShopifyProduct[] = []
+  let collections: ShopifyCollection[] = []
 
   try {
     ;[products, collections] = await Promise.all([
@@ -110,6 +112,7 @@ export default async function HomePage() {
   }
 
   const featuredCollection = collections[0]
+
 
   return (
     <div className="min-h-screen">
@@ -163,6 +166,47 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Amazon UK Trust & Store Showcase Banner */}
+      <section className="py-12 border-b border-border bg-gradient-to-r from-card via-secondary/40 to-card">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-6 p-6 sm:p-8 rounded-2xl bg-[#FF9900]/5 border border-[#FF9900]/20">
+            <div className="space-y-2 text-center lg:text-left">
+              <div className="flex items-center justify-center lg:justify-start gap-2">
+                <div className="flex text-[#FF9900]">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-[#FF9900] text-[#FF9900]" />
+                  ))}
+                </div>
+                <span className="text-xs font-bold text-foreground">4.7 / 5.0 RATING</span>
+                <span className="text-xs text-muted-foreground">• 10,000+ UK Reviews</span>
+              </div>
+              <h3 className="font-heading text-2xl sm:text-3xl tracking-wider text-foreground">
+                OFFICIAL SHAMAS &amp; SONS FORMULAS ON AMAZON UK
+              </h3>
+              <p className="text-xs sm:text-sm text-muted-foreground max-w-2xl">
+                Looking for Prime next-day delivery? Every authentic Shamas &amp; Sons metal polish and wadding product is available directly through our verified Amazon UK storefront.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap items-center justify-center gap-3 shrink-0">
+              <a
+                href="https://www.amazon.co.uk/s?k=Brasso+Metal+Polish"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#FF9900] hover:bg-[#ffaa22] text-[#0A0A0A] font-bold text-sm tracking-wide shadow-md transition-all duration-200"
+              >
+                <span>SHOP ON AMAZON UK</span>
+                <ArrowRight className="w-4 h-4" />
+              </a>
+              <Button asChild variant="outline" size="lg" className="border-border hover:border-foreground font-heading tracking-wider">
+                <Link href="/products">BROWSE CATALOG</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
       {/* Features / Why Choose Us */}
       <section className="py-20 lg:py-32 border-b border-border bg-secondary/20">

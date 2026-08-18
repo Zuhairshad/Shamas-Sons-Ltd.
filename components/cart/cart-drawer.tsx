@@ -4,9 +4,9 @@ import { useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
-import { X, Minus, Plus, ShoppingCart, CreditCard, Trash2 } from 'lucide-react'
+import { X, Minus, Plus, ShoppingCart, CreditCard, Trash2, ExternalLink } from 'lucide-react'
 import { useCart } from './cart-provider'
-import { formatPrice } from '@/lib/shopify/utils'
+import { formatPrice, getAmazonUrl } from '@/lib/shopify/utils'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import NumberFlow from '@number-flow/react'
@@ -258,18 +258,30 @@ export function CartDrawer() {
                               </motion.button>
                             </div>
 
-                            {/* Price */}
-                            <motion.span
-                              layout
-                              className="text-sm font-medium text-primary"
-                            >
-                              {formatPrice({
-                                amount: String(
-                                  parseFloat(line.merchandise.price.amount) * line.quantity
-                                ),
-                                currencyCode: line.merchandise.price.currencyCode,
-                              })}
-                            </motion.span>
+                            {/* Price and Amazon link */}
+                            <div className="flex flex-col items-end gap-1">
+                              <motion.span
+                                layout
+                                className="text-sm font-semibold text-primary"
+                              >
+                                {formatPrice({
+                                  amount: String(
+                                    parseFloat(line.merchandise.price.amount) * line.quantity
+                                  ),
+                                  currencyCode: line.merchandise.price.currencyCode,
+                                })}
+                              </motion.span>
+                              <a
+                                href={getAmazonUrl(line.merchandise.product)}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-[10px] text-muted-foreground hover:text-[#FF9900] flex items-center gap-0.5 transition-colors"
+                                title="View on Amazon UK"
+                              >
+                                <span>Amazon</span>
+                                <ExternalLink className="w-2.5 h-2.5" />
+                              </a>
+                            </div>
                           </div>
                         </div>
                       </motion.li>
@@ -286,7 +298,7 @@ export function CartDrawer() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 20 }}
-                  className="p-6 border-t border-border space-y-4 bg-card"
+                  className="p-6 border-t border-border space-y-3 bg-card"
                 >
                   <div className="flex items-center justify-between">
                     <span className="text-muted-foreground">Subtotal</span>
@@ -302,7 +314,7 @@ export function CartDrawer() {
                     </span>
                   </div>
                   <p className="text-xs text-muted-foreground">
-                    Shipping and taxes calculated at checkout.
+                    Free shipping over £20. Taxes calculated at checkout.
                   </p>
                   <motion.div
                     whileHover={{ scale: 1.01 }}
@@ -310,18 +322,30 @@ export function CartDrawer() {
                   >
                     <Button
                       asChild
-                      className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-heading text-lg tracking-wider gap-2"
+                      onClick={closeCart}
+                      className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-heading text-lg tracking-wider gap-2 shadow-lg"
                       size="lg"
                     >
-                      <a href={cart.checkoutUrl}>
+                      <Link href="/checkout">
                         <CreditCard className="w-5 h-5" />
-                        CHECKOUT
-                      </a>
+                        PROCEED TO CHECKOUT
+                      </Link>
                     </Button>
                   </motion.div>
+
+                  <a
+                    href="https://www.amazon.co.uk/s?k=Brasso+Metal+Polish"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-lg bg-[#FF9900]/10 hover:bg-[#FF9900]/20 border border-[#FF9900]/30 text-[#FF9900] text-xs font-semibold tracking-wide transition-colors"
+                  >
+                    <span>Or Buy Items on Amazon UK</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+
                   <button
                     onClick={closeCart}
-                    className="w-full text-center text-sm text-muted-foreground hover:text-foreground transition-colors py-2"
+                    className="w-full text-center text-xs text-muted-foreground hover:text-foreground transition-colors pt-1"
                   >
                     Continue Shopping
                   </button>
@@ -334,3 +358,4 @@ export function CartDrawer() {
     </>
   )
 }
+

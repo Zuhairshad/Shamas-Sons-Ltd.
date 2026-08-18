@@ -5,6 +5,7 @@ import Image from 'next/image'
 
 const navLinks = [
   { label: 'Products', href: '/products' },
+  { label: 'Checkout', href: '/checkout' },
   { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },
   { label: 'Privacy', href: '/privacy' },
@@ -29,7 +30,7 @@ export function Footer() {
         </div>
 
         {/* Navigation Links */}
-        <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-10">
+        <nav className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 mb-10">
           {navLinks.map((link) => (
             <Link
               key={link.href + link.label}
@@ -39,7 +40,17 @@ export function Footer() {
               {link.label}
             </Link>
           ))}
+          <a
+            href="https://www.amazon.co.uk/s?k=Brasso+Metal+Polish"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-[#FF9900] hover:text-[#ffaa22] font-semibold transition-colors flex items-center gap-1"
+          >
+            <span>Amazon Store</span>
+            <span className="text-xs">↗</span>
+          </a>
         </nav>
+
 
         {/* Dotted Separator */}
         <div className="border-t border-dotted border-border/40 mb-8" />

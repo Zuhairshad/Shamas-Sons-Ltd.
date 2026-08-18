@@ -55,3 +55,6 @@ export function getVariantDiscountPercentage(variant: ShopifyProductVariant): nu
   if (compareAt <= price) return 0
   return Math.round(((compareAt - price) / compareAt) * 100)
 }
+
+export { getAmazonUrl, getAmazonProductData, AMAZON_STORE_URL } from './amazon'
+
