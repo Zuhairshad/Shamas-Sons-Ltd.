@@ -1,2 +1,4 @@
-allowBuilds:
-  sharp: set this to true or false
+# sharp is Next.js's image optimizer; pnpm 10 blocks dependency build scripts
+# unless they are approved here, and fails the install when any are ignored.
+onlyBuiltDependencies:
+  - sharp
