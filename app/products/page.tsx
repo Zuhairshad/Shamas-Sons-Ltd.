@@ -45,19 +45,26 @@ async function ProductGrid({ sort, type }: { sort?: string; type?: string }) {
       sortKey = 'BEST_SELLING'
   }
 
+  const isMetalPolishFilter = type === 'metal-polish'
+  const isBeautyFilter = type === 'beauty-toiletries'
   const products = await getProducts({
-    first: 24,
+    first: 60,
     sortKey,
     reverse,
-    query: type ? `product_type:${type}` : undefined,
+    query: type && !isMetalPolishFilter && !isBeautyFilter ? `product_type:${type}` : undefined,
   })
+  const filteredProducts = isMetalPolishFilter
+    ? products.filter((product) => !product.tags.includes('beauty-toiletries'))
+    : isBeautyFilter
+      ? products.filter((product) => product.tags.includes('beauty-toiletries'))
+      : products
 
-  if (products.length === 0) {
+  if (filteredProducts.length === 0) {
     return (
       <div className="text-center py-16">
         <p className="text-muted-foreground mb-4">No products found</p>
         <p className="text-sm text-muted-foreground">
-          Connect your Shopify store to display products here.
+          Products are being prepared for this catalogue.
         </p>
       </div>
     )
@@ -65,7 +72,7 @@ async function ProductGrid({ sort, type }: { sort?: string; type?: string }) {
 
   return (
     <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-6">
-      {products.map((product, index) => (
+      {filteredProducts.map((product, index) => (
         <ProductCard key={product.id} product={product} priority={index < 8} />
       ))}
     </div>

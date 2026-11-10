@@ -507,7 +507,7 @@ export function CheckoutClient() {
                       className="rounded border-border bg-secondary text-primary focus:ring-primary h-4 w-4"
                     />
                     <label htmlFor="newsletter" className="text-xs text-muted-foreground">
-                      Email me with exclusive metal care tips, heritage offers, and new release alerts
+                      Email me with product updates, store news, and new arrival alerts
                     </label>
                   </div>
 
@@ -1105,7 +1105,7 @@ export function CheckoutClient() {
                   <ExternalLink className="w-3.5 h-3.5 text-[#FF9900]" />
                 </div>
                 <p className="text-[11px] text-muted-foreground">
-                  You can purchase all authentic Shamas &amp; Sons formulas directly on Amazon UK with Prime 1-Day delivery.
+                  You can view selected product listings directly on Amazon UK.
                 </p>
                 <a
                   href="https://www.amazon.co.uk/s?k=Brasso+Metal+Polish"
@@ -1113,7 +1113,7 @@ export function CheckoutClient() {
                   rel="noopener noreferrer"
                   className="block text-center py-2 px-3 rounded-lg bg-[#FF9900] hover:bg-[#ffaa22] text-[#0A0A0A] font-bold text-xs tracking-wide transition-colors"
                 >
-                  BUY THESE ITEMS ON AMAZON UK
+                  VIEW ON AMAZON UK
                 </a>
               </div>
             </div>

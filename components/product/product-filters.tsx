@@ -21,10 +21,12 @@ const sortOptions = [
 
 const categoryOptions = [
   { value: null, label: 'All Products' },
-  { value: 'liquid', label: 'Liquids' },
-  { value: 'wipe', label: 'Wadding & Wipes' },
-  { value: 'multipack', label: 'Multipacks' },
-  { value: 'polish', label: 'Gel & Polish' },
+  { value: 'metal-polish', label: 'Metal Polish' },
+  { value: 'beauty-toiletries', label: 'Beauty & Toiletries' },
+  { value: 'Lip & Nail', label: 'Lip & Nail' },
+  { value: 'Fragrance', label: 'Fragrance' },
+  { value: 'Bath & Body', label: 'Bath & Body' },
+  { value: 'Beauty Accessories', label: 'Beauty Accessories' },
 ]
 
 interface ProductFiltersProps {

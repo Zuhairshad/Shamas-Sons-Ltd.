@@ -2,9 +2,10 @@ import type { ShopifyMoney, ShopifyProduct, ShopifyProductVariant } from './type
 
 export function formatPrice(money: ShopifyMoney): string {
   const amount = parseFloat(money.amount) || 0
-  const currency = money.currencyCode === 'PKR' ? 'GBP' : (money.currencyCode || 'GBP')
+  const currency = money.currencyCode || 'GBP'
+  const locale = currency === 'PKR' ? 'en-PK' : 'en-GB'
   try {
-    return new Intl.NumberFormat('en-GB', {
+    return new Intl.NumberFormat(locale, {
       style: 'currency',
       currency: currency,
       minimumFractionDigits: 2,

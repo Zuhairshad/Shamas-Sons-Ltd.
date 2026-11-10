@@ -19,8 +19,8 @@ const jost = Jost({
 })
 
 export const metadata: Metadata = {
-  title: 'Shamas & Sons | Restore the Shine',
-  description: 'Premium multi-metal polish and surface restoration products by Shamas & Sons Ltd.',
+  title: 'shamasandsons | Discover more',
+  description: 'Discover a thoughtfully selected range of products from shamasandsons.',
   icons: {
     icon: '/logo.png',
   },
@@ -42,7 +42,7 @@ export default function RootLayout({
     <html lang="en" className={`${bebasNeue.variable} ${jost.variable} bg-background`}>
       <body className="font-sans antialiased">
         <CartProvider>
-          <PillNav items={navItems} logo="/logo.png" logoAlt="SHAMAS & SONS" baseColor="#0A0A0A" pillColor="#FFFFFF" hoveredPillTextColor="#FFFFFF" pillTextColor="#0A0A0A" />
+          <PillNav items={navItems} logo="/logo.png" logoAlt="shamasandsons" baseColor="#0A0A0A" pillColor="#FFFFFF" hoveredPillTextColor="#FFFFFF" pillTextColor="#0A0A0A" />
           <main className="min-h-screen pt-10 bg-background">{children}</main>
           <Footer />
           <CartDrawer />

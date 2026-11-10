@@ -182,18 +182,6 @@ export function getAmazonProductData(product?: {
     return AMAZON_PRODUCTS_DATA[asinFromTitle]
   }
 
-  // Fallback if ASIN was parsed but not in hardcoded map
-  const asin = asinFromId || asinFromHandle || asinFromTitle
-  if (asin) {
-    return {
-      asin,
-      title: product.title || 'Brasso Metal Polish',
-      url: `https://www.amazon.co.uk/dp/${asin}`,
-      rating: 4.6,
-      ratingCount: 150,
-    }
-  }
-
   return null
 }
 
@@ -207,6 +195,9 @@ export function getAmazonUrl(product?: {
 }): string {
   const data = getAmazonProductData(product)
   if (data?.url) return data.url
+
+  const asin = extractAsin(product?.id) || extractAsin(product?.handle) || extractAsin(product?.title)
+  if (asin) return `https://www.amazon.co.uk/dp/${asin}`
 
   if (product?.title) {
     return `https://www.amazon.co.uk/s?k=${encodeURIComponent(

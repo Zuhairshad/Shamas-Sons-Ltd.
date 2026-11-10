@@ -3,7 +3,7 @@ import { CheckoutClient } from './checkout-client'
 
 export const metadata: Metadata = {
   title: 'Secure Checkout | Shamas & Sons Ltd',
-  description: 'Complete your order of premium British metal polish and restoration products.',
+  description: 'Review your Shamas & Sons order before checkout.',
 }
 
 export default function CheckoutPage() {

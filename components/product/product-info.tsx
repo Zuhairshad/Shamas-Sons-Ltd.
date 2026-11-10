@@ -27,6 +27,7 @@ export function ProductInfo({ product }: ProductInfoProps) {
   const defaultVariant = getDefaultVariant(product)
   const amazonData = getAmazonProductData(product)
   const amazonUrl = getAmazonUrl(product)
+  const isBeautyProduct = product.tags.includes('beauty-toiletries')
 
   const [selectedVariant, setSelectedVariant] = useState<ShopifyProductVariant | null>(
     defaultVariant
@@ -255,15 +256,15 @@ export function ProductInfo({ product }: ProductInfoProps) {
       <div className="pt-6 space-y-3 border-t border-border">
         <div className="flex items-center gap-3 text-sm text-muted-foreground">
           <Truck className="w-5 h-5 text-primary" />
-          <span>Free UK shipping on orders over £20 (Fast Prime Delivery on Amazon)</span>
+          <span>{isBeautyProduct ? 'Check delivery options on Amazon UK.' : 'Free UK shipping on orders over £20 (Fast Prime Delivery on Amazon)'}</span>
         </div>
         <div className="flex items-center gap-3 text-sm text-muted-foreground">
           <Shield className="w-5 h-5 text-primary" />
-          <span>100% Authentic British Heritage Formula Guaranteed</span>
+          <span>{isBeautyProduct ? 'Availability and final price are confirmed on Amazon UK.' : '100% Authentic British Heritage Formula Guaranteed'}</span>
         </div>
         <div className="flex items-center gap-3 text-sm text-muted-foreground">
           <Check className="w-5 h-5 text-primary" />
-          <span>30-Day Money-Back Guarantee & Hassle-Free Returns</span>
+          <span>{isBeautyProduct ? 'Use the direct Amazon UK listing to complete your order.' : '30-Day Money-Back Guarantee & Hassle-Free Returns'}</span>
         </div>
       </div>
 

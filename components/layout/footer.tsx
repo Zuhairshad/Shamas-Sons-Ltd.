@@ -21,7 +21,7 @@ export function Footer() {
           <Link href="/" className="flex items-center">
             <Image
               src="/logo.png"
-              alt="Shamas & Sons"
+              alt="shamasandsons"
               width={190}
               height={400}
               className="h-12 w-auto invert"
@@ -41,13 +41,10 @@ export function Footer() {
             </Link>
           ))}
           <a
-            href="https://www.amazon.co.uk/s?k=Brasso+Metal+Polish"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/products"
             className="text-sm text-[#FF9900] hover:text-[#ffaa22] font-semibold transition-colors flex items-center gap-1"
           >
-            <span>Amazon Store</span>
-            <span className="text-xs">↗</span>
+            <span>Explore products</span>
           </a>
         </nav>
 

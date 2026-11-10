@@ -4,42 +4,35 @@ import { ArrowRight, ShieldCheck, Sparkles, Award, Layers } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 export const metadata = {
-  title: 'Our Heritage | Metal Care & Restoration',
-  description: 'Discover the tradition, precision, and craftsmanship behind our authentic multi-metal polish collections.',
+  title: 'Our Story | shamasandsons',
+  description: 'Discover the story behind shamasandsons and its growing product catalogue.',
 }
 
 const values = [
   {
     icon: Award,
-    title: 'Centurial Heritage',
+    title: 'Worth Your Time',
     description:
-      'Rooted in British craftsmanship, our formulas stay true to the time-tested recipe trusted across generations of households and workshops.',
+      'We focus on products that are useful, giftable, or simply good to discover — not noise for the sake of filling a page.',
   },
   {
     icon: Layers,
-    title: 'Multi-Metal Versatility',
+    title: 'Easy to Navigate',
     description:
-      'Engineered to restore brass, copper, bronze, chrome, and stainless steel with a single, dependable formulation.',
+      'Clear categories, plain information, and a simple path from browsing to the product you want.',
   },
   {
     icon: Sparkles,
-    title: 'Lasting Mirror Luster',
+    title: 'No Guesswork',
     description:
-      'Micro-abrasive polishing action lifts stubborn oxidation quickly, leaving a sealed protective microfilm against humidity and tarnish.',
+      'Each listing is designed to surface the details that help you decide, without dressing them up as promises.',
   },
   {
     icon: ShieldCheck,
-    title: 'Uncompromising Quality',
+    title: 'Always Evolving',
     description:
-      'Formulated to meet strict safety and quality standards, ensuring gentle yet powerful results on architectural hardware, cookware, and antiques.',
+      'The range can grow as new finds earn their place, keeping shamasandsons open to more than one kind of product.',
   },
-]
-
-const stats = [
-  { number: '100+', label: 'Years of Tradition' },
-  { number: '5', label: 'Core Metals Restored' },
-  { number: '98%', label: 'Customer Satisfaction' },
-  { number: '1000s', label: 'Of Surfaces Protected' },
 ]
 
 export default function AboutPage() {
@@ -51,18 +44,18 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
               <p className="text-primary font-medium tracking-widest uppercase mb-4">
-                The Restoration Story
+                Our Story
               </p>
               <h1 className="font-heading text-5xl lg:text-6xl tracking-wider text-foreground mb-6">
-                CRAFTED FOR
+                MORE TO
                 <br />
-                <span className="text-primary">THE FINISH</span>
+                <span className="text-primary">EXPLORE</span>
               </h1>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                Liquid metal polish traces its pedigree back over a century in Britain, originally developed to replace labor-intensive pastes and bring fast, mirror-like clarity to industrial railways, maritime vessels, and luxury hotels.
+                shamasandsons is a storefront built around discovery: a considered place to explore a growing range of products without being limited to one category.
               </p>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                Today, that same commitment to timeless shine lives on in every bottle, cream, and wadding format we supply — designed to restore treasured door hardware, antique copper cookware, and modern chrome fixtures effortlessly.
+                The aim is simple: make browsing feel clear, useful, and open to whatever belongs in the catalogue next.
               </p>
               <Button
                 asChild
@@ -70,7 +63,7 @@ export default function AboutPage() {
                 className="bg-primary text-primary-foreground hover:bg-primary/90 font-heading text-lg tracking-wider"
               >
                 <Link href="/products">
-                  EXPLORE POLISH PRODUCTS
+                  EXPLORE THE CATALOGUE
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Link>
               </Button>
@@ -80,38 +73,24 @@ export default function AboutPage() {
                 src="/logo.png"
                 alt="Shamas & Sons Ltd"
                 fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-contain p-16 opacity-25 invert"
               />
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center p-8 bg-background/60 backdrop-blur-md rounded-2xl border border-border/40">
                   <p className="font-heading text-4xl lg:text-5xl text-foreground tracking-wider mb-2">
-                    PROVEN FORMULA
+                    ONE PLACE
                   </p>
                   <p className="font-heading text-6xl lg:text-7xl text-primary tracking-wider">
-                    EST. 1905
+                    TO EXPLORE
                   </p>
                   <p className="text-xs uppercase tracking-widest text-muted-foreground mt-2">
-                    Heritage Quality &amp; Care
+                    shamasandsons
                   </p>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats */}
-      <section className="py-16 lg:py-20 bg-secondary/40 border-y border-border/60">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <p className="font-heading text-5xl lg:text-6xl text-primary tracking-wider mb-2">
-                  {stat.number}
-                </p>
-                <p className="text-sm font-medium uppercase tracking-wider text-muted-foreground">{stat.label}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -124,7 +103,7 @@ export default function AboutPage() {
               Our Principles
             </p>
             <h2 className="font-heading text-4xl lg:text-5xl tracking-wider text-foreground">
-              THE STANDARDS OF RESTORATION
+              WHAT WE CARE ABOUT
             </h2>
           </div>
 
@@ -156,13 +135,13 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-primary font-medium tracking-widest uppercase mb-4 text-xs sm:text-sm">
-              Authentic Performance
+              Built for discovery
             </p>
             <h2 className="font-heading text-4xl lg:text-5xl tracking-wider text-foreground mb-6">
-              PRESERVING BEAUTY ACROSS GENERATIONS
+              MORE THAN ONE THING
             </h2>
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-10">
-              Whether restoring a century-old brass heirloom or keeping daily kitchen copper pristine, our formulas provide the dependable luster and anti-tarnish protection you can count on.
+              shamasandsons is designed to make space for more: more products to discover, more reasons to return, and more ways to find what works for you.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button

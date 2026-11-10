@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight, Sparkles, Layers, Award, Star, CheckCircle2, ShieldCheck, HelpCircle } from 'lucide-react'
-import { getFeaturedProducts, getCollections } from '@/lib/shopify/client'
+import { ArrowRight, Sparkles, Layers, Award, CheckCircle2 } from 'lucide-react'
+import { getFeaturedProducts, getProducts } from '@/lib/shopify/client'
 import { ProductCard } from '@/components/product/product-card'
 import { Button } from '@/components/ui/button'
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion'
@@ -10,108 +10,108 @@ import { HeroSection } from '@/components/home/hero-section'
 const features = [
   {
     icon: Sparkles,
-    title: 'Fast Tarnish Removal',
-    description: 'A few drops on a cloth lift built-up oxidation and tarnish from brass and copper in minutes, without aggressive scrubbing on lightly soiled surfaces.',
+    title: 'Thoughtfully Selected',
+    description: 'Explore a growing range of useful finds chosen to make everyday shopping feel simple and considered.',
   },
   {
     icon: Layers,
-    title: 'Multi-Metal Formula',
-    description: 'One versatile formula works across brass, bronze, copper, chrome, and stainless steel to cover most metal surfaces around your home or workshop.',
+    title: 'Easy to Explore',
+    description: 'Use clear categories and filters to move from the full catalogue to what you are looking for.',
   },
   {
     icon: Award,
-    title: 'Time-Tested Heritage',
-    description: 'Manufactured in Britain with over a century of trusted pedigree, staying true to a proven recipe that restores brilliant, long-lasting luster.',
+    title: 'Made for Browsing',
+    description: 'Every listing brings the key details together, so you can explore the catalogue with confidence.',
   },
 ]
 
 const categories = [
   {
-    title: 'Brass Polish & Cleaners',
-    description: 'Traditional liquid polish formula engineered for fast tarnish removal on door handles, ornaments, and brass fittings.',
+    title: 'Metal Polish',
+    description: 'Explore the products currently available in this part of the catalogue.',
     image: '/picas/pp/712oFUjZ0zL._AC_UL480_FMwebp_QL65_.webp',
-    href: '/products?type=liquid',
+    href: '/products?type=metal-polish',
   },
   {
-    title: 'Copper & Bronze Care',
-    description: 'Deep-cleaning treatment that gently dissolves green verdigris and dark oxidation on cookware and architectural accents.',
-    image: '/picas/pp/71a0vxYvO0L._AC_UL480_FMwebp_QL65_.webp',
-    href: '/products?type=liquid',
+    title: 'Lip & Nail',
+    description: 'Explore the products currently available in this part of the catalogue.',
+    image: 'https://m.media-amazon.com/images/I/71WdnuR4hgL._AC_SX679_.jpg',
+    href: '/products?type=Lip%20%26%20Nail',
   },
   {
-    title: 'Chrome & Stainless Steel',
-    description: 'Specialized formula for streak-free shine, water spot removal, and micro-scratch reduction on modern fixtures.',
-    image: '/picas/pp/815fhQPtz9L._AC_UL480_FMwebp_QL65_.webp',
-    href: '/products?type=polish',
+    title: 'Fragrance',
+    description: 'Explore the products currently available in this part of the catalogue.',
+    image: 'https://m.media-amazon.com/images/I/71synqTHxAL._AC_SX679_.jpg',
+    href: '/products?type=Fragrance',
   },
   {
-    title: 'Polish Wadding & Creams',
-    description: 'Pre-treated cotton wadding and heavy-duty pastes for targeted, mess-free detailing on intricate metalwork.',
-    image: '/picas/pp/810n3lfq1zL._AC_UL480_FMwebp_QL65_.webp',
-    href: '/products?type=wipe',
+    title: 'Bath & Body',
+    description: 'Explore the products currently available in this part of the catalogue.',
+    image: 'https://m.media-amazon.com/images/I/71fvRx3-vPL._AC_SX679_PIbundle-2,TopRight,0,0_SH20_.jpg',
+    href: '/products?type=Bath%20%26%20Body',
   },
 ]
 
-const testimonials = [
+const shopperHighlights = [
   {
-    name: 'Marcus T.',
-    role: 'Antique Restorer',
-    rating: 5,
-    comment: 'Used it on a set of antique brass drawer pulls that had oxidized almost completely black. Two light passes with a cotton cloth and they looked brand new with a deep, mirror-like reflection.',
+    title: 'One place to explore',
+    description: 'A single catalogue for discovering products across a variety of everyday needs and occasions.',
   },
   {
-    name: 'Sandra K.',
-    role: 'Homeowner & Collector',
-    rating: 5,
-    comment: 'The wadding format is remarkably easy to use on detailed vintage copper pans and silverware. Zero mess, effortless buffing, and it keeps tarnish away for weeks.',
+    title: 'Find your way',
+    description: 'Browse the complete range or use a category filter when you already know what you are looking for.',
   },
   {
-    name: 'David R.',
-    role: 'Workshop Craftsman',
-    rating: 5,
-    comment: 'Keeps bathroom chrome fixtures, vehicle trim, and brass fittings gleaming without any harsh abrasiveness. I always keep a bottle in the workshop.',
+    title: 'See the details',
+    description: 'Open any product to view its information and make a more informed choice at your own pace.',
   },
 ]
 
-const polishFaqs = [
+const catalogueFaqs = [
   {
-    question: 'How do you use metal polish for the best mirror shine?',
-    answer: 'Apply a small amount of metal polish to a soft lint-free cloth or use a piece of pre-treated wadding. Rub over the brass, copper, chrome, or stainless steel surface using light, circular pressure. Once the tarnish begins lifting and the liquid begins to dry to a light haze, buff the surface with a clean, dry microfiber cloth until a high gloss appears.',
+    question: 'How do I browse the catalogue?',
+    answer: 'Start on the Products page to view the complete range, then use category filters or sorting to narrow what you see.',
   },
   {
-    question: 'What metals and surfaces is the formula safe on?',
-    answer: 'Our metal polish formula is safe and effective on brass, copper, bronze, chrome, stainless steel, pewter, and aluminum. It can also be used on hard plastics and Bakelite. Always test a small hidden area first on antique or lacquered metals.',
+    question: 'Where can I find product information?',
+    answer: 'Open any product from the catalogue to see its available details and the next steps for that item.',
   },
   {
-    question: 'Does the polish remove light surface scratches?',
-    answer: 'Yes. Light surface scuffs and oxidation marks on brass, chrome, and stainless steel fade with repeated buffing, as the micro-abrasive formula gently refines the tarnished metal surface. While deep gouges cannot be filled, the restored luster makes them significantly less noticeable.',
+    question: 'Can prices and availability change?',
+    answer: 'Yes. Product information can change over time, so please check the most current details before completing an order.',
   },
   {
-    question: 'What is the difference between liquid polish and wadding?',
-    answer: 'Liquid polish is ideal for covering larger, smooth surfaces like plaques, copper cookware, and bar rails. Impregnated cotton wadding is ready to use without liquid spills, making it the perfect mess-free choice for intricate filigree, musical instruments, and delicate hardware.',
+    question: 'How do I choose the right product?',
+    answer: 'Use category filters to compare relevant products, then open a listing to review its description and available options.',
   },
   {
-    question: 'Does it leave a protective coating against future tarnish?',
-    answer: 'Yes. The formulation leaves behind an ultra-thin protective barrier that seals the polished metal against humidity, atmospheric moisture, and fingerprint oils, significantly extending the time between cleanings.',
+    question: 'How can I keep up with new products?',
+    answer: 'Use the email field below to hear about new arrivals and updates from shamasandsons.',
   },
 ]
 
-import type { ShopifyProduct, ShopifyCollection } from '@/lib/shopify/types'
+import type { ShopifyProduct } from '@/lib/shopify/types'
 
 export default async function HomePage() {
   let products: ShopifyProduct[] = []
-  let collections: ShopifyCollection[] = []
+  let beautyProducts: ShopifyProduct[] = []
 
   try {
-    ;[products, collections] = await Promise.all([
+    ;[products, beautyProducts] = await Promise.all([
       getFeaturedProducts(4),
-      getCollections(),
+      getProducts({ first: 35, query: 'tag:beauty' }),
     ])
   } catch {
     // Keep the editorial homepage useful while the Shopify connection is being configured.
   }
 
-  const featuredCollection = collections[0]
+  const beautyHighlights = ['Lip & Nail', 'Fragrance', 'Bath & Body', 'Beauty Accessories']
+    .map((productType) => beautyProducts.find((product) => product.productType === productType))
+    .filter((product): product is ShopifyProduct => Boolean(product))
+  const bestSellerHighlights = [
+    ...products.slice(0, 2),
+    ...beautyHighlights.slice(0, 2),
+  ]
 
 
   return (
@@ -140,9 +140,9 @@ export default async function HomePage() {
             </Link>
           </div>
 
-          {products.length > 0 ? (
+          {bestSellerHighlights.length > 0 ? (
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
-              {products.map((product, index) => (
+              {bestSellerHighlights.map((product, index) => (
                 <ProductCard
                   key={product.id}
                   product={product}
@@ -154,7 +154,7 @@ export default async function HomePage() {
             <div className="text-center py-16">
               <p className="text-muted-foreground mb-4">No products found</p>
               <p className="text-sm text-muted-foreground">
-                Connect your Shopify store to display products here.
+                Products are being prepared for this catalogue.
               </p>
             </div>
           )}
@@ -167,59 +167,18 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Amazon UK Trust & Store Showcase Banner */}
-      <section className="py-12 border-b border-border bg-gradient-to-r from-card via-secondary/40 to-card">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-6 p-6 sm:p-8 rounded-2xl bg-[#FF9900]/5 border border-[#FF9900]/20">
-            <div className="space-y-2 text-center lg:text-left">
-              <div className="flex items-center justify-center lg:justify-start gap-2">
-                <div className="flex text-[#FF9900]">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-[#FF9900] text-[#FF9900]" />
-                  ))}
-                </div>
-                <span className="text-xs font-bold text-foreground">4.7 / 5.0 RATING</span>
-                <span className="text-xs text-muted-foreground">• 10,000+ UK Reviews</span>
-              </div>
-              <h3 className="font-heading text-2xl sm:text-3xl tracking-wider text-foreground">
-                OFFICIAL SHAMAS &amp; SONS FORMULAS ON AMAZON UK
-              </h3>
-              <p className="text-xs sm:text-sm text-muted-foreground max-w-2xl">
-                Looking for Prime next-day delivery? Every authentic Shamas &amp; Sons metal polish and wadding product is available directly through our verified Amazon UK storefront.
-              </p>
-            </div>
-
-            <div className="flex flex-wrap items-center justify-center gap-3 shrink-0">
-              <a
-                href="https://www.amazon.co.uk/s?k=Brasso+Metal+Polish"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#FF9900] hover:bg-[#ffaa22] text-[#0A0A0A] font-bold text-sm tracking-wide shadow-md transition-all duration-200"
-              >
-                <span>SHOP ON AMAZON UK</span>
-                <ArrowRight className="w-4 h-4" />
-              </a>
-              <Button asChild variant="outline" size="lg" className="border-border hover:border-foreground font-heading tracking-wider">
-                <Link href="/products">BROWSE CATALOG</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-      {/* Features / Why Choose Us */}
+      {/* Features / Why Shop With Us */}
       <section className="py-20 lg:py-32 border-b border-border bg-secondary/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
             <p className="text-primary font-semibold tracking-widest uppercase mb-3 text-xs sm:text-sm">
-              Trusted Craftsmanship
+              Why shamasandsons
             </p>
             <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl tracking-wider text-foreground mb-6 leading-tight">
-              WHY HOUSEHOLDS REACH FOR OUR POLISH
+              SHOP WITH CONFIDENCE
             </h2>
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-              A specialized formula built for brass, bronze, copper, chrome, and stainless steel — available in liquid, cream, and wadding form to match every task.
+              A clear, considered place to discover products, browse at your pace, and find something that fits.
             </p>
           </div>
 
@@ -249,13 +208,13 @@ export default async function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <p className="text-primary font-semibold tracking-widest uppercase mb-3 text-xs sm:text-sm">
-              Tailored Solutions
+              Find what fits
             </p>
             <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl tracking-wider text-foreground mb-4">
               SHOP BY CATEGORY
             </h2>
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-              From liquid metal polish to specialized wadding and creams, each format is engineered for specific surfaces and cleaning requirements.
+              Browse the complete catalogue or begin with the category that feels right for you.
             </p>
           </div>
 
@@ -285,7 +244,7 @@ export default async function HomePage() {
                     </p>
                   </div>
                   <span className="inline-flex items-center text-xs font-bold uppercase tracking-wider text-primary group-hover:translate-x-1 transition-transform">
-                    Explore Format <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
+                    Explore products <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
                   </span>
                 </div>
               </Link>
@@ -294,85 +253,31 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Featured Collection Banner */}
-      {featuredCollection && (
-        <section className="py-16 lg:py-24 bg-secondary">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-              <div className="order-2 lg:order-1">
-                <p className="text-primary font-medium tracking-widest uppercase mb-4">
-Made for the finish
-                </p>
-                <h2 className="font-heading text-4xl lg:text-6xl tracking-wider text-foreground mb-6">
-                  {featuredCollection.title.toUpperCase()}
-                </h2>
-                <p className="text-lg text-muted-foreground mb-8 max-w-lg leading-relaxed">
-                  {featuredCollection.description || 'Explore our carefully curated collection of premium products designed to elevate your metal restoration experience.'}
-                </p>
-                <Button
-                  asChild
-                  size="lg"
-                  className="bg-primary text-primary-foreground hover:bg-primary/90 font-heading text-lg tracking-wider"
-                >
-                  <Link href={`/products`}>
-                    EXPLORE COLLECTION
-                    <ArrowRight className="ml-2 w-5 h-5" />
-                  </Link>
-                </Button>
-              </div>
-              <div className="order-1 lg:order-2 relative aspect-square lg:aspect-[4/5] bg-white rounded-2xl shadow-xl overflow-hidden flex items-center justify-center p-6 sm:p-10">
-                <Image
-                  src="/picas/pp/61Ah67TnasL._AC_UL640_FMwebp_QL65_.webp"
-                  alt={featuredCollection?.title || "Metal Polish Collection"}
-                  fill
-                  className="object-contain p-4 sm:p-6"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Customer Reviews & Testimonials */}
+      {/* Shopping Highlights */}
       <section className="py-20 lg:py-32 border-b border-border bg-secondary/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <p className="text-primary font-semibold tracking-widest uppercase mb-3 text-xs sm:text-sm">
-              Proven Satisfaction
+              Explore with clarity
             </p>
             <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl tracking-wider text-foreground mb-4">
-              WHAT CUSTOMERS SAY
+              SHOPPING HIGHLIGHTS
             </h2>
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-              Real feedback from craftsmen, antique collectors, and homeowners who trust our formula on brass, copper, and chrome.
+              A straightforward way to explore the range without the store being defined by a single type of product.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
-            {testimonials.map((test) => (
+            {shopperHighlights.map((highlight) => (
               <div
-                key={test.name}
+                key={highlight.title}
                 className="bg-card/70 border border-border/60 rounded-2xl p-8 flex flex-col justify-between shadow-sm hover:border-primary/40 transition-all duration-300"
               >
                 <div>
-                  <div className="flex items-center gap-1 text-primary mb-4">
-                    {[...Array(test.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-primary" />
-                    ))}
-                  </div>
-                  <p className="text-sm sm:text-base text-foreground/90 leading-relaxed italic mb-6">
-                    &ldquo;{test.comment}&rdquo;
-                  </p>
-                </div>
-                <div className="pt-4 border-t border-border/40 flex items-center justify-between">
-                  <div>
-                    <h4 className="font-heading text-lg tracking-wider text-foreground">{test.name}</h4>
-                    <p className="text-xs text-muted-foreground">{test.role}</p>
-                  </div>
-                  <span className="text-xs font-semibold text-primary flex items-center gap-1">
-                    <CheckCircle2 className="w-3.5 h-3.5" /> Verified
-                  </span>
+                  <CheckCircle2 className="w-5 h-5 text-primary mb-5" />
+                  <h3 className="font-heading text-2xl tracking-wider text-foreground mb-3">{highlight.title.toUpperCase()}</h3>
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{highlight.description}</p>
                 </div>
               </div>
             ))}
@@ -468,18 +373,18 @@ Made for the finish
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 lg:mb-20">
             <p className="text-primary font-semibold tracking-widest uppercase mb-3 text-xs sm:text-sm">
-              Care Guide &amp; Expert Advice
+              Catalogue help
             </p>
             <h2 className="font-heading text-4xl lg:text-6xl tracking-wider text-foreground mb-4">
-              METAL CARE &amp; FAQS
+              FREQUENTLY ASKED QUESTIONS
             </h2>
             <p className="text-base sm:text-lg text-muted-foreground max-w-xl mx-auto">
-              Everything you need to know about using metal polish, surface safety, scratch reduction, and tarnish prevention.
+              A quick guide to browsing the catalogue and checking product details.
             </p>
           </div>
 
           <Accordion type="single" collapsible className="space-y-5 sm:space-y-6">
-            {polishFaqs.map((faq, index) => (
+            {catalogueFaqs.map((faq, index) => (
               <AccordionItem key={faq.question} value={`faq-${index}`} className="border-0">
                 <div className="bg-secondary/50 border border-border/60 rounded-2xl overflow-hidden hover:border-primary/40 transition-colors shadow-sm">
                   <AccordionTrigger className="px-7 sm:px-9 py-6 sm:py-7 hover:no-underline text-left">
@@ -507,22 +412,22 @@ Made for the finish
               Stay Connected
             </p>
             <h2 className="font-heading text-4xl lg:text-5xl tracking-wider text-foreground mb-6">
-              RESTORE WITH CONFIDENCE
+              STAY IN THE KNOW
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-              Join thousands of collectors, restorers, and households who trust our authentic metal polish essentials.
+              Be first to hear about new arrivals, useful finds, and updates from shamasandsons.
             </p>
             <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <input
                 type="email"
-                placeholder="Enter your email"
+                placeholder="Your email for updates"
                 className="flex-1 bg-secondary border border-border rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
               />
               <Button
                 type="submit"
                 className="bg-primary text-primary-foreground hover:bg-primary/90 font-heading tracking-wider px-8"
               >
-                SUBSCRIBE
+                KEEP ME UPDATED
               </Button>
             </form>
           </div>

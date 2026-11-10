@@ -24,6 +24,101 @@ import type {
 const domain = process.env.NEXT_PUBLIC_SHOPIFY_DOMAIN
 const storefrontToken = process.env.NEXT_PUBLIC_SHOPIFY_STOREFRONT_TOKEN
 const apiVersion = '2025-01'
+// Fixed conversion for the imported PKR catalogue source (11 November 2026).
+const PKR_TO_GBP = 0.00269154
+
+type BeautyListing = {
+  asin: string
+  title: string
+  price: string
+  image: string
+  productType: 'Lip & Nail' | 'Fragrance' | 'Bath & Body' | 'Beauty Accessories'
+}
+
+const BEAUTY_LISTINGS: BeautyListing[] = [
+  { asin: 'B0FKCWV7CH', title: 'Chupa Chups Lip Licking Lip Balm Collection, 5 Assorted Flavors', price: '1224', image: 'https://m.media-amazon.com/images/I/71WdnuR4hgL._AC_SX679_.jpg', productType: 'Lip & Nail' },
+  { asin: 'B0FKBZ81BT', title: 'Disney Princess Lip Balm Set – 5 Flavored Lip Balms for Kids', price: '10045', image: 'https://m.media-amazon.com/images/I/71DQjnmLU9L._AC_SX679_.jpg', productType: 'Lip & Nail' },
+  { asin: 'B0G2T8VWFK', title: 'Chupa Chups Set of 7 Lip Balms, Assorted Fruity Flavours', price: '2207', image: 'https://m.media-amazon.com/images/I/612ssZpR-PL._AC_SX679_.jpg', productType: 'Lip & Nail' },
+  { asin: 'B0FY71QXC7', title: 'Disney Frozen Lip Balm Set for Kids – 5-Pack', price: '5587.13', image: 'https://m.media-amazon.com/images/I/81CWnOnhLQL._AC_SX679_PIbundle-5,TopRight,0,0_SH20_.jpg', productType: 'Lip & Nail' },
+  { asin: 'B0FKBXY4W3', title: 'Hello Kitty 5 x Lip Balms Gift Set', price: '5587.13', image: 'https://m.media-amazon.com/images/I/71BAGgDiGwL._AC_SX679_.jpg', productType: 'Lip & Nail' },
+  { asin: 'B0FK3YSZNY', title: 'Wicked Nail Polish Collection – 4-Piece Set', price: '7068', image: 'https://m.media-amazon.com/images/I/613X-lodKDL._AC_SX679_.jpg', productType: 'Lip & Nail' },
+  { asin: 'B0FK3X1XJN', title: 'Wicked Lip Balm Collection – 3 Pack Gift Set', price: '6332.58', image: 'https://m.media-amazon.com/images/I/717TzJiDvEL._AC_SX679_.jpg', productType: 'Lip & Nail' },
+  { asin: 'B0FK65374H', title: 'Emily in Paris Lip Balm Gift Set – Pack of 5', price: '3271', image: 'https://m.media-amazon.com/images/I/71KWEj609+L._AC_SX679_.jpg', productType: 'Lip & Nail' },
+  { asin: 'B0HLG4NMCQ', title: 'Firetrap Luxury Collection Fragrance Set for Him, 3 x 30ml', price: '4232', image: 'https://m.media-amazon.com/images/I/71synqTHxAL._AC_SX679_.jpg', productType: 'Fragrance' },
+  { asin: 'B0FYXZBB4V', title: 'Nicce for Men Eau de Toilette & Beanie Hat Gift Set', price: '5062', image: 'https://m.media-amazon.com/images/I/71PNcDoysYL._AC_SX679_.jpg', productType: 'Fragrance' },
+  { asin: 'B0HLDVZJ3T', title: 'Firetrap Luxury Collection Fragrance Set for Her, 3 x 30ml', price: '1768', image: 'https://m.media-amazon.com/images/I/71Bmr8syC3L._AC_SX679_.jpg', productType: 'Fragrance' },
+  { asin: 'B0FKCJMDMX', title: 'Chupa Chups Body Spray Gift Set, 4 x 50ml', price: '1072', image: 'https://m.media-amazon.com/images/I/711dS+CxBjL._AC_SX679_.jpg', productType: 'Fragrance' },
+  { asin: 'B0FK5LTHDN', title: 'SoulCal Women’s Fragrance Gift Set', price: '2345', image: 'https://m.media-amazon.com/images/I/61YnTkBE5mL._AC_SX679_.jpg', productType: 'Fragrance' },
+  { asin: 'B07JMRYK5Q', title: 'French Blossom Eau De Parfum 100ml', price: '4466', image: 'https://m.media-amazon.com/images/I/71-tjYAE8LL._AC_SX679_.jpg', productType: 'Fragrance' },
+  { asin: 'B0FTZHYY8C', title: 'Masquerade Extra Terrestre Eau de Toilette 100ml', price: '5110', image: 'https://m.media-amazon.com/images/I/81zxCPPaL5L._AC_SX679_.jpg', productType: 'Fragrance' },
+  { asin: 'B0FT3F68Y2', title: 'Lovali Golden Blossom Eau De Parfum 100ml', price: '4466', image: 'https://m.media-amazon.com/images/I/814D6xkeKvL._AC_SX679_.jpg', productType: 'Fragrance' },
+  { asin: 'B0FLVMYNBN', title: 'Brazilian Sol Fragrance Body Mist, 3 x 150ml', price: '5583', image: 'https://m.media-amazon.com/images/I/81d-NRl-9cL._AC_SX679_.jpg', productType: 'Fragrance' },
+  { asin: 'B0G5LWHRHP', title: 'Call of Duty Shower Set with Shower Gel and Bath Pouf', price: '1072', image: 'https://m.media-amazon.com/images/I/71fvRx3-vPL._AC_SX679_PIbundle-2,TopRight,0,0_SH20_.jpg', productType: 'Bath & Body' },
+  { asin: 'B0FK2VVYH8', title: 'Wicked Duo Bath Melts Gift Set, 2 x 100g', price: '2415', image: 'https://m.media-amazon.com/images/I/61-WFAIl-cL._AC_SX679_PIbundle-2,TopRight,0,0_SH20_.jpg', productType: 'Bath & Body' },
+  { asin: 'B0FMSMRXHS', title: 'Wednesday Face Mask with Hyaluronic Acid, 3 Pack', price: '5579', image: 'https://m.media-amazon.com/images/I/81Ekdq1pijL._AC_SX679_PIbundle-3,TopRight,0,0_SH20_.jpg', productType: 'Bath & Body' },
+  { asin: 'B0FK43RC44', title: 'Squishmallows Lucky Charm Bath Gift Set', price: '3379', image: 'https://m.media-amazon.com/images/I/61Ez9+XgpNL._AC_SX679_.jpg', productType: 'Bath & Body' },
+  { asin: 'B0FKNFCVGN', title: 'CoComelon 350ml Bubble Bath & Bath Sponge Gift Set', price: '2788', image: 'https://m.media-amazon.com/images/I/71WckU4WqPL._AC_SX679_.jpg', productType: 'Bath & Body' },
+  { asin: 'B0FK6XTPK9', title: 'CoComelon Bubble Bath Gift Set – 4 Pack', price: '2750', image: 'https://m.media-amazon.com/images/I/71Zgmr21R7L._AC_SX679_.jpg', productType: 'Bath & Body' },
+  { asin: 'B0FKJPJ8NN', title: 'Umbro ICE Hair & Body Wash Gift Set', price: '3678.78', image: 'https://m.media-amazon.com/images/I/61tLkgo76TL._AC_SX679_.jpg', productType: 'Bath & Body' },
+  { asin: 'B0FKJWW3BQ', title: 'Umbro Defiant Body Wash & Ladies Socks', price: '2207', image: 'https://m.media-amazon.com/images/I/71m6H0LipCL._AC_SX679_.jpg', productType: 'Bath & Body' },
+  { asin: 'B0FT3WPX8Q', title: 'Penguin Men’s Grooming Gift Set', price: '12263', image: 'https://m.media-amazon.com/images/I/713hmho1OXL._AC_SX679_.jpg', productType: 'Bath & Body' },
+  { asin: 'B0FK41NWVC', title: 'Stranger Things Face Wash & Face Scrub', price: '4468.96', image: 'https://m.media-amazon.com/images/I/81mT9zXr14L._AC_SX679_.jpg', productType: 'Bath & Body' },
+  { asin: 'B0FK53YYSS', title: 'Peaky Blinders Beard Grooming Gift Set', price: '3718', image: 'https://m.media-amazon.com/images/I/71jDejfwoUL._AC_SX679_PIbundle-4,TopRight,0,0_SH20_.jpg', productType: 'Bath & Body' },
+  { asin: 'B0CP2C34PS', title: 'Stranger Things Static TV Tin Bath Set', price: '4331.05', image: 'https://m.media-amazon.com/images/I/716Qtdi4YWL._AC_SX679_PIbundle-4,TopRight,0,0_SH20_.jpg', productType: 'Bath & Body' },
+  { asin: 'B0FK2TS2ZX', title: 'Wednesday Body Wash & Water Bottle', price: '4849.38', image: 'https://m.media-amazon.com/images/I/71lSHKLTwdL._AC_SX679_.jpg', productType: 'Bath & Body' },
+  { asin: 'B0FKHFXB46', title: 'Squishmallows Kids Bubble Bath Gift Set, 3 x 300ml', price: '2978.06', image: 'https://m.media-amazon.com/images/I/71EIHsiNJiL._AC_SX679_.jpg', productType: 'Bath & Body' },
+  { asin: 'B0FR489SYR', title: 'Baby Shark Bubble Bath for Kids, 2 x 300ml', price: '3615.42', image: 'https://m.media-amazon.com/images/I/819JldVeuyL._AC_SX679_.jpg', productType: 'Bath & Body' },
+  { asin: 'B0FK2X9TB5', title: 'Wicked Glinda Compact Mirror', price: '5587.13', image: 'https://m.media-amazon.com/images/I/71L1EcjBZaL._AC_SX679_.jpg', productType: 'Beauty Accessories' },
+  { asin: 'B0FJYBS3JZ', title: 'Corsair Toiletries Wicked Cosmetic Bag & Compact Mirror', price: '5556.50', image: 'https://m.media-amazon.com/images/I/713P8kLGTWL._AC_CR0%2C0%2C0%2C0_SX352_SY330_.jpg', productType: 'Beauty Accessories' },
+  { asin: 'B0FK3SJQWQ', title: 'Wicked Makeup Brush & Sponge Set', price: '1396', image: 'https://m.media-amazon.com/images/I/81+FkoNJStL._AC_SX679_PIbundle-7,TopRight,0,0_SH20_.jpg', productType: 'Beauty Accessories' },
+]
+
+const BEAUTY_PRODUCTS: ShopifyProduct[] = BEAUTY_LISTINGS.map((listing) => {
+  const priceInGbp = (Number(listing.price) * PKR_TO_GBP).toFixed(2)
+  const image = {
+    url: listing.image,
+    altText: listing.title,
+    width: 679,
+    height: 679,
+  }
+
+  return {
+    id: `gid://shopify/Product/${listing.asin}`,
+    handle: `${listing.productType.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-${listing.asin.toLowerCase()}`,
+    title: listing.title,
+    description: 'Available from Amazon UK.',
+    descriptionHtml: '<p>Available from Amazon UK.</p>',
+    productType: listing.productType,
+    vendor: 'Corsair Toiletries',
+    tags: ['beauty-toiletries', 'beauty', listing.productType.toLowerCase().replace(/[^a-z0-9]+/g, '-')],
+    availableForSale: true,
+    priceRange: {
+      minVariantPrice: { amount: priceInGbp, currencyCode: 'GBP' },
+      maxVariantPrice: { amount: priceInGbp, currencyCode: 'GBP' },
+    },
+    compareAtPriceRange: {
+      minVariantPrice: { amount: priceInGbp, currencyCode: 'GBP' },
+      maxVariantPrice: { amount: priceInGbp, currencyCode: 'GBP' },
+    },
+    featuredImage: image,
+    images: { edges: [{ node: image }] },
+    variants: {
+      edges: [{
+        node: {
+          id: `gid://shopify/ProductVariant/v-${listing.asin}`,
+          title: 'Default Title',
+          availableForSale: true,
+          selectedOptions: [{ name: 'Title', value: 'Default Title' }],
+          price: { amount: priceInGbp, currencyCode: 'GBP' },
+          compareAtPrice: null,
+          image,
+        },
+      }],
+    },
+    options: [{ id: `opt-${listing.asin}`, name: 'Title', values: ['Default Title'] }],
+    seo: { title: listing.title, description: 'Available from Amazon UK.' },
+  }
+})
 
 const MOCK_PRODUCTS: ShopifyProduct[] = [
   {
@@ -1087,7 +1182,8 @@ const MOCK_PRODUCTS: ShopifyProduct[] = [
     },
     options: [{ id: 'opt-18', name: 'Size', values: ['2 x 175ml'] }],
     seo: { title: 'Shamas & Sons Metal Polisher Wadding 2 x 175ml', description: 'Buy Shamas & Sons Metal Polisher Wadding 2 x 175ml online' }
-  }
+  },
+  ...BEAUTY_PRODUCTS,
 ]
 
 const MOCK_COLLECTIONS: ShopifyCollection[] = [
